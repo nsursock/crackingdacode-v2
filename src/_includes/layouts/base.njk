@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
     <!-- Add any common styles or meta tags here -->
+    <link rel="dns-prefetch" href="https://unsplash.com">
+    <link rel="preconnect" href="https://unsplash.com">
     <link rel="stylesheet" href="/assets/main.bundle.css">
+    <link rel="preload" href="/static/fonts/aldrich/aldrich-v17-latin-regular.woff2" as="font" crossorigin/>
+    <link rel="preload" href="/static/fonts/aldrich/aldrich-v17-latin-regular.woff" as="font" crossorigin/>
+    <link rel="preload" href="/static/fonts/aldrich/aldrich-v17-latin-regular.ttf" as="font" crossorigin/>
     <script type="module" src="/assets/main.bundle.js" defer></script>
     <script>
       if (localStorage.crdacode_theme === 'dark' || (!('crdacode_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
