@@ -7,7 +7,7 @@
   <a href="{{ post.url }}" aria-label="Read more about: {{ post.data.title }}">
     <div class="relative">
       <div class="relative" x-data="{ isDalle: {{ post.data.tags | json }}.includes('dalle') }">
-        <img class="rounded-t-lg transition-all duration-500 ease-in-out" 
+        <img width="480" :height="isDalle ? '275' : '320'" class="rounded-t-lg transition-all duration-500 ease-in-out" 
         :class="typeof type !== 'undefined' && '{{ loop.length }}' === 3 ? 'group-hover:filter group-hover:blur-md' : ''" 
         :data-src="isDalle ? 
             `{{ post.data.featured }}`.replace('/upload/', '/upload/w_480/h_275/f_webp/') : 
