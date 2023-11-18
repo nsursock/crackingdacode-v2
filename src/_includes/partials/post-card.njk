@@ -10,7 +10,7 @@
         <!--
           loading="lazy" src="https://images.unsplash.com/photo-1529917365646-d9b0d968d713?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=480&h=320"
           -->
-        <img
+        <img loading="lazy"
           width="480" :height="isDalle ? '275' : '320'" class="rounded-t-lg transition-all duration-500 ease-in-out" 
           :class="typeof type !== 'undefined' && '{{ loop.length }}' === 3 ? 'group-hover:filter group-hover:blur-md' : ''" 
           :data-src="isDalle ? 

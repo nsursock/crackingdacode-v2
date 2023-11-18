@@ -31,7 +31,7 @@
               </blockquote>
               <figcaption class="mt-6 flex items-center">
                 <div class="overflow-hidden rounded-full bg-gray-50">
-                  <img x-intersect.once="$el.src = $el.dataset.src"
+                  <img loading="lazy" x-intersect.once="$el.src = $el.dataset.src"
                   class="w-12 h-12 object-cover"
                   data-src="{{ testimonial.photo }}?h=100&w=100&fm=webp"
                   alt="Photo of {{ testimonial.person }}"
