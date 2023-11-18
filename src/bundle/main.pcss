@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import './styles/base.pcss';
+
+@import 'tailwindcss/components';
+@import './styles/components.pcss';
+
+@import 'tailwindcss/utilities';
+@import './styles/utilities.pcss';
+
+@layer base {
+  /* aldrich-regular - latin */
+  @font-face {
+    font-family: 'Aldrich';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: local(''),
+      /* Super Modern Browsers */
+        url('/assets/fonts/aldrich/aldrich-v17-latin-regular.woff')
+        format('woff'),
+      /* Modern Browsers */
+        url('/assets/fonts/aldrich/aldrich-v17-latin-regular.ttf')
+        format('truetype')
+  }
+}
+
+html {
+  @apply antialiased font-website;
+}

@@ -1,0 +1,61 @@
+<section class="py-8 sm:py-10 lg:py-16" x-data="dataTestimonials">
+  <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-center">
+    <h2 class="font-display text-4xl font-bold tracking-tight text-gray-900">Some kind words from early customers...</h2>
+    <p class="mt-4 text-lg tracking-tight text-gray-600">I worked with a small group of early access customers to make sure all of the content in the book was exactly what they needed. Hears what they had to say about the finished product.</p>
+  </div>
+  <div class="group mt-16">
+    {% if env.devMode %}
+      {% set testimonials = testimonials.development %}
+    {% else %}
+      {% set testimonials = testimonials.production %}
+    {% endif %}
+
+    <ul role="list" class="auto-cols-fr mx-auto grid max-w-2xl grid-cols-1 sm:grid-cols-2 gap-4 px-4 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
+      {% for chunk in testimonials | batch(3) %}
+        <li class="grid gap-4">
+          {% for testimonial in chunk %}
+            <figure class="rounded-xl p-8 shadow-md ring-1 ring-gray-900/5">
+              <blockquote class="relative">
+                <svg
+                  class="absolute opacity-50 left-0 w-10 h-10 text-indigo-500 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 125">
+                  <path d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9
+                    5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6
+                    29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"></path>
+                </svg>
+                <p class="text-lg tracking-tight text-gray-900">{{ testimonial.text }}</p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center">
+                <div class="overflow-hidden rounded-full bg-gray-50">
+                  <img x-init="$el.src = $el.dataset.src"
+                  class="w-12 h-12 object-cover"
+                  data-src="{{ testimonial.photo }}"
+                  alt="Photo of {{ testimonial.person }}"
+                >
+                </div>
+                <div class="ml-4">
+                  <div class="text-base font-medium leading-6 tracking-tight text-gray-900">{{ testimonial.person }}</div>
+                  <div class="mt-1 text-sm text-gray-600">{{ testimonial.title }}</div>
+                </div>
+              </figcaption>
+            </figure>
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {# <div class="mt-10 flex justify-center">
+      <button type="button" class="flex items-center text-base font-medium tracking-tight text-gray-900 hover:text-gray-700">Read more testimonials<svg aria-hidden="true" viewBox="0 0 24 24" class="ml-2 h-6 w-6">
+          <path d="m17 14-5 5-5-5M12 18.5V5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div> #}
+  </div>
+</section>
+
+<script>
+  function dataTestimonials() {
+    return {}
+  }
+</script>

@@ -1,0 +1,140 @@
+<div class="relative overflow-hidden bg-white dark:bg-gray-900" x-data="{ showMenu: false }">
+  <div class="mx-auto max-w-7xl dark:bg-gray-900">
+    <div class="relative z-10 bg-white pb-8 dark:bg-gray-900 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+      <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white dark:text-gray-900 lg:block" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="50,0 100,0 50,100 0,100"/>
+      </svg>
+      <div>
+        <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
+          <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+            <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+              <div class="flex w-full items-center justify-between md:w-auto">
+                <div>
+                  <span class="sr-only">Home</span>
+                  <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-auto stroke-current text-indigo-500 sm:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <title>Landing Page</title>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0
+                            00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0
+                            00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                  {% include 'partials/darkmode.njk' %}
+                  <button @click="showMenu = !showMenu" type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-900" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {% if nav.menus %}
+              <nav class="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
+                {% for menu in nav.menus %}
+                  <a href="{{ menu.route }}" class="font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 hover:dark:text-gray-500">
+                    {{ menu.name }}
+                  </a>
+                {% endfor %}
+              </nav>
+            {% endif %}
+            <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+              {% include 'partials/darkmode.njk' %}
+            </div>
+          </nav>
+        </div>
+        <!-- Mobile menu, show/hide based on menu open state.
+
+          Entering: "duration-150 ease-out"
+              From: "opacity-0 scale-95"
+              To: "opacity-100 scale-100"
+          Leaving: "duration-100 ease-in"
+              From: "opacity-100 scale-100"
+              To: "opacity-0 scale-95" -->
+        <div x-cloak x-show="showMenu" @click.outside="showMenu = false" class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden">
+          <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5 dark:bg-gray-800">
+            <div class="flex items-center justify-between px-5 pt-4">
+              <div>
+                <span class="sr-only">Home</span>
+                <a href="/">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-auto stroke-current text-indigo-500 sm:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0
+                          00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0
+                          00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="-mr-2">
+                <button @click="showMenu = !showMenu" type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
+                  <span class="sr-only">Close main menu</span>
+                  <!-- Heroicon name: outline/x -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            {% if nav.menus %}
+              <div class="space-y-2 px-2 pt-2 pb-3">
+                {% for menu in nav.menus %}
+                  <div>
+                    <a href="{{ menu.route }}" class="block rounded-md px-3 py-1 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700">
+                      {{ menu.name }}
+                    </a>
+                    <div class="flex flex-wrap">
+                      {% for submenu in menu.submenus %}
+                        <a href="{{ submenu.route }}" class="ml-2 block rounded-md px-3 py-1 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700">
+                          {{ submenu.name }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <main class="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <div class="sm:text-center lg:text-left">
+          <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="inline dark:text-white"> Cracking Da Code: </span>
+            <span class="inline text-indigo-600"> One Word, One Method To Win </span>
+          </h1>
+          <p class="mt-3 text-base text-gray-500 dark:text-gray-400 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+            The purpose of this blog is to assist individuals in achieving emancipation through the cultivation and harnessing of their imaginative faculties.
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div class="rounded-md shadow relative ">
+              <div class=" absolute  -inset-0.5 bg-indigo-600 dark:bg-indigo-400 rounded-md blur"></div>
+              <a @click="registerEvent('primary', 'click')" href="/featured/principles-for-a-liberated-existence/" 
+                  class="relative flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 dark:bg-indigo-400 dark:text-black dark:hover:bg-indigo-300 md:py-4 md:px-10 md:text-lg"> Get The Code </a>
+            </div>
+            <div class="mt-5 sm:mt-0 sm:ml-5 relative group">
+              <div class=" absolute  -inset-0.5 bg-indigo-200 dark:bg-indigo-800 rounded-md blur"></div>
+              <a @click="registerEvent('secondary', 'click')" href="/featured" 
+                  class="relative flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 dark:bg-indigo-900 dark:text-indigo-300 dark:hover:bg-indigo-800 md:py-4 md:px-10 md:text-lg"> Featured Posts </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <picture>
+      <source media="(max-width: 799px)" height="320" width="480" srcset="/assets/images/hero-index.webp"/>
+      <img width="1080" height="720"
+          class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" 
+          src="/assets/images/hero-index-desktop.webp" alt="wall tagged with world peace"/>
+    </picture>
+  </div>
+</div>

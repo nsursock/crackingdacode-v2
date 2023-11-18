@@ -1,0 +1,36 @@
+{
+  "name": "crackingdacode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:11ty": "eleventy --quiet",
+    "build:css": "tailwindcss -i src/bundle/main.pcss -o dist/assets/main.bundle.css --minify --postcss",
+    "build:js": "esbuild src/bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --platform=browser",
+    "clean": "rm -rf dist",
+    "dev:11ty": "eleventy --serve --port=$PORT",
+    "dev:css": "tailwindcss -i src/bundle/main.pcss -o dist/assets/main.bundle.css --watch --postcss",
+    "dev:js": "esbuild src/bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --watch --platform=browser",
+    "build": "cross-env NODE_ENV=production npm-run-all clean -p 'build:*'",
+    "dev": "cross-env NODE_ENV=development npm-run-all -p 'dev:*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.5",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "@alpinejs/intersect": "^3.13.2",
+    "@supabase/supabase-js": "^2.38.4",
+    "alpinejs": "^3.13.2",
+    "autoprefixer": "^10.4.16",
+    "date-fns": "^2.30.0"
+  }
+}

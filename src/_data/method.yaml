@@ -1,0 +1,17 @@
+---
+features:
+  - title: Simplicity
+    description: Embrace the simplicity inherent in our code, offering a straightforward and accessible path to enhancing various aspects of life. Navigate effortlessly towards a better existence.
+    icon: 'cap'
+
+  - title: Clarity
+    description: Prioritize clarity within the code, illuminating the journey towards a better life. Transparent and understandable, our code ensures that every step taken is one of informed choice and understanding.
+    icon: 'bulb'
+
+  - title: Openness
+    description: Embrace the encoded virtue of openness in every line, affording the autonomy to customize and sculpt one's life. This attribute serves as the cornerstone, unlocking a personalized and enriching experience on the journey towards holistic well-being.
+    icon: 'key'
+
+  - title: Justice
+    description: Discern justice within the code, adeptly weaving together the elements of simplicity, clarity, and openness. The resultant symphony resonates with the essence of an elevated life, fostering comprehensive well-being.
+    icon: 'scale'

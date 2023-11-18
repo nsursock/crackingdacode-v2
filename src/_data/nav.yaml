@@ -1,0 +1,80 @@
+---
+menus:
+  - name: Home
+    route: /
+    icon: 'home'
+  - name: About
+    route: /about
+    icon: 'annotation'
+    submenus:
+      - name: Biography
+        description: Gain insight into the author with a brief history to understand the person behind the website.
+        route: /about
+        icon: 'dna'
+      - name: Portfolio
+        description: Discover the website creator's skills and details on how this site was made.
+        route: /webdev
+        icon: 'folio'
+      - name: Blog
+        description: Explore a comprehensive list of articles on this anti-war music blog.
+        route: /blog
+        icon: 'bolt'
+      - name: Quizzes
+        description: Take musical culture quizzes to gauge your knowledge level.
+        route: /quiz
+        icon: 'choice'
+      - name: Settings
+        description: Personalize settings, including photos and occupation, in this configuration section.
+        route: /settings
+        icon: 'settings'
+  - name: Services
+    route: /services
+    icon: 'ticket'
+    submenus:
+      - name: Healing
+        description: Find relief from pain through music therapy services provided here.
+        route: /services
+        icon: 'happy'
+      - name: Djing
+        description: Get the crowd moving with professional DJing services for your events.
+        route: /services
+        icon: 'note'
+      - name: Coaching
+        description: Receive assistance in creating an action plan to move forward and make progress.
+        route: /services
+        icon: 'eye'
+      - name: Teaching
+        description: Gain access to knowledge sharing services for topics you may lack.
+        route: /services
+        icon: 'school'
+      - name: Consulting
+        description: Resolve your most challenging business problems with expert consulting services.
+        route: /services
+        icon: 'support'
+      - name: Coding
+        description: Collaborate on coding projects, especially web development, for your next big idea.
+        route: /services
+        icon: 'code'
+      - name: Testing
+        description: Evaluate the quality of your website or app with comprehensive testing services.
+        route: /services
+        icon: 'adjustments'
+  - name: Products
+    route: /products
+    icon: 'cube'
+    submenus:
+      - name: Idea
+        description: Receive songwriting inspiration to kickstart your next hit song project.
+        route: /products
+        icon: 'bulb'
+      - name: Playlist
+        description: Set the mood with curated playlists, each spanning one hour.
+        route: /products
+        icon: 'collection'
+      - name: Song
+        description: Get a great song recommendation that only requires production.
+        route: /products
+        icon: 'note'
+  - name: Contact
+    route: /contact
+    icon: 'at-symbol'
