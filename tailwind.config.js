@@ -5,6 +5,9 @@ module.exports = {
     "./src/**/*.md",
   ],
   theme: {
+    debugScreens: {
+      position: ['bottom', 'right'],
+    },
     extend: {
       fontFamily: {
         website: ['Aldrich', 'sans-serif'],
@@ -16,6 +19,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('tailwindcss-debug-screens')
   ],
 };
 

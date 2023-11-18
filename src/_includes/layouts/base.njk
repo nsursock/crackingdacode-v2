@@ -33,7 +33,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="{{ 'debug-screens' if env.devMode }}">
     {{ content | safe }}
   </body>
 
