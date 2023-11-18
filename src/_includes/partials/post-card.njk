@@ -7,14 +7,17 @@
   <a href="{{ post.url }}" aria-label="Read more about: {{ post.data.title }}">
     <div class="relative">
       <div class="relative" x-data="{ isDalle: {{ post.data.tags | json }}.includes('dalle') }">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1529917365646-d9b0d968d713?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=480&h=320"
-         width="480" :height="isDalle ? '275' : '320'" class="rounded-t-lg transition-all duration-500 ease-in-out" 
-        :class="typeof type !== 'undefined' && '{{ loop.length }}' === 3 ? 'group-hover:filter group-hover:blur-md' : ''" 
-        :data-src="isDalle ? 
+        <!--
+          loading="lazy" src="https://images.unsplash.com/photo-1529917365646-d9b0d968d713?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=480&h=320"
+          -->
+        <img
+          width="480" :height="isDalle ? '275' : '320'" class="rounded-t-lg transition-all duration-500 ease-in-out" 
+          :class="typeof type !== 'undefined' && '{{ loop.length }}' === 3 ? 'group-hover:filter group-hover:blur-md' : ''" 
+          :data-src="isDalle ? 
             `{{ post.data.featured }}`.replace('/upload/', '/upload/w_480/h_275/f_webp/') : 
             `{{ post.data.featured }}&w=480&h=320`" 
-            :alt="`{{ post.data.alt }}`" 
-        x-intersect.once="showArticle = true; $el.src = $el.dataset.src"/>
+          :alt="`{{ post.data.alt }}`" 
+          x-intersect.once="showArticle = true; $el.src = $el.dataset.src"/>
         <template x-if="typeof type !== 'undefined' && '{{ loop.length }}' === 3">
           <div
             class=" absolute inset-0 bg-gray-500 bg-opacity-0 group-hover:bg-opacity-50 group-focus:bg-opacity-50 transition-all
@@ -36,7 +39,7 @@
           {{ post.data.tags[0] }}
         </h2>
         <p class="hover:line-clamp-none line-clamp-2  mt-2 text-lg leading-6 font-bold tracking-tight text-gray-900 sm:text-xl dark:text-white ">
-          {{ post.data.title }} 
+          {{ post.data.title }}
         </p>
         <p class="hover:line-clamp-none line-clamp-4  mt-4 max-w-2xl text-md text-gray-500 lg:mx-auto dark:text-gray-400 ">
           {{ post.data.description }}
