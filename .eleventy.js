@@ -18,6 +18,10 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(value);
   });
 
+  eleventyConfig.addNunjucksFilter("append", function (value1, value2) {
+    return value1.concat(value2)
+  });
+
   // Statistics functions
   eleventyConfig.addNunjucksAsyncFilter('top', async function (posts, callback) {
     let token = (await (await fetch(

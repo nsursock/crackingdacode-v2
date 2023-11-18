@@ -3,7 +3,7 @@ production:
   - person: Christian Smith
     title: Writer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3700.jpeg
+      https://crdacode.imgix.net/testimonials/public/65be038a6b5cb83f8cc6d3700.jpeg
     text: >-
       Count me in to explore the blog! The design is stellar from what I've
       glimpsed. Can't wait to dive in and immerse myself in the captivating
@@ -11,7 +11,7 @@ production:
   - person: Amelia Miller
     title: Life Coach
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3701.jpeg
+      https://crdacode.imgix.net/testimonials/public/65be038a6b5cb83f8cc6d3701.jpeg
     text: >-
       You've not just inspired but ignited a fire within me with the mesmerizing
       music on your blog. It's a treasure trove for those eager to understand
@@ -19,7 +19,7 @@ production:
   - person: Maud Johnson
     title: Scientist
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3702.jpeg
+      https://crdacode.imgix.net/testimonials/public/65be038a6b5cb83f8cc6d3702.jpeg
     text: >-
       The genius idea of blending music with anecdotes on your blog is a
       revelation. It's more than a blog; it's a musical exploration. I've
@@ -28,7 +28,7 @@ production:
   - person: Paul Brown
     title: Blogger
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3703.jpeg
+      https://crdacode.imgix.net/testimonials/public/65be038a6b5cb83f8cc6d3703.jpeg
     text: >-
       Your blog is a masterpiece! It's not just the content; your
       professionalism and unwavering dedication shine through every post. Keep
@@ -36,75 +36,44 @@ production:
   - person: Stephanie Garcia
     title: Poli Sci Student
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3704.jpeg
+      https://crdacode.imgix.net/testimonials/public/65be038a6b5cb83f8cc6d3704.jpeg
     text: >-
       Your chosen themes resonate so profoundly. Your writing goes beyond words;
       it's an impactful journey that has shaped my perspective and
       understanding. Forever grateful for the insights and wisdom you share.
-  - person: Emma Sullivan
-    title: QA Engineer
-    photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/14a3bac209238751cc7e65700.jpeg
-    text: >-
-      The originality of the blog's design harmonizes with its rich content,
-      underscoring your clear and intentional minimalist approach that becomes
-      evident upon reading.
-  - person: Sophia Simmons
-    title: Nurse
-    photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/3c3827c3b002ab10022fcf500.jpeg
-    text: >-
-      I haven't seen such creativity since high school. Your unique approach
-      surprised me, and I might share it with others who could find it
-      interesting.
-  - person: Evelyn Kim
-    title: Community Manager
-    photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/8374dbe675e0f0be6afd5fc00.jpeg
-    text: >-
-      Your blog holds immense future potential. I, too, strongly believe in
-      music as a source of answers—it has consistently offered solace to the
-      mind.
-  - person: Michael Carter
-    title: Designer
-    photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/a88dd89570dd25b63fe567400.jpeg
-    text: >-
-      Quoting lyrics every two sentences—impressive culture! Your depth of
-      knowledge shines through.
 development:
   - person: David Anderson
     title: Developer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/7200978f40c9b2e443373ba00.jpeg
+      https://crdacode.imgix.net/testimonials/public/7200978f40c9b2e443373ba00.jpeg
     text: >-
       Unmatched entertainment! Your words and music blend seamlessly, creating
       an exceptional experience.
   - person: Isabella Price
     title: Singer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/928439bab39c1e9a6df5bd300.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/928439bab39c1e9a6df5bd300.jpeg
     text: >-
       Your writing today left a lasting impression. Your distinctive style and
       content stand out. You're a much-anticipated and influential writer.
   - person: Charlotte Reynolds
     title: Baker
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/03ea99fb9e9ff89e9b1f08b00.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/03ea99fb9e9ff89e9b1f08b00.jpeg
     text: >-
       With this blog, our overthinking has reduced by half, and our intense
       emotions no longer feel overwhelming. It's a return to simplicity!
   - person: Grace Hughes
     title: Singer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/7e363c922e8b9fcb6ad92fa00.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/7e363c922e8b9fcb6ad92fa00.jpeg
     text: >-
       Manic Depression rules! Your writing on it is exceptional, capturing the
       essence of the song's powerful emotions and musical brilliance.
   - person: Sophia Simmons
     title: Nurse
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/3c3827c3b002ab10022fcf500.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/3c3827c3b002ab10022fcf500.jpeg
     text: >-
       I haven't seen such creativity since high school. Your unique approach
       surprised me, and I might share it with others who could find it
@@ -112,7 +81,7 @@ development:
   - person: Evelyn Kim
     title: Community Manager
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/8374dbe675e0f0be6afd5fc00.jpeg
+      https://crdacode.imgix.net/testimonials/public/8374dbe675e0f0be6afd5fc00.jpeg
     text: >-
       Your blog holds immense future potential. I, too, strongly believe in
       music as a source of answers—it has consistently offered solace to the
@@ -120,43 +89,43 @@ development:
   - person: Michael Carter
     title: Designer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/a88dd89570dd25b63fe567400.jpeg
+      https://crdacode.imgix.net/testimonials/public/a88dd89570dd25b63fe567400.jpeg
     text: >-
       Quoting lyrics every two sentences—impressive culture! Your depth of
       knowledge shines through.
   - person: Christopher Hayes
-    title: Broker
+    title: Content Marketer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/53da4ecfff0591452bd656f00.jpeg
+      https://crdacode.imgix.net/testimonials/public/53da4ecfff0591452bd656f00.jpeg
     text: >-
       It's intriguing how you sidestep censorship, allowing words to flow
       seamlessly like a river. Your skills in copywriting are evident, and I
       would unquestionably consider hiring you.
-  - person: Daniel Turner
+  - person: Danielle Turner
     title: Surfer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/c322d5bb3c500978d1d412c00.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/c322d5bb3c500978d1d412c00.jpeg
     text: >-
       Engaging with this blog is akin to riding a wave: you emerge on the shore,
       rejuvenated. Milan Kundera would surely commend such literary prowess.
   - person: Joseph Parker
     title: Music Producer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/958c8a60beed3a051886dd400.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/958c8a60beed3a051886dd400.jpeg
     text: >-
       Is it the magic of your blog? Absolutely! I'm reenergized and prepared to
       tackle the world with a newfound vigor.
   - person: Ava Parker
     title: Analyst
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/056222a515f65affed8083b00.jpeg
+      https://crdacode.imgix.net/testimonials/public/056222a515f65affed8083b00.jpeg
     text: >-
       Your insightful blog imparts simplicity to life, prompting me to shelve my
       tendency to overthink and embrace a more relaxed approach.
   - person: Mia Foster
     title: Nurse
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/cbebfac1cd94b60141cec3300.jpeg
+      https://crdacode.imgix.net/testimonials/public/cbebfac1cd94b60141cec3300.jpeg
     text: >-
       Your blog is widely read at the hospital, serving as a valuable resource
       for music therapy. The diverse content has noticeably enhanced the
@@ -164,7 +133,7 @@ development:
   - person: James Mitchell
     title: Developer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/af328008d8d459b3d1ff51b00.jpeg
+      https://crdacode.imgix.net/testimonials/public/af328008d8d459b3d1ff51b00.jpeg
     text: >-
       Thank you for conveying the truth with such grace. In the realm of
       authenticity, music stands as a palpable reality, while everything else
@@ -172,7 +141,7 @@ development:
   - person: Emma Sullivan
     title: QA Engineer
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/14a3bac209238751cc7e65700.jpeg
+      https://crdacode.imgix.net/testimonials/public/14a3bac209238751cc7e65700.jpeg
     text: >-
       The originality of the blog's design harmonizes with its rich content,
       underscoring your clear and intentional minimalist approach that becomes
@@ -180,35 +149,19 @@ development:
   - person: Mandy Moore
     title: Unit Tester
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/6ce84baba13aea80ab0692600.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/6ce84baba13aea80ab0692600.jpeg
     text: >-
       I found your blog post to be both insightful and well-written. Your
       analysis of the topic was thorough and thought-provoking, and I appreciate
       the clarity of your writing. It provided valuable information and a fresh
       perspective on the subject matter, making it a compelling read.
-  - person: Roy Ayers
-    title: Funky Man
+  - person: Roy Sheldon
+    title: Guitarist
     photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials.dev/public/85555e9aa6149860784213f00.jpeg
+      https://crdacode.imgix.net/testimonials.dev/public/85555e9aa6149860784213f00.jpeg
     text: >-
       I would like to extend my gratitude for the opportunity to share my
       thoughts on this blog. As a funk musician, I'm truly humbled by the
       positive reception my work has received. Your support and encouragement
       inspire me to keep grooving and spreading the funk to all the music lovers
       out there.
-  - person: Christian Smith
-    title: Writer
-    photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3700.jpeg
-    text: >-
-      Count me in to explore the blog! The design is stellar from what I've
-      glimpsed. Can't wait to dive in and immerse myself in the captivating
-      world you've crafted.
-  - person: Amelia Miller
-    title: Life Coach
-    photo: >-
-      https://qroiybphgipjhkmfsvnj.supabase.co/storage/v1/object/public/testimonials/public/65be038a6b5cb83f8cc6d3701.jpeg
-    text: >-
-      You've not just inspired but ignited a fire within me with the mesmerizing
-      music on your blog. It's a treasure trove for those eager to understand
-      and connect with your incredible journey. I'm hooked!
