@@ -17,19 +17,25 @@
   x-data="{ isInViewport: false }"
   x-intersect.once="isInViewport = !isInViewport"
 >
+<!-- 
+  x-transition:enter="transition transform ease-out duration-1000 "
+    x-transition:enter-start="opacity-0 scale-75"
+    x-transition:enter-end="opacity-100 scale-100"
+    -->
   <div
     class="py-12 bg-white dark:bg-gray-900 dark:text-gray-200"
     x-show="isInViewport"
-    x-transition:enter="transition transform ease-out duration-1000 "
-    x-transition:enter-start="opacity-0 scale-75"
-    x-transition:enter-end="opacity-100 scale-100">
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!--
+        x-transition:enter="transition transform ease-out duration-1000 "
+        x-transition:enter-start="-translate-y-full"
+        x-transition:enter-end="translate-y-0"
+        -->
       <div
         class="lg:text-center"
         x-show="isInViewport"
-        x-transition:enter="transition transform ease-out duration-1000 "
-        x-transition:enter-start="-translate-y-full"
-        x-transition:enter-end="translate-y-0">
+      >
         <h2 class=" text-base text-indigo-600 font-semibold tracking-wide uppercase ">
           Dragon Attack
         </h2>
@@ -45,12 +51,15 @@
         {% if method.features %}
           <dl class=" space-y-10 md:space-y-0 md:grid md:grid-cols-2  md:gap-x-8 md:gap-y-10 ">
             {% for item in method.features %}
+            <!--
+              x-transition:enter="transform transition ease-in-out duration-[2s]"
+                x-transition:enter-start="-rotate-180 scale-50"
+                x-transition:enter-end="rotate-0 scale-100"
+                -->
               <div
                 class="relative"
                 x-show="isInViewport"
-                x-transition:enter="transform transition ease-in-out duration-[2s]"
-                x-transition:enter-start="-rotate-180 scale-50"
-                x-transition:enter-end="rotate-0 scale-100">
+              >
                 <dt>
                   <div class=" absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white ">
                     <!-- Heroicon name -->

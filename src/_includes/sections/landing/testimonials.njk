@@ -1,7 +1,7 @@
 <section class="py-8 sm:py-10 lg:py-16" x-data="dataTestimonials">
   <div class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:max-w-4xl lg:px-12 text-center">
-    <h2 class="font-display text-4xl font-bold tracking-tight text-gray-900">Some kind words from early visitors...</h2>
-    <p class="mt-4 text-lg tracking-tight text-gray-600">In late 2017, the inception of this blog marked the commencement of a digital journey that has since garnered the attention of thousands of visitors. Among this diverse audience, a select few have chosen to articulate their perspectives publicly. Presented herein are narratives encapsulating their experiences and perspectives.</p>
+    <h2 class="font-display text-4xl font-bold tracking-tight dark:text-gray-100 text-gray-900">Some kind words from early visitors...</h2>
+    <p class="mt-4 text-lg tracking-tight dark:text-gray-500 text-gray-600">In late 2017, the inception of this blog marked the commencement of a digital journey that has since garnered the attention of thousands of visitors. Among this diverse audience, a select few have chosen to articulate their perspectives publicly. Presented herein are narratives encapsulating their experiences and perspectives.</p>
   </div>
   <div class="group mt-16">
     {# {% if env.devMode %} #}
@@ -17,7 +17,7 @@
         <li class="grid gap-4">
           {% set outerLoopIndex = loop.index0 %}
           {% for testimonial in chunk %}
-            <figure x-show="!$store.utils.isMobile() || isLoadMorePressed || ({{ loop.index0 }} < 5 && {{ outerLoopIndex }} == 0)" class="rounded-xl p-8 shadow-md ring-1 ring-gray-900/5">
+            <figure x-show="!$store.utils.isMobile() || isLoadMorePressed || ({{ loop.index0 }} < 5 && {{ outerLoopIndex }} == 0)" class="dark:bg-gray-850 rounded-xl p-8 shadow-md ring-1 dark:ring-gray-100/5 ring-gray-900/5">
               <blockquote class="relative">
                 <svg
                   class="absolute opacity-50 left-0 w-10 h-10 text-indigo-500 fill-current"
@@ -27,7 +27,7 @@
                     5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6
                     29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"></path>
                 </svg>
-                <p class="text-lg tracking-tight text-gray-900">{{ testimonial.text }}</p>
+                <p class="text-lg tracking-tight dark:text-gray-100 text-gray-900">{{ testimonial.text }}</p>
               </blockquote>
               <figcaption class="mt-6 flex items-center">
                 <div class="overflow-hidden rounded-full bg-gray-50">
@@ -38,8 +38,8 @@
                 >
                 </div>
                 <div class="ml-4">
-                  <div class="text-base font-medium leading-6 tracking-tight text-gray-900">{{ testimonial.person }}</div>
-                  <div class="mt-1 text-sm text-gray-600">{{ testimonial.title }}</div>
+                  <div class="text-base font-medium leading-6 tracking-tight dark:text-gray-100 text-gray-900">{{ testimonial.person }}</div>
+                  <div class="mt-1 text-sm dark:text-gray-500 text-gray-600">{{ testimonial.title }}</div>
                 </div>
               </figcaption>
             </figure>

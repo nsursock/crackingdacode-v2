@@ -10,8 +10,7 @@ module.exports = {
         website: ['Aldrich', 'sans-serif'],
       },
       colors: {
-        'gray-950': '#080c14',
-        'gray-850': '#2b3348'
+        'gray-850': '#181F2F'
       },
     }
   },

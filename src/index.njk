@@ -10,7 +10,9 @@ layout: layouts/base.njk
   <link rel="preload" fetchpriority="high" as="image" href="/assets/images/hero-index-desktop.webp" media="(min-width: 800px)">
 {% endblock %}
 
-{% include 'sections/landing/hero.njk' %}
-{% include 'sections/landing/features.njk' %}
-{% include 'partials/posts-section.njk' %}
-{% include 'sections/landing/testimonials.njk' %}
+<div class="dark:bg-gray-900">
+  {% include 'sections/landing/hero.njk' %}
+  {% include 'sections/landing/features.njk' %}
+  {% include 'partials/posts-section.njk' %}
+  {% include 'sections/landing/testimonials.njk' %}
+</div>
