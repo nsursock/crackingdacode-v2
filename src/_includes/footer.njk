@@ -73,17 +73,13 @@
               </div>
               <div class="inline-flex rounded-md shadow relative ml-3 ">
                 <div class=" absolute -inset-0.5 bg-indigo-600 dark:bg-indigo-500 rounded-md blur"></div>
-                <button
+                <button :disabled="parseFloat(amount) < 3"
             @click="pay"
             id="donate-button"
             class="relative inline-flex items-center justify-center px-5 py-3 border border-indigo-500 text-base font-medium rounded-md
               text-white bg-indigo-600 hover:bg-indigo-700">
-                  <!-- <template x-if="!isFetching && !(document.getElementById('pay-button') || false)" > <span
-            id="pay-button">Pay</span> </template> -->
                   <span x-show="!isFetching" id="pay-button">Pay</span>
-                  <!-- <template x-if="isFetching"> -->
                   <div x-show="isFetching" id="wait-button" class="inline-flex items-center">
-                    {# <span x-show="!isMobile()">Please Wait</span> #}
                     <svg
               class="animate-spin h-5 w-5 text-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -245,12 +241,30 @@
             </svg>
           </a>
         </div>
-        <p class="text-sm dark:text-gray-300 text-gray-700">© Insight Labs <!-- -->
+        <p class="text-sm dark:text-gray-300 text-gray-700">© Sursock Labs <!-- -->
           <span x-text="year"></span></p>
       </div>
     </div>
   </div>
 </footer>
+
+<!-- Global notification live region, render this permanently at the end of the document -->
+<div x-data="{ openCookieNotif: false, openCompleteProfile: false }" 
+    x-init="() => { setTimeout(() => openCookieNotif = true, 500); setTimeout(() => openCompleteProfile = true, 3000); }"
+   aria-live="assertive" class="pointer-events-none fixed inset-0 z-[100] flex items-end px-4 py-6 sm:items-start sm:p-6">
+  <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
+    {# {% if page
+      .url
+      .includes('/blog') %}
+      {% include './partials/notification-posts.njk' %}
+    {% endif %} #}
+    {# {% include './partials/notifications.njk' %} #}
+    {# {% if page.url == '/' %} #}
+    {% include 'partials/notifications/privacy.njk' %}
+    {# {% endif %} #}
+  </div>
+</div>
+
 <script>
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
@@ -273,11 +287,11 @@
   function dataCta() {
     return {
       isFetching: false,
-      amount: (Math.random() * 100).toFixed(2),
+      amount: '0.00', //(Math.random() * 100).toFixed(2),
       currency: 'USD',
       stripe: null,
       async pay() {
-//        this.registerEvent('donate', 'click')
+        //        this.registerEvent('donate', 'click')
 
         await loadScript('https://js.stripe.com/v3')
         this.stripe = Stripe('{{ env.stripeKey }}')
@@ -287,7 +301,7 @@
           domain: window.location.origin
         }
         this.isFetching = true
-        fetch('/api/payment', { 
+        fetch('/api/payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -298,7 +312,7 @@
           .then((session) => {
             this
               .stripe
-              .redirectToCheckout({sessionId: session.id})
+              .redirectToCheckout({ sessionId: session.id })
           })
           .then(function (result) {
             if (result.error) {
