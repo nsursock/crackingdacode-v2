@@ -2,13 +2,8 @@
 title: Home | One Word, Four Principles
 description: Ambition enhances our beauty. We strive to resolve human perplexity and champion world peace. Join us, contribute to the movement, and decipher the code for a better world.
 author: Nicolas Sursock
-layout: layouts/base.njk
+layout: layouts/index.njk
 ---
-
-{% block head %}
-  <link rel="preload" fetchpriority="high" as="image" href="/assets/images/hero-index.webp" media="(max-width: 799px)">
-  <link rel="preload" fetchpriority="high" as="image" href="/assets/images/hero-index-desktop.webp" media="(min-width: 800px)">
-{% endblock %}
 
 <div class="dark:bg-gray-900">
   {% include 'sections/landing/hero.njk' %}
