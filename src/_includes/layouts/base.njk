@@ -33,9 +33,9 @@
       }
     </style>
   </head>
-  <body class="{{ 'debug-screens' if env.devMode }}">
+  <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}">
     {{ content | safe }}
-  </body>
 
-  {% include "../footer.njk" %}
+    {% include "../footer.njk" %}
+  </body>
 </html>
