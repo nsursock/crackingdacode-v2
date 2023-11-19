@@ -27,8 +27,8 @@
             {# <div class="mt-1 text-sm dark:text-gray-500 text-gray-600">{{ testimonial.title }}</div> #}
             <span
                 class="text-sm text-gray-500 dark:text-gray-400"
-                x-data="{ time: {{ post.templateContent.split(' ').length / 238 }} }">
-              {{ post.data.date | format('MMM dd, yyyy') }} •
+                x-data="{ time: {{ post.templateContent | wordcount }} / 238 }">
+              <a href="/archive/{{ post.data.date | format('yyyy') }}">{{ post.data.date | format('MMM dd, yyyy') }}</a> •
                 <span x-text="`${Math.round(time).toString().split('.')[0]} min read`"/>
             </span>
           </div>

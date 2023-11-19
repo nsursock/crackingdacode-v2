@@ -33,16 +33,15 @@ layout: layouts/base.njk
       </main>
     </div>
   </div>
-  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2" 
-    x-data="{ photoUrl: '{{ featured }}' }">
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
     <picture>
-        <source media="(max-width: 799px)" height="320" width="480" :srcset="photoUrl + '&w=480&h=320&fm=webp'"/>
+        <source media="(max-width: 799px)" height="320" width="480" srcset="{{ featured }}&w=480&h=320&fm=webp"/>
         {# <source media="(min-width: 800px)" height="720" width="1080" :srcset="photoUrl + '&q=80&w=1080&h=720'"/> #}
         <img
           fetchpriority="high"
           class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          :src="photoUrl + '&w=1080&h=720'"
-          alt="organisation by tag picture "/>
+          src="{{ featured }}&w=1080&h=720&fm=webp"
+          alt="{{ alt }} "/>
       </picture>
   </div>
 </div>

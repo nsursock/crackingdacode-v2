@@ -1,26 +1,18 @@
 ---
 pagination:
-  data: collections
+  data: collections.year
   size: 1
-  alias: tag
+  alias: year
   addAllPagesToCollections: true
-  filter:
-    - all
-    - year
-    - blog
-    - posts
-    - formal
-    - featured
-    - processed
 layout: layouts/page.njk
 eleventyComputed:
-  title: Tagged “{{ tag }}”
-  description: A list of all {{ collections[tag].length }} posts related to “{{ tag }}”
-permalink: /tags/{{ tag | slug }}/
-featured: https://images.unsplash.com/photo-1513407135356-a5276958b57e?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-alt: brown Ema plates on brown wooden board
-name: Louie Martinez
-handle: thetalkinglens
+  title: Published in {{ year[0] }}
+  description: A list of all {{ year[1].length }} posts published in {{ year[0] }}
+permalink: /archive/{{ year[0] }}/
+featured: https://images.unsplash.com/photo-1515554307882-9b0b53710835?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt: a row of wooden drawers with numbers on them
+name: Henry & Co.
+handle: hngstrm
 ---
 
 {% block head %}
@@ -31,13 +23,13 @@ handle: thetalkinglens
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">Mr. Know It All</h2>
-      <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">Please peruse the most widely viewed posts featured below. Alternatively, you are welcome to delve into our publications classified by tag.</p>
+      <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">Please peruse the most widely viewed posts featured below. Alternatively, you are welcome to delve into our publications classified by year.</p>
     </div>
 
     {% if not env.devMode %}
       <div class="">
         <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Popular Posts</h2>
-        {% set postslist = collections[tag] | top %}
+        {% set postslist = year[1] | top %}
         <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
           {% for post in postslist %}
             {% include 'partials/post-card.njk' %}
@@ -48,7 +40,7 @@ handle: thetalkinglens
 
     <div class="">
       <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Latest Posts</h2>
-      {% set postslist = collections[tag] | latest %}
+      {% set postslist = year[1] | latest %}
       <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
         {% for post in postslist %}
           {% include 'partials/post-card.njk' %}

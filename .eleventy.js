@@ -21,6 +21,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksFilter("append", function (value1, value2) {
     return value1.concat(value2)
   });
+  
+  eleventyConfig.addCollection('year', (collection) => {
+    const posts = collection.getFilteredByTag('featured').reverse()
+    const years = posts.map((post) => post.date.getFullYear())
+    const uniqueYears = [...new Set(years)]
+
+    const postsByYear = uniqueYears.reduce((prev, year) => {
+      const filteredPosts = posts.filter(
+        (post) => post.date.getFullYear() === year
+      )
+      return [...prev, [year, filteredPosts]]
+    }, [])
+    
+    return postsByYear
+  })
 
   // Statistics functions
   eleventyConfig.addNunjucksAsyncFilter('top', async function (posts, callback) {
