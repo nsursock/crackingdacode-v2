@@ -36,7 +36,7 @@ layout: layouts/base.njk
   <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2" 
     x-data="{ photoUrl: '{{ featured }}' }">
     <picture>
-        <source media="(max-width: 600px)" height="320" width="480" :srcset="photoUrl + '&w=480&h=320&fm=webp'"/>
+        <source media="(max-width: 799px)" height="320" width="480" :srcset="photoUrl + '&w=480&h=320&fm=webp'"/>
         {# <source media="(min-width: 800px)" height="720" width="1080" :srcset="photoUrl + '&q=80&w=1080&h=720'"/> #}
         <img
           fetchpriority="high"
