@@ -1,0 +1,55 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+  filter:
+    - all
+    - posts
+    - blog
+    - formal
+    - featured
+    - processed
+layout: layouts/page.njk
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+  description: A list of all {{ collections[tag].length }} posts related to “{{ tag }}”
+permalink: /tags/{{ tag | slug }}/
+featured: https://images.unsplash.com/photo-1513407135356-a5276958b57e?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt: brown Ema plates on brown wooden board
+name: Louie Martinez
+handle: thetalkinglens
+---
+
+<div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">Mr. Know It All</h2>
+      <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">Please peruse the most widely viewed posts featured below. Alternatively, you are welcome to delve into our publications classified by tag.</p>
+    </div>
+
+    {% if not env.devMode %}
+      <div class="">
+        <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Popular Posts</h2>
+        {% set postslist = collections[tag] | top %}
+        <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
+          {% for post in postslist %}
+            {% include 'partials/post-card.njk' %}
+          {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+
+    <div class="">
+      <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Latest Posts</h2>
+      {% set postslist = collections[tag] | latest %}
+      <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
+        {% for post in postslist %}
+          {% include 'partials/post-card.njk' %}
+        {% endfor %}
+      </ol>
+    </div>
+
+  </div>
+</div>

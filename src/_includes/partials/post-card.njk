@@ -11,7 +11,7 @@
         class="h-48 w-full object-cover ">
     </div>
     <div class="p-8">
-      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ post.data.tags[0] }}</div>
+      <a href="/tags/{{ post.data.tags[0] | lower }}" class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ post.data.tags[0] }}</a>
       <a href="{{ post.url }}" aria-label="Read more about: {{ post.data.title }}" class="block mt-1 text-lg leading-tight font-medium dark:text-white text-black hover:underline">{{ post.data.title }}</a>
       <p class="mt-2 dark:text-gray-400 text-gray-500">{{ post.data.description }}</p>
     </div>
