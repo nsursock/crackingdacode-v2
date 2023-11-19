@@ -2,6 +2,7 @@
   class="shadow-md ring-1 dark:ring-gray-100/5 ring-gray-900/5 dark:bg-gray-850 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden lg:max-w-2xl">
   <div class="flex flex-col justify-between h-full">
     <div class="">
+      <div class="aspect-w-16 aspect-h-9 bg-gray-50 dark:bg-gray-850"></div>
       <img width="480" :height="isDalle ? 275 : 320" :data-src="isDalle ? 
             `{{ post.data.featured }}`.replace('/upload/', '/upload/w_480/h_275/f_webp/') : 
             `{{ post.data.featured }}&w=480&h=320`" 
