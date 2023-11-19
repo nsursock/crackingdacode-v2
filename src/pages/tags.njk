@@ -6,7 +6,6 @@ pagination:
   addAllPagesToCollections: true
   filter:
     - all
-    - posts
     - blog
     - formal
     - featured
@@ -21,6 +20,10 @@ alt: brown Ema plates on brown wooden board
 name: Louie Martinez
 handle: thetalkinglens
 ---
+
+{% block head %}
+  <link rel="preload" fetchpriority="high" as="image" href="{{ featured }}&w=480&h=320&fm=webp">
+{% endblock %}
 
 <div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
