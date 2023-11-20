@@ -1,8 +1,6 @@
 const stripe = require('stripe')(process.env.BACKEND_STRIPE_KEY)
 import { createClient } from '@supabase/supabase-js'
 
-// const YOUR_DOMAIN = process.env.EXPRESS_FRONTEND_URL
-
 export default async function handler(request, response) {
 
   // const supabase = createClient(

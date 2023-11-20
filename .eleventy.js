@@ -21,6 +21,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksFilter("append", function (value1, value2) {
     return value1.concat(value2)
   });
+
+  eleventyConfig.addFilter('isPaginated', (url) => new RegExp('^/[0-9]+/$').test(url))
   
   eleventyConfig.addCollection('year', (collection) => {
     const posts = collection.getFilteredByTag('featured').reverse()

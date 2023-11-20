@@ -4,6 +4,14 @@ window.Alpine = Alpine
 import intersect from '@alpinejs/intersect'
 Alpine.plugin(intersect)
 
+import global from './scripts/global.js'
+// import form from './form.js'
+// import testimonials from './testimonials.js'
+
+Alpine.data('global', global)
+// Alpine.data('form', form)
+// Alpine.data('testimonials', testimonials)
+
 // Start Alpine when the page is ready.
 window.addEventListener('DOMContentLoaded', () => {
   Alpine.start()
