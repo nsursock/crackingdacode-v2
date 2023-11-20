@@ -30,7 +30,7 @@ eleventyComputed:
         </div>
       </div>
     </div> #}
-    <div class="order-last -ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+    <div class="order-last md:-ml-12 -mt-12 md:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
       {# <figure x-ref="figure">
         <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[36rem]" src="{{ featured }}&q=80&w=1080&h=720&fm=webp" alt="{{ alt }}">
         <figcaption class=" mt-3">
@@ -39,7 +39,7 @@ eleventyComputed:
       </figure> #}
       {% for auth in authors.authors %}
         {% if auth.name == author %}
-          <div class="mt-12 mx-4 mb-6 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800 md:mx-auto md:max-w-lg lg:max-w-xl">
+          <div class="mt-12 md:mx-4 mb-6 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800 md:mx-auto md:max-w-lg lg:max-w-xl">
             <div class="md:flex md:h-full">
               <div class="md:flex-shrink-0">
                 <img class="w-full object-cover md:h-full md:w-48" src="{{ auth.photo }}.jpg" alt="Photo of author {{ auth.name }}"/>
