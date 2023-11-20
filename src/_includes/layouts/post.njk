@@ -77,6 +77,16 @@ eleventyComputed:
 
       adapt(el) {
         Array
+          .from(el.getElementsByTagName('aside'))
+          .forEach((aside) => {
+            //console.log(aside.classList)
+            aside.classList.forEach((value) => {
+              value.includes('md:') && aside
+              .classList
+              .remove(value)
+            });
+          });
+        /*Array
           .from(el.getElementsByClassName('md:float-right'))
           .forEach((aside) => {
             aside
@@ -95,7 +105,7 @@ eleventyComputed:
             aside
               .classList
               .add('md:-ml-24')
-          })
+          })*/
       },
 
       images: [],
