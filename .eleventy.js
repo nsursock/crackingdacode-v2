@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('isPaginated', (url) => new RegExp('^/[0-9]+/$').test(url))
   
   eleventyConfig.addCollection('year', (collection) => {
-    const posts = collection.getFilteredByTag('featured').reverse()
+    const posts = collection.getFilteredByTag('blog').reverse()
     const years = posts.map((post) => post.date.getFullYear())
     const uniqueYears = [...new Set(years)]
 
@@ -98,7 +98,7 @@ module.exports = function (eleventyConfig) {
 
   // Set up Markdown for posts
   eleventyConfig.addCollection("posts", function (collection) {
-    return collection.getFilteredByGlob("src/featured/*.md");
+    return collection.getFilteredByGlob("src/posts/*.md");
   });
 
   eleventyConfig.addPassthroughCopy('./src/assets')

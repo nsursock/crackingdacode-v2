@@ -26,6 +26,21 @@ export default () => ({
     // }
   },
 
+  splitHeadlineBalanced(headline) {
+    const words = headline.split(' ');
+    const totalWords = words.length;
+  
+    if (totalWords < 2) {
+      return [headline]; // Can't split if there are less than 2 words
+    }
+  
+    const middle = Math.ceil(totalWords / 2);
+    const firstPart = words.slice(0, middle).join(' ');
+    const secondPart = words.slice(middle).join(' ');
+  
+    return [firstPart.replace(/"/g, ''), secondPart.replace(/"/g, '')];
+  },
+
   async init() {
     window.addEventListener('scroll', () => {
       this.prevPercent = this.percent;
