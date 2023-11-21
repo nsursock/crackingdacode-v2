@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/base.njk
 title: About 
 title2: And The Grail
 description: An artist at war with the world because the dead rule the living. Music is the only way out!

@@ -34,21 +34,7 @@
     </style>
   </head>
   <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}" x-data="global">
-    {% if page.url == '/' or page.url | isPaginated %}
-      <div
-        x-show="lastScrollTop > landingPageOffset"
-        x-transition:enter="animate-swing "
-        :class="{ 'sticky top-0 z-40' : isScrollingUp || !isScrollingUp }">
-        {% include '../header.njk' %}
-      </div>
-    {% else %}
-      <div :class="{ 'sticky top-0 z-40 animate-swing' : isScrollingUp || !isScrollingUp }">
-        {% include '../header.njk' %}
-      </div>
-    {% endif %}
-
     {{ content | safe }}
-
     {% include '../footer.njk' %}
   </body>
 </html>

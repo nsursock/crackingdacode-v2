@@ -12,6 +12,12 @@ layout: layouts/base.njk
 {% endblock %}
 
 {% block body %}
+  <div
+        x-show="lastScrollTop > landingPageOffset"
+        x-transition:enter="animate-swing "
+        :class="{ 'sticky top-0 z-40' : isScrollingUp || !isScrollingUp }">
+    {% include 'header.njk' %}
+  </div>
   <div class="dark:bg-gray-900">
     {% include 'sections/landing/hero.njk' %}
     {% include 'sections/landing/features.njk' %}

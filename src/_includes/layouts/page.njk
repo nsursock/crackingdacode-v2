@@ -2,6 +2,10 @@
 layout: layouts/base.njk
 ---
 
+<div :class="{ 'sticky top-0 z-40 animate-swing' : isScrollingUp || !isScrollingUp }">
+  {% include 'header.njk' %}
+</div>
+
 <div class="relative bg-white overflow-hidden dark:bg-gray-900">
   <div class="max-w-7xl mx-auto">
     <div class=" relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 dark:bg-gray-900 ">
@@ -35,14 +39,14 @@ layout: layouts/base.njk
   </div>
   <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
     <picture>
-        <source media="(max-width: 799px)" height="320" width="480" srcset="{{ featured }}&w=480&h=320&fm=webp"/>
-        {# <source media="(min-width: 800px)" height="720" width="1080" :srcset="photoUrl + '&q=80&w=1080&h=720'"/> #}
-        <img
+      <source media="(max-width: 799px)" height="320" width="480" srcset="{{ featured }}&w=480&h=320&fm=webp"/>
+      {# <source media="(min-width: 800px)" height="720" width="1080" :srcset="photoUrl + '&q=80&w=1080&h=720'"/> #}
+      <img
           fetchpriority="high"
           class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="{{ featured }}&w=1080&h=720&fm=webp"
           alt="{{ alt }} "/>
-      </picture>
+    </picture>
   </div>
 </div>
 {{ content | safe}}
