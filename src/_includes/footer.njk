@@ -3,7 +3,7 @@
   x-data="{ isInViewport: false }"
   x-intersect.once="isInViewport = !isInViewport"
 >
-  <footer x-show="isInViewport" class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 w-full sm:mt-32 lg:mt-40 dark:bg-gray-900">
+  <footer x-cloak x-show="isInViewport" class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 w-full sm:mt-32 lg:mt-40 dark:bg-gray-900">
     <div class="mx-auto max-w-2xl lg:max-w-none">
       <div>
         <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
