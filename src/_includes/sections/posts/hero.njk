@@ -30,7 +30,7 @@
                   <svg class="h-5 w-5 flex-shrink-0 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 20 20" aria-hidden="true">
                     <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z"/>
                   </svg>
-                  <a href="/blog" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"> Blog </a>
+                  <a href="/posts" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"> Blog </a>
                 </div>
               </li>
               <li>
@@ -107,15 +107,15 @@
   <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2" x-data="{ cloudName: 'doht6fqbq' }">
     <picture>
       <source height="320" width="480" media="(max-width: 799px)" 
-            :srcset="'{{ featured }}'.includes('cloud') ? 
+            :srcset="'{{ featured }}'.includes('cloud') && tags.includes('processed') ? 
             '{{ featured }}'.replace('/upload/', '/upload/w_480/h_275/f_webp/') : 
             `{{ featured }}&w=480&h=320`"/>
       {# <source media="(min-width: 800px)" srcset="{{ featured }}&q=80&w=1080&h=720"/> #}
       <img width="1080" height="720" class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" 
-            :src="'{{ featured }}'.includes('cloud') ? 
+            :src="'{{ featured }}'.includes('cloud') && tags.includes('processed') ? 
             '{{ featured }}'.replace('/upload/', '/upload/w_1050/h_600/f_webp/') : 
               `{{ featured }}&w=1080&h=720`" 
-              :alt="window.location.pathname.includes('/featured/') ? '{{ alt }}' : '{{ title + ' ' + title2 }}'"/>
+              alt="{{ alt }}"/>
     </picture>
     {# <span class="text-center">Featured image by {{ photographer }} on Unsplash</span> #}
   </div>
