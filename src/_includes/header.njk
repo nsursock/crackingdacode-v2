@@ -165,8 +165,7 @@
         </button>
       </div>
       {% if nav.menus %}
-        <template x-if="true">
-          <nav class="hidden space-x-10 md:flex" x-cloak="x-cloak">
+          <nav x-cloak class="hidden space-x-10 md:flex" >
             {% for menu in nav.menus %}
               {% if menu.submenus %}
                 <div class="relative" @click.outside="open = false" x-data="{ open: false }">
@@ -243,7 +242,6 @@
               {% endif %}
             {% endfor %}
           </nav>
-        </template>
       {% endif %}
       <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">{% include 'partials/darkmode.njk' %}</div>
     </div>
@@ -256,7 +254,7 @@
   Leaving: "duration-100 ease-in"
       From: "opacity-100 scale-100"
       To: "opacity-0 scale-95" -->
-  <div x-cloak="x-cloak" x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" x-show="showMobile" class="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition md:hidden">
+  <div x-cloak x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" x-show="showMobile" class="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition md:hidden">
     <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-gray-800 dark:ring-opacity-25">
       <div class="px-5 pt-5 pb-6">
         <div class="flex items-center justify-between">

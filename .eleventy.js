@@ -22,6 +22,14 @@ module.exports = function (eleventyConfig) {
     return value1.concat(value2)
   });
 
+  eleventyConfig.addNunjucksFilter("dump", function (value) {
+    console.log(value)
+  });
+
+  eleventyConfig.addNunjucksFilter("filter", function (data, key, value) {
+    return data.filter((item) => item[key] === value)
+  });
+
   eleventyConfig.addFilter('isPaginated', (url) => new RegExp('^/[0-9]+/$').test(url))
   
   eleventyConfig.addCollection('year', (collection) => {

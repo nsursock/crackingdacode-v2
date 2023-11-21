@@ -7,7 +7,7 @@ pagination:
 layout: layouts/page.njk
 eleventyComputed:
   title: Published in {{ year[0] }}
-  description: A list of all {{ year[1].length }} posts published in {{ year[0] }}
+  description: A list of all {{ year[1].length }} post(s) published in {{ year[0] }}
 permalink: /archive/{{ year[0] }}/
 featured: https://images.unsplash.com/photo-1515554307882-9b0b53710835?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 alt: a row of wooden drawers with numbers on them
@@ -22,8 +22,9 @@ handle: hngstrm
 <div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">Mr. Know It All</h2>
-      <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">Please peruse the most widely viewed posts featured below. Alternatively, you are welcome to delve into our publications classified by year.</p>
+      {% set item = years.years | filter('number', year[0]) | first %}
+      <h2 class="text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">{{ item.short }}</h2>
+      <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">{{ item.long }}</p>
     </div>
 
     {% if not env.devMode %}
