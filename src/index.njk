@@ -8,14 +8,14 @@ layout: layouts/base.njk
 {% block head %}
   <link rel="preload" fetchpriority="high" as="image" href="/assets/images/hero-index.webp" media="(max-width: 799px)">
   <link rel="preload" fetchpriority="high" as="image" href="/assets/images/hero-index-desktop.webp" media="(min-width: 800px)">
-  <link rel="preload" fetchpriority="high" as="image" href="/assets/images/placeholder2.webp">
+  {# <link rel="preload" fetchpriority="high" as="image" href="/assets/images/placeholder2.webp"> #}
 {% endblock %}
 
 {% block body %}
   <div class="dark:bg-gray-900">
     {% include 'sections/landing/hero.njk' %}
     {% include 'sections/landing/features.njk' %}
-    {% include 'partials/posts-section.njk' %}
+    {% include 'sections/landing/articles.njk' %}
     {% include 'sections/landing/testimonials.njk' %}
     {% include 'sections/landing/pricing.njk' %}
   </div>
