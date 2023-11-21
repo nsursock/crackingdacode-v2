@@ -83,7 +83,9 @@ module.exports = function (eleventyConfig) {
       .filter((item) => !item.x.includes('just-solution'))
 
     tops = tops.map((top) => {
-      const index = posts.findIndex((post) => post.url === top.x)
+      const index = posts.findIndex((post) => {
+        return post.url.split('/')[2] === top.x.split('/')[2] 
+      })
       if (index !== -1) return posts[index]
     }).filter((top) => top !== undefined)
 
