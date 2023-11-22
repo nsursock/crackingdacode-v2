@@ -62,7 +62,6 @@
     }
 ] %}
 
-
 <aside class="flex sm:flex-col w-12  sticky top-0 mt-12">
     {% for platform in platforms %}
         <a
@@ -71,7 +70,14 @@
         rel="noopener"
         target="_blank"
         href="{{ platform.url }}{{ env.url }}{{ page.url }}" 
-        :class="$store.utils.isMobile() ? !{{ loop.first }} && !{{ loop.last }} ? '-ml-px' : 'first:rounded-l-lg last:rounded-r-lg' : !{{ loop.first }} && !{{ loop.last }} ? '-mt-px' : 'first:rounded-t-lg last:rounded-b-lg'"
+        :class="{ 
+            '-mt-px': !$store.utils.isMobile() && !{{ loop.first }},
+            '-ml-px': $store.utils.isMobile() && !{{ loop.first }},
+            'first:rounded-t-lg': !$store.utils.isMobile() && {{ loop.first }},
+            'last:rounded-b-lg': !$store.utils.isMobile() && {{ loop.last }},
+            'first:rounded-l-lg': $store.utils.isMobile() && {{ loop.first }},
+            'last:rounded-r-lg': $store.utils.isMobile() && {{ loop.last }}
+        }"
         class="relative inline-flex items-center p-3 text-sm font-medium border bg-white border-gray-300
             text-gray-500 hover:bg-gray-50 dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-gray-800">
             <svg
@@ -84,7 +90,7 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round">
-                    <use href="#icon-{{ platform.icon }}"></use>
+                <use href="#icon-{{ platform.icon }}"></use>
             </svg>
         </a>
     {% endfor %}
