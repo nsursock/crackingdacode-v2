@@ -62,9 +62,11 @@
     }
 ] %}
 
-<aside class="flex sm:flex-col w-12  sticky top-0 mt-12">
-    {% for platform in platforms %}
-        <a
+<aside class="w-12 lg:sticky lg:top-0 lg:mt-12">
+    <span class="hidden lg:block">Share</span>
+    <div class="flex sm:flex-col">
+        {% for platform in platforms %}
+            <a
         x-data="{ isOpen: false }"
         @click="registerEvent('share', 'click')"
         rel="noopener"
@@ -80,7 +82,7 @@
         }"
         class="relative inline-flex items-center p-3 text-sm font-medium border bg-white border-gray-300
             text-gray-500 hover:bg-gray-50 dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-gray-800">
-            <svg
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -90,8 +92,8 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round">
-                <use href="#icon-{{ platform.icon }}"></use>
-            </svg>
-        </a>
-    {% endfor %}
-</aside>
+                    <use href="#icon-{{ platform.icon }}"></use>
+                </svg>
+            </a>
+        {% endfor %}
+    </aside>
