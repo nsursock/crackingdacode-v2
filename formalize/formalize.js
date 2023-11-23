@@ -40,6 +40,7 @@ Your assignment is to meticulously refine the provided document in the following
    - Indicate word count.
 3. Endeavor to identify seamless transitions between sections, adhering to a maximum of 2 sentences per transition and write it at the end of the section.
 4. Conscientiously pinpoint 1 long tail keyword (comprising at least 4 words) for the entire article, seamlessly incorporating it in a natural manner within each section.
+5. Based on the document provided, please identify a single compelling word, create an attention-grabbing headline, and craft a concise paragraph (1 or 2 sentences) to promote the article.
 
 Please adhere to the following guidelines:
 - Titles should adhere to title capitalization rules.
@@ -52,6 +53,9 @@ Please adhere to the following guidelines:
 Output: Your response is anticipated in JSON format (not markdown) as per the specified structure:
 
   {
+    "word": "",
+    "headline": "",
+    "paragraph": "",
     "keyword": long tail keyword,
     "sections": [
       {
@@ -316,6 +320,9 @@ const files = fs.readdirSync(directory);
 title: "${splitTitle[0]}"
 title2: "${splitTitle[1]}"
 description: "${JSON.parse(rest).metadata.description.replace(/"/g, '')}"
+word: ${JSON.parse(article).word}
+headline: ${JSON.parse(article).headline}
+paragraph: ${JSON.parse(article).paragraph}
 ${yaml.dump(JSON.parse(rest).metadata.variations)}
 author: Nicolas Sursock
 date: ${new Date(json.head.date).toISOString().slice(0, -5) + 'Z'}
