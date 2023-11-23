@@ -18,18 +18,19 @@ eleventyComputed:
       <div class="mx-auto max-w-7xl px-4 sm:px-6">
         <div class="mx-auto flex max-w-2xl flex-col lg:flex-row lg:gap-x-8 lg:gap-y-16 lg:mx-0 lg:max-w-none lg:justify-between lg:items-start lg:gap-y-10">
 
-          <div class="lg:block md:order-last hidden lg:top-10 lg:sticky lg:w-1/12 lg:-mr-12 lg:-mt-32">
+          <div class="lg:block order-last md:order-none hidden lg:top-10 lg:sticky lg:w-1/12 lg:-mr-12 lg:-mt-32">
             {% include 'sections/posts/sharing.njk' %}
           </div>
 
           <div class="lg:pr-4">
             <div class="lg:max-w-lg mb-5">
-              <p class="text-base font-semibold leading-7 dark:text-indigo-500 text-indigo-600">{{ tags[0] }}</p>
-              <h1 class="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">{{ title }}</h1>
-              <p class="mt-6 text-xl leading-8 dark:text-gray-300 text-gray-700">{{ description }}</p>
+              <p class="text-base font-semibold leading-7 dark:text-indigo-500 text-indigo-600">{{ word }}</p>
+              <h1 class="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">{{ headline }}</h1>
+              <p class="mt-6 text-xl leading-8 dark:text-gray-300 text-gray-700">{{ paragraph }}</p>
             </div>
             <div id="article" class="prose lg:prose-xl dark:prose-invert dark:text-gray-400 max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               {{ content | safe}}
+              ({{ content | wordcount }} words)
             </div>
           </div>
 

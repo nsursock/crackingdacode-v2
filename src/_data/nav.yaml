@@ -17,7 +17,7 @@ menus:
         icon: 'folio'
       - name: Blog
         description: Explore a comprehensive list of articles on this anti-war music blog.
-        route: /blog
+        route: /posts
         icon: 'bolt'
       - name: Quizzes
         description: Take musical culture quizzes to gauge your knowledge level.

@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
     return data.filter((item) => item[key] === value)
   });
 
-  eleventyConfig.addFilter('isPaginated', (url) => new RegExp('^/[0-9]+/$').test(url))
+  // eleventyConfig.addFilter('isPaginated', (url) => new RegExp('^/[0-9]+/$').test(url))
   
   eleventyConfig.addCollection('year', (collection) => {
     const posts = collection.getFilteredByTag('blog').reverse()
