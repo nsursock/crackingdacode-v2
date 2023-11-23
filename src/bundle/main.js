@@ -12,6 +12,8 @@ Alpine.data('global', global)
 // Alpine.data('form', form)
 // Alpine.data('testimonials', testimonials)
 
+import { format, formatRelative, formatDistance } from 'date-fns'
+
 // Start Alpine when the page is ready.
 window.addEventListener('DOMContentLoaded', () => {
   Alpine.start()
@@ -20,6 +22,11 @@ window.addEventListener('DOMContentLoaded', () => {
 // Basic Store Example in Alpine.
 window.addEventListener('alpine:initializing', () => {
   Alpine.store('utils', {
+    formatDate(date, dateFormat) {
+      if (dateFormat === 'relative') return formatRelative(date, new Date())
+      else if (dateFormat === 'distance') return formatDistance(date, new Date(), { addSuffix: true })
+      else return format(date, dateFormat)
+    },
     isMobile() {
       return this.getDeviceType() === 'Mobile'
     },
@@ -39,5 +46,36 @@ window.addEventListener('alpine:initializing', () => {
         return 'Desktop';
       }
     }
+  })
+
+  Alpine.store('db', {
+    client: null,
+
+    createClient(url, key) {
+      this.client = createClient(url, key)
+    }
+  })
+
+  Alpine.store('auth', {
+    user: null,
+    setUser(user) {
+      this.user = user
+    },
+    init() {
+      this.getLoggedInUser()
+    },
+    getLoggedInUser() {
+      const token = localStorage.getItem('crdacode_token')
+      if (token) {
+        fetch('/api/auth?mode=me', {
+          method: 'POST',
+          body: token,
+        })
+          .then((response) => response.json())
+          .then((message) => {
+            if (message.success) this.user = message.user
+          })
+      }
+    },
   })
 })

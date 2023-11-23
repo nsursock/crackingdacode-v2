@@ -1,6 +1,9 @@
 export default () => ({
 
-  // Scrolling detector
+  // For toggling panels and modals
+  showCommentsPanel: false,
+
+  // For scrolling detection
   landingPageOffset: 400,
   lastScrollTop: window.scrollY || document.documentElement.scrollTop,
   isScrollingUp: false,
@@ -8,6 +11,12 @@ export default () => ({
   percent: 0,
   circumference: 30 * 2 * Math.PI,
   currStep: [],
+
+  // For notifications handling
+  showNotification: false,
+  success: false,
+  status: '',
+  details: '',
 
   registerEvent(label, type) {
     // if (process.env.NODE_ENV.startsWith('prod')) {
