@@ -120,141 +120,145 @@ Generate ten, formally articulated comments tailored for the article, each spann
 }
 `;
 
-const promptMusic =
-  `Write a 150-200 words formal critic of the following song (response should be text without a title of 3 or 4 paragraphs): `
+// const promptMusic =
+//   `Write a 150-200 words formal critic of the following song (response should be text without a title of 3 or 4 paragraphs): `
 
 const article = `
 {
-  "keyword": "journey through the symphony",
+  "word": "Enigmatic",
+  "headline": "Can Hooverphonic's 'Badaboum' Ignite Your Soul?",
+  "paragraph": "Immerse yourself in the mesmerizing world of Hooverphonic's 'Badaboum,' where each note and lyric collaboratively spark a symphony of emotions that resonates with the depths of your being.",
+  "keyword": "Hooverphonic Badaboum themes",
   "sections": [
     {
-      "title": "Is Distance the Silent Conductor of Everlasting Love?",
-      "content": [
-        "Immerse yourself in the soul-stirring melody of Hooverphonic's 'Badaboum,' where a profound question emerges: Does distance hold the unspoken key to enduring love? The song delicately unfolds the notion that space in relationships is not merely a choice but a necessity for personal growth and transformation.",
-        "Hooverphonic challenges ingrained notions, inviting contemplation on the intricate dance between closeness and the mandated distance for authentic connections. Can formality coexist with genuine, unguarded expressions of love? Explore the unconventional wisdom surrounding relationships and the symphony of love in this reflective exploration. The haunting echoes of 'Badaboum' linger, raising questions about the delicate balance between intimacy and space in the pursuit of lasting connections.",
-        "As the music weaves its intricate tale, 'Badaboum' invites us to reevaluate the conventional wisdom surrounding relationships. Can formality coexist with the genuine, unguarded expressions of love? Through its melodic nuances, the song raises a thought-provoking query, beckoning listeners to explore the intricate dance between closeness and the mandated distance for authentic, enduring connections."
-      ],
-      "keywords": ["distance in relationships", "symphony of love", "personal growth", "enduring connections"],
-      "prompt": "A photorealistic image illustrating the delicate balance between closeness and distance in a relationship."
+      "title": "Exploring Pain Catastrophization",
+      "content": ["Embark on an emotional journey as 'Badaboum' by Hooverphonic delves into the intricate realm of pain catastrophization. The song masterfully navigates the intense and complex emotions tied to exaggerated pain, offering listeners a cathartic experience.", "With a haunting melody that mirrors the depth of emotional distress, 'Badaboum' becomes a therapeutic exploration of the human psyche, leaving an indelible mark on the hearts of those who lend it an ear."],
+      "count": 183,
+      "keywords": ["Badaboum", "pain catastrophization", "emotional distress", "cathartic experience"],
+      "prompt": "A poignant image capturing the intensity of emotional distress."
     },
     {
-      "title": "Harmony or Discord: Navigating Emotional Turmoil's Inevitability",
-      "content": [
-        "As 'Badaboum' unfolds, a poignant question emerges: In life's symphony, is stumbling upon emotional turmoil an inevitable note? The haunting beauty of Hooverphonic's composition explores life's probabilistic nature, suggesting encounters with toxicity might be an unavoidable aspect of the human experience.",
-        "Reflect on whether navigating emotional turmoil is intrinsic to life's journey, pondering the probability of encountering those who cause distress along the way. Embark on a contemplative journey through the unpredictability of life's emotional landscapes with 'Badaboum.' The song becomes a poignant soundtrack to life's uncertainties, prompting reflection on the twists and turns that shape our emotional landscapes.",
-        "Hooverphonic's composition raises a contemplative query on whether navigating emotional turmoil is an intrinsic part of life's journey. In the pursuit of love and self-discovery, does the probability of encountering those who cause emotional distress become an unavoidable chapter in the narrative of our lives? 'Badaboum' becomes a soundtrack to life's uncertainties, prompting us to reflect on the inevitable twists and turns that shape our emotional landscapes."
-      ],
-      "keywords": ["life's symphony", "emotional turmoil", "human experience", "unavoidable encounters"],
-      "prompt": "A photorealistic image capturing the unpredictable nature of life's emotional landscapes."
+      "title": "The Probabilistic Dance of Life",
+      "content": ["Join Hooverphonic in contemplating life's unpredictable dance in 'Badaboum.' The song lyrically reflects on the probabilistic aspect of our existence, inviting listeners to ponder the twists of fate that shape our journey.", "With a melodic arrangement that mirrors life's uncertainties, 'Badaboum' becomes a philosophical soundtrack, encouraging introspection on the beauty found in life's unpredictability."],
+      "count": 162,
+      "keywords": ["Badaboum", "probabilistic aspect of life", "philosophical exploration", "life's uncertainties"],
+      "prompt": "An image evoking the unpredictable nature of life's dance."
     },
     {
-      "title": "Catastrophic Thoughts: Prelude to Despair or Resilience?",
-      "content": [
-        "In the melodic cascade of 'Badaboum,' a profound question lingers: Can catastrophic thoughts, like haunting refrains, become crippling echoes in the human psyche? The song delicately unravels the tapestry of the mind, exploring the potency of negative thinking. The lyrics suggest that dwelling on catastrophic scenarios can be akin to a musical crescendo, building into a paralyzing force that impedes personal growth.",
-        "As the haunting notes play on, 'Badaboum' becomes a poignant exploration of the emotional toll of such thoughts. The composition implies that these dark melodies have the potential to trap individuals in a cycle of self-destructive contemplation, hindering the pursuit of happiness. The narrative within the song encourages reflection on the weight of catastrophic thoughts and their impact on our mental landscapes.",
-        "However, amidst the shadows, 'Badaboum' also hints at the possibility of a transformative counterpoint. Can the very echoes that threaten to be crippling also serve as a prelude to resilience? The song prompts us to consider whether, like a musical resolution, navigating through catastrophic thoughts may lead to a symphony of strength and emotional fortitude."
-      ],
-      "keywords": ["catastrophic thoughts", "negative thinking", "emotional fortitude", "transformative counterpoint"],
-      "prompt": "A photorealistic image symbolizing the intricate dance between dark thoughts and the resilience of the human mind."
+      "title": "Navigating Distance in Love",
+      "content": ["Hooverphonic skillfully navigates the theme of distance and space in relationships in 'Badaboum.' The song paints a poignant picture of the emotional gaps that can emerge between two hearts, offering a melodic reflection on the challenges of maintaining connection amidst physical or emotional distance.", "'Badaboum' becomes a musical guide, prompting listeners to ponder the delicate balance required to bridge the gaps in love."],
+      "count": 172,
+      "keywords": ["Badaboum", "distance and space in relationships", "emotional gaps", "connection"],
+      "prompt": "An image symbolizing the delicate balance in relationships."
     },
     {
-      "title": "Navigating Life's Symphony with 'Badaboum': From Despair to Hope",
-      "content": [
-        "In the haunting echoes of life's catastrophes explored in 'Badaboum,' a resounding question emerges: How did we descend into the hellish symphony of our own thoughts, and can we find our way back to the harmonious horizons of hope? The song, with its introspective lyricism and emotive melodies, metaphorically paints a journey into the depths of personal struggles, confronting the darkness within.",
-        "As the composition weaves through the complexities of toxic relationships, encounters with emotional turmoil, and the paralyzing grip of catastrophic thoughts, it leaves us at a crucial juncture—a juncture of introspection and potential rebirth. Amidst the tumultuous cadence of life, 'Badaboum' becomes not just a symphony of trials but a testament to the enduring human spirit.",
-        "It encourages us to look beyond the cacophony of our struggles, towards the promise of brighter days on the horizon. As the narrative unfolds, it becomes apparent that the intricate dance of love and relationships explored in 'Badaboum' delves into the complexity of human connections. The intertwining of sex and love, often likened to powerful drugs, reveals that these intense emotions can lead one to cross paths with the wrong person."
-      ],
-      "keywords": ["life's symphony", "personal struggles", "enduring human spirit", "brighter days"],
-      "prompt": "A photorealistic image representing the journey from despair to hope, inspired by the symphony of life."
+      "title": "Witnessing Others' Suffering",
+      "content": ["In 'Badaboum,' Hooverphonic explores the empathetic theme of witnessing the suffering of others. The lyrics weave a narrative that reflects on the profound impact of observing pain and hardship in those around us, creating a sonic experience that encourages empathy and reflection.", "The song's emotive resonance serves as a poignant reminder of the interconnectedness of the human experience."],
+      "count": 153,
+      "keywords": ["Badaboum", "witnessing suffering of others", "empathetic theme", "human experience"],
+      "prompt": "An image capturing the emotional resonance of witnessing suffering."
+    },
+    {
+      "title": "The Allure of Temptation",
+      "content": ["Delve into the provocative exploration of sex and promiscuity as Hooverphonic likens it to a drug in 'Badaboum.' The song lyrically navigates the intoxicating allure of temptation, offering a melodic commentary on the complexities of desire and its impact on human connection.", "'Badaboum' becomes a musical canvas, inviting listeners to reflect on the parallels between the highs of intimacy and the addictive nature of forbidden allure."],
+      "count": 190,
+      "keywords": ["Badaboum", "sex and promiscuity", "intoxicating allure", "forbidden allure"],
+      "prompt": "An image capturing the sensual and provocative essence of temptation."
+    },
+    {
+      "title": "Banality of Males: A Solution Unveiled",
+      "content": ["Concluding the lyrical exploration in 'Badaboum,' Hooverphonic introduces the notion of the 'banality of males' as a solution to the complexities presented. The song suggests that amidst the tumultuous themes of pain, uncertainty, and desire, finding solace in the ordinary and mundane aspects of life can be the ultimate antidote.", "'Badaboum' becomes not just a song but a guide to finding equilibrium in the banal, offering a profound solution to the tumultuous journey of the human experience."],
+      "count": 197,
+      "keywords": ["Badaboum", "banality of males", "finding solace", "human experience"],
+      "prompt": "An image capturing the tranquility in the banality of life."
     }
   ]
 }
   `
 
 const rest = `
-  {
-    "categories": ["Love", "Relationships", "Life", "Society", "Philosophy"],
-    "keywords": ["navigating the complexities of love"],
-    "metadata": {
-      "title": "Is Navigating the Complexities of Love a Symphony or Discord in Life's Journey?",
-      "description": "Embark on a journey through the symphony of love, exploring challenges and potential harmonies in life's intricate dance.",
-      "prompt": "A photorealistic illustration capturing the delicate balance between love's complexities and life's unpredictable journey.",
-      "variations": {
-        "titles": [
-          {"text": "Does Love's Complexity Harmonize or Discord in Life's Intricate Symphony?"},
-          {"text": "Navigating Love's Intricacies: A Symphony or Discord in Life's Journey?"},
-          {"text": "Can Life's Journey Harmonize Love's Complexity or Descend into Discord?"},
-          {"text": "Exploring Love's Complexity: A Symphony or Discord in Life's Unique Journey?"}
-        ],
-        "descriptions": [
-          {"text": "Embark on a journey through the symphony of love, exploring challenges and potential harmonies in life's intricate dance."},
-          {"text": "Delve into the intricate dance of love, navigating challenges and seeking harmonies in the symphony of life's journey."},
-          {"text": "Can love's complexities find harmony in life's journey? Explore the intricate dance and potential resolutions."},
-          {"text": "Discover the symphony of love amidst life's complexities, navigating challenges and seeking harmonies along the journey."}
-        ]
-      },
-      "misc": {
-        "lantern": [
-          {"text": "Unlock the secrets of love's symphony as we navigate life's intricate journey together."},
-          {"text": "Embark on a profound exploration of love's complexities and the harmonious possibilities within life's journey."},
-          {"text": "Join us on a journey through the symphony of love, unraveling challenges and discovering the beauty within life's intricate dance."},
-          {"text": "Experience the transformative power of love's symphony as we navigate life's journey, embracing both challenges and harmonies."}
-        ],
-        "comments": [
-          {"text": "This article beautifully captures the nuances of love and life's journey. A must-read!"},
-          {"text": "Navigating love's complexities is an art, and this article does it with elegance and insight."},
-          {"text": "I appreciate the exploration of love's symphony and the intricate dance within life's journey."},
-          {"text": "The title drew me in, and the content delivered a thoughtful reflection on love and life."},
-          {"text": "A symphony of words that resonates with the challenges and beauty of love's journey."},
-          {"text": "This article provides a fresh perspective on love, navigating complexities with grace."},
-          {"text": "The exploration of love's complexities is profound, and the writing is captivating."},
-          {"text": "I enjoyed the journey through love's symphony and the insights into life's intricate dance."},
-          {"text": "The title poses an intriguing question, and the article provides a rich exploration of the topic."},
-          {"text": "Navigating love's complexities is beautifully portrayed in this well-crafted article."}
-        ]
-      }
+{
+  "categories": ["Entertainment", "Art", "Culture", "Love"],
+  "keywords": ["complexity of human emotions"],
+  "metadata": {
+    "title": "Can Badaboum Unravel the Complexity of Human Emotions Through Its Melody?",
+    "description": "Embark on a musical journey delving into the intricate world of emotions stirred by Badaboum's enchanting tunes.",
+    "prompt": "A surreal image capturing the essence of emotional complexity in music.",
+    "variations": {
+      "titles": [
+        { "text": "Does Badaboum Navigate the Depths of Human Emotions with its Melody?" },
+        { "text": "Unraveling Human Emotions: The Musical Tapestry of Badaboum" },
+        { "text": "Can Badaboum Evoke the Profundity of Human Emotions through Music?" },
+        { "text": "Exploring Emotional Depths: Badaboum's Impact on the Soul" }
+      ],
+      "descriptions": [
+        { "text": "Experience a musical narrative that intricately weaves through the spectrum of human emotions, offering solace and understanding." },
+        { "text": "Dive into the enchanting world of Badaboum, where emotions find expression in every note, unraveling the complexities of the human heart." },
+        { "text": "Embark on a melodic journey with Badaboum, where the music becomes a mirror reflecting the intricate tapestry of human emotions." },
+        { "text": "Explore the emotional labyrinth of Badaboum, a symphony that resonates with the nuanced feelings that define our human experience." }
+      ]
+    },
+    "misc": {
+      "lantern": [
+        { "text": "Immerse yourself in the emotive soundscape of Badaboum, transcending conventional musical boundaries and exploring the depth of human sentiments." },
+        { "text": "Discover a harmonious journey with Badaboum, where each note tells a tale of emotional richness and resonates with the soul." },
+        { "text": "Let Badaboum serenade you into the intricacies of human emotions, painting a vivid picture through its enchanting melody." },
+        { "text": "Experience the magic of Badaboum, where the fusion of music and emotions creates a symphony that speaks to the depths of the human soul." }
+      ],
+      "comments": [
+        { "text": "Badaboum's melodies are a balm for the soul, offering a cathartic experience that transcends the ordinary bounds of music." },
+        { "text": "In Badaboum, Hooverphonic masterfully captures the emotional nuances, making each listening session a journey of self-discovery." },
+        { "text": "The song Badaboum is a testament to Hooverphonic's ability to craft music that resonates with the complexities of human emotions." },
+        { "text": "Listening to Badaboum feels like taking a deep dive into the ocean of emotions, where each wave is a note that stirs the heart." },
+        { "text": "Hooverphonic's Badaboum is a masterpiece that goes beyond entertainment, creating an emotional connection with the listener." },
+        { "text": "Badaboum's melody is a poetic expression of the human experience, offering solace and understanding in a world filled with chaos." },
+        { "text": "Hooverphonic's Badaboum is a musical journey that transcends genres, inviting listeners to explore the vast landscape of human emotions." },
+        { "text": "With Badaboum, Hooverphonic opens a gateway to the realm of emotions, where each note is a key unlocking hidden chambers of the heart." },
+        { "text": "Badaboum's melody has a transformative power, creating an emotional resonance that lingers long after the music fades." },
+        { "text": "Hooverphonic's Badaboum is a sonic masterpiece that speaks to the soul, making it a timeless addition to the realm of musical artistry." }
+      ]
     }
-  }  
+  }
+}
+
   `
 
 const music = `
-  In the evocative and haunting composition "Badaboum" by Hooverphonic, the Belgian band seamlessly weaves together layers of melancholy and introspection. The song's ethereal melody serves as a captivating backdrop to thought-provoking lyrics that delve into the complexities of human emotions and relationships. The title itself, an onomatopoeic representation of a sudden, impactful event, foreshadows the emotional depth explored within the song.
+Step into the mesmerizing world of Hooverphonic's latest musical gem, "Badaboum," where sonic artistry and poignant lyricism converge in a harmonious embrace. From the opening notes, the song unveils a spellbinding tapestry of sound, a testament to Hooverphonic's ability to craft emotive experiences through their music. With each haunting melody and carefully chosen lyric, "Badaboum" invites listeners on a captivating journey of introspection and emotional resonance.
 
-The narrative unfolds like a poetic exploration of love and its intricate dance, challenging conventional notions ingrained in us from a young age. Hooverphonic invites listeners to reconsider the role of distance in relationships, pondering whether it is not merely a choice but an essential element for personal growth. The lyrics subtly question the formalities often associated with matters of the heart, urging us to embrace genuine, unguarded expressions of love.
+The composition unfolds like a cinematic narrative, weaving together lush instrumental arrangements and ethereal vocals that elevate the listener to a heightened state of musical immersion. Hooverphonic's distinctive style shines through, blending elements of dream pop and trip-hop with a unique flair, creating an atmospheric soundscape that feels both timeless and contemporary. As the music unfolds, there's an undeniable magnetic pull, drawing the audience into the intricate world of the song.
 
-The haunting beauty of "Badaboum" extends beyond its melodic nuances to confront the inevitability of encountering emotional turmoil in life's symphony. The song delicately explores the probabilistic nature of such encounters, suggesting that, like the unpredictability of music, moments with toxic individuals might be an unavoidable part of the human experience. Amidst the shadows, the composition hints at the possibility of resilience, portraying catastrophic thoughts as potential preludes to emotional fortitude.
-
-Overall, "Badaboum" stands as a testament to Hooverphonic's ability to craft emotionally charged and intellectually stimulating music. The song's melancholic charm, coupled with its profound exploration of love, emotional turmoil, and resilience, leaves a lasting impression that transcends the boundaries of conventional pop music.
-  `
+What sets "Badaboum" apart is not just its musical prowess but its lyrical depth. The lyrics unfold like poetry, exploring themes of love, longing, and the complexities of the human experience. Each verse is a carefully crafted brushstroke, painting vivid images and evoking a myriad of emotions. Hooverphonic's ability to marry profound storytelling with enchanting melodies ensures that "Badaboum" transcends the boundaries of a mere song, becoming a transformative experience that resonates long after the final note fades away.
+`
 
 // ----------------------------------------------------------------
 
 require('dotenv').config({ path: '../.env' })
-const path = require('path');
+// const path = require('path');
 const yaml = require('js-yaml');
 // const axios = require('axios');
 const fs = require('fs');
-const matter = require('gray-matter');
-const cheerio = require('cheerio');
+// const matter = require('gray-matter');
+// const cheerio = require('cheerio');
 
 const unsplashAPIKey = process.env.UNSPLASH_ACCESS_KEY;
 
 const directory = '../src/posts/';
-const files = fs.readdirSync(directory);
+// const files = fs.readdirSync(directory);
 
 (async () => {
 
   // Process each file
-  for (const file of files) {
+  // for (const file of files) {
 
     const startTime = performance.now();
 
     // Check if the file has a .md extension
-    if (file.endsWith('.md')) {
-      let filePath = `${directory}/${file}`;
-      let json = convertJson(filePath);
+    // if (file.endsWith('.md')) {
+      // let filePath = `${directory}/${file}`;
+      // let json = convertJson(filePath);
 
-      if (json.head.tags.length <= 5) {
+      // if (json.head.tags.length <= 5) {
         const numVariations = 1
         let finalContent = []
         for (let index = 0; index < numVariations; index++) { // no variations for unsplash
@@ -265,7 +269,7 @@ const files = fs.readdirSync(directory);
             let markdown = ''
             // if (index !== 0) { // skip introduction
 
-            const photo = await getRandomUnsplashImage(section.keywords)
+            const photo = await getRandomUnsplashImage(section.prompt)
             // const photo = await extractUnplashMetadata(json.asides[index - 1])
             // console.log(photo);
 
@@ -307,13 +311,13 @@ const files = fs.readdirSync(directory);
           // create md file
           const splitTitle = splitHeadlineBalanced(JSON.parse(rest).metadata.title);
           // const photo = await extractUnplashMetadata(json.head.featured, true)
-          const photo = await getRandomUnsplashImage(JSON.parse(rest).keywords)
+          const photo = await getRandomUnsplashImage(JSON.parse(rest).metadata.prompt)
           // const photo = await getDallEImage(JSON.parse(rest).metadata.prompt + ', digital art', true)
 
-          const yamlMusic = {
-            track: json.head.track,
-            versions: json.head.versions
-          }
+          // const yamlMusic = {
+          //   track: json.head.track,
+          //   versions: json.head.versions
+          // }
 
           let frontmatter =
             `---
@@ -325,16 +329,14 @@ headline: ${JSON.parse(article).headline}
 paragraph: ${JSON.parse(article).paragraph}
 ${yaml.dump(JSON.parse(rest).metadata.variations)}
 author: Nicolas Sursock
-date: ${new Date(json.head.date).toISOString().slice(0, -5) + 'Z'}
+date: ${new Date().toISOString().slice(0, -5) + 'Z'}
 featured: ${photo.urls.raw}&auto=format&fit=crop&q=80
 alt: ${photo.alt_description}
 name: ${photo.user.name}
 handle: ${photo.user.username}
 keywords: ${JSON.parse(article).keyword}
-original: ${file}
-tags: [${JSON.parse(rest).categories},blog,formal,featured,processed]
+tags: [${JSON.parse(rest).categories},manual]
 layout: layouts/post.njk
-${yaml.dump(yamlMusic)}
 ${yaml.dump(JSON.parse(rest).metadata.misc)}
 ---
 `
@@ -345,21 +347,21 @@ ${yaml.dump(JSON.parse(rest).metadata.misc)}
             fs.writeFileSync(filePath, frontmatter + finalContent[index].join('\n'), 'utf-8');
             console.log(`Content has been successfully written to ${filePath}`);
 
-            const sourceDirectory = directory;
-            const destinationDirectory = '../formalize/processed';
-            const fileName = file;
+            // const sourceDirectory = directory;
+            // const destinationDirectory = '../formalize/processed';
+            // const fileName = file;
 
-            const sourcePath = path.join(sourceDirectory, fileName);
-            const destinationPath = path.join(destinationDirectory, fileName);
+            // const sourcePath = path.join(sourceDirectory, fileName);
+            // const destinationPath = path.join(destinationDirectory, fileName);
 
-            // Move the file
-            fs.rename(sourcePath, destinationPath, (err) => {
-              if (err) {
-                console.error(`Error moving file: ${err}`);
-              } else {
-                console.log('File moved successfully!');
-              }
-            })
+            // // Move the file
+            // fs.rename(sourcePath, destinationPath, (err) => {
+            //   if (err) {
+            //     console.error(`Error moving file: ${err}`);
+            //   } else {
+            //     console.log('File moved successfully!');
+            //   }
+            // })
 
           } catch (err) {
             console.error('Error writing to the file:', err);
@@ -369,9 +371,10 @@ ${yaml.dump(JSON.parse(rest).metadata.misc)}
         const endTime = performance.now();
         console.log(`Elapsed time: ${convertMillis(endTime - startTime)}`);
       }
-    }
-  }
-})();
+//     }
+//   }
+// }
+)();
 
 // ----------------------------------------------------------------
 
@@ -418,7 +421,7 @@ async function getRandomUnsplashImage(query) {
 
   try {
     const response = await fetch(
-      `https://api.unsplash.com/photos/random?client_id=${process.env.UNSPLASH_ACCESS_KEY}&query=${query}&orientation=landscape`);
+      `https://api.unsplash.com/photos/random?client_id=${unsplashAPIKey}&query=${query}&orientation=landscape`);
     if (!response.ok) {
       throw new Error(`Failed to fetch random image: ${response.statusText}`);
     }

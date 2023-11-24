@@ -1,0 +1,126 @@
+**Input**: Please handle those tasks for the song: Badaboum by Hooverphonic
+
+# Music
+
+Write a 150-200 words introduction (3 or 4 paragraphs) which is a positive critic.
+Output should be plain text.
+
+# Article
+1. Identify a single compelling word, create an attention-grabbing headline, and craft a concise paragraph (1 sentence) to promote the song.
+2. Then write sections 150-200 words long about the themes evoked in the song (with title):
+ - pain catastrophization,
+ - the probabilistic aspect of life,
+ - distance and space in a relationship,
+ - witnessing suffering of others,
+ - sex and promiscuity that can be like drugs,
+ - conclude by mentioning the solution: banality of males.
+Please adhere to the following guidelines:
+- Titles should adhere to title capitalization rules.
+- Titles should adopt an interrogative form and encompass 7 to 8 words.
+- Titles ought to encompass a judicious mix of commonplace, uncommon, powerful, and emotive words.
+- Sections should be comprised of 4 or 5 well-structured paragraphs.
+- Paragraphs should consist of 3 or 4 sentences each.
+3. Discern and designate 1 long tail keyword (a minimum of 4 words) pertinent to the section.
+4. Present an image prompt suitable for dall-e, illustrating the section with a photorealistic image.
+5. Indicate word count of each section.
+
+Output: Your response is anticipated in JSON format (not markdown) as per the specified structure:
+
+  {
+    "word": "",
+    "headline": "",
+    "paragraph": "",
+    "keyword": long tail keyword,
+    "sections": [
+      {
+        "title": "",
+        "content": [],
+        "count": (word count),
+        "keywords": [],
+        "prompt": ""
+      }
+    ]
+  }
+
+# Rest
+
+Here are categories: ```
+Art
+  Basic Income
+  Business
+  Creativity
+  Culture
+  Economy
+  Education
+  Entertainment
+  Environment
+  Equality
+  Family
+  Fitness
+  Future
+  Health
+  History
+  Humor
+  Justice
+  Life
+  Love
+  Philosophy
+  Politics
+  Productivity
+  Psychology
+  Relationships
+  Science
+  Sexuality
+  Society
+  Wellness
+  World
+  ```
+
+## Categories
+Determine the primary category for the chosen article from the available options: ${WORDPRESS_CATEGORIES}.
+Identify four secondary categories for the chosen article from the provided options: ${WORDPRESS_CATEGORIES}.
+Ensure the primary category is listed first in the array.
+
+## Keywords
+Identify one long tail keyword (consisting of at least 4 words) for the article. Exclude the use of the word 'impact.'
+
+## Title
+Devise a formal title for the article adhering to the following specifications:
+- Utilize title capitalization.
+- Pose the title as a question and maintain a length of 10 to 12 words.
+- Incorporate a balanced mix of common, uncommon, powerful, and emotional words, with the distribution being 20-30% common words, 10-20% uncommon words, 10-15% emotional words, and a minimum of 1 power word.
+
+## Description
+Craft a formal meta description for search engines that accomplishes the following:
+- Identifies a challenge within the article and alludes to a potential solution.
+- Convey the response without explicitly mentioning 'challenge' and 'solution.'
+- Maintain a character count of approximately 180, avoiding the commencement with the word 'explore.'
+
+## Variations
+Generate four distinct variations for both the title and description.
+
+## Prompt
+Supply an image prompt for dall-e, facilitating the illustration of the article with a photorealistic image.
+
+## Lantern
+Compose four formal sentences, each spanning 15-20 words, designed to persuade skeptics and effectively market the article.
+
+## Comments
+Generate ten, formally articulated comments tailored for the article, each spanning 50-60 words.
+
+**Output:** The provided response is expected in JSON format (not markdown), following a structure akin to the example provided:
+
+{ 
+  "categories": [],
+  "keywords": [],
+  "metadata": {
+    "title": "",
+    "description": "",
+    "prompt": "",
+    "variations": { titles: [{text: ...}, ...], descriptions: [{text: ...}, ...] },
+    "misc": {
+      "lantern": [{text: ...}, ...],
+      "comments": [{text: ...}, ...],
+    }
+  },
+}

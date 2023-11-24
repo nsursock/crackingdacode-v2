@@ -6,9 +6,9 @@ const websiteId = 'ca5ab971-2008-4b4e-b29b-291db540c3af'
 module.exports = function (eleventyConfig) {
 
   // Utility functions
-  eleventyConfig.addFilter('latest', function (items) {
-    return items.reverse().slice(0, 9)
-  })
+  // eleventyConfig.addFilter('latest', function (items) {
+  //   return items.slice(0, 9)
+  // })
 
   eleventyConfig.addFilter('format', function (date, dateFormat) {
     return format(date, dateFormat)
@@ -30,10 +30,8 @@ module.exports = function (eleventyConfig) {
     return data.filter((item) => item[key] === value)
   });
 
-  // eleventyConfig.addFilter('isPaginated', (url) => new RegExp('^/[0-9]+/$').test(url))
-  
   eleventyConfig.addCollection('year', (collection) => {
-    const posts = collection.getFilteredByTag('blog').reverse()
+    const posts = collection.getFilteredByTag('blog')
     const years = posts.map((post) => post.date.getFullYear())
     const uniqueYears = [...new Set(years)]
 

@@ -33,7 +33,7 @@ handle: weirick
 
     <div class="">
       <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Latest Posts</h2>
-      {% set postslist = collections.posts | latest %}
+      {% set postslist = collections.posts | reverse %}
       <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
         {% for post in postslist %}
           {% include 'partials/post-card.njk' %}

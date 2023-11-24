@@ -225,6 +225,12 @@
             </div>
           </div>
           {# {% include 'partials/notifications.njk' %} #}
+          <template x-teleport="body">
+            <div>
+            {% include 'partials/auth/login.njk' %}
+            {% include 'partials/auth/signup.njk' %}
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -254,10 +260,8 @@
           method: 'POST',
           body: window.location.pathname
         })
-        this.sortedItems = (await res.json())
-          .data || []
-          this
-          .sortItems('newest')
+        this.sortedItems = (await res.json()).data || []
+        this.sortItems('newest')
         this.count = this.sortedItems.length
       },
       init() {

@@ -18,6 +18,13 @@ export default () => ({
   status: '',
   details: '',
 
+  // For auth management
+  showAuthLoginModal: false,
+  showAuthSignupModal: false,
+  email: '',
+  name: '',
+  password: '',
+
   registerEvent(label, type) {
     // if (process.env.NODE_ENV.startsWith('prod')) {
     // if (typeof umami !== 'undefined') {
@@ -52,17 +59,22 @@ export default () => ({
   },
 
   async init() {
-    const articleElement = document.querySelector('#article');
-
-    if (!articleElement) return;
 
     window.addEventListener('scroll', () => {
+
+      this.prevPercent = this.percent
+      var st = window.scrollY || document.documentElement.scrollTop
+      this.isScrollingUp = st <= this.lastScrollTop
+      this.lastScrollTop = st <= 0 ? 0 : st // for mobile or negative scrolling
+
+      const articleElement = document.querySelector('#article');
+      if (!articleElement) return;
+
       const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
       const percentage = (scrollPosition / documentHeight) * 100;
 
       this.percent = Math.round(percentage);
-
       // console.log(`User has read ${this.percent.toFixed(2)}% of the article`);
 
       const updateStep = (step, label) => {
