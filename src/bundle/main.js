@@ -14,9 +14,32 @@ Alpine.data('global', global)
 
 import { format, formatRelative, formatDistance } from 'date-fns'
 
+function generateUniqueID() {
+  // Create a timestamp (milliseconds since the Unix epoch)
+  const timestamp = new Date().getTime();
+
+  // Generate a random number (between 0 and 1) and convert it to a string
+  const random = Math.random().toString(36).substr(2);
+
+  // Combine the timestamp and random number to create a unique ID
+  const uniqueID = timestamp + random;
+
+  return uniqueID;
+}
+
 // Start Alpine when the page is ready.
 window.addEventListener('DOMContentLoaded', () => {
-  Alpine.start()
+  if (window.location.search.includes('InternalTraffic')) {
+    localStorage.setItem('crdacode_InternalTraffic', 'true')
+  }
+
+  // Check if the unique user ID is in local storage
+  const uniqueID = localStorage.getItem('crdacode_UniqueUserID');
+  if (!uniqueID) { // new user
+    localStorage.setItem('crdacode_UniqueUserID', generateUniqueID());
+
+    Alpine.start()
+  }
 })
 
 // Basic Store Example in Alpine.
