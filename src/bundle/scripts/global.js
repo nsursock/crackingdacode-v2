@@ -2,6 +2,7 @@ export default () => ({
 
   // For toggling panels and modals
   showCommentsPanel: false,
+  showSharingModal: false,
 
   // For scrolling detection
   landingPageOffset: 400,
@@ -35,7 +36,7 @@ export default () => ({
     // mixpanel.track(oneWord)
     // gtag('event', label + '_' + type)
     console.log(oneWord)
-    splitbee.track(oneWord)
+    typeof splitbee !== 'undefined' && splitbee.track(oneWord)
     // plausible(label[0].toUpperCase() + label.slice(1, label.length))
     // {
     //   'app_name': 'myAppName',

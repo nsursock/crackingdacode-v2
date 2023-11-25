@@ -1,5 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div x-data="dataComments()" x-show="$store.utils.isMobile() && percent == 100 && showCommentsPanel || !$store.utils.isMobile() && showCommentsPanel" class="relative z-50" x-cloak="x-cloak" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+<div x-data="dataComments()" x-show="showCommentsPanel" 
+class="relative z-50" x-cloak aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <!-- Background backdrop, show/hide based on slide-over state.
     
     Entering: "ease-in-out duration-500"
@@ -8,7 +9,7 @@
     Leaving: "ease-in-out duration-500"
         From: "opacity-100"
         To: "opacity-0" -->
-  <div x-show="$store.utils.isMobile() && percent == 100 && showCommentsPanel || !$store.utils.isMobile() && showCommentsPanel" x-transition:enter="ease-in-out duration-500 " x-transition:enter-start="opacity-0 " x-transition:enter-end="opacity-100  " x-transition:leave="ease-in-out duration-500 " x-transition:leave-start="opacity-100 " x-transition:leave-end="opacity-0 " class="fixed inset-0 bg-gray-500 bg-opacity-75 backdrop-blur-sm backdrop-filter transition-opacity"></div>
+  <div x-show="showCommentsPanel" x-transition:enter="ease-in-out duration-500 " x-transition:enter-start="opacity-0 " x-transition:enter-end="opacity-100  " x-transition:leave="ease-in-out duration-500 " x-transition:leave-start="opacity-100 " x-transition:leave-end="opacity-0 " class="fixed inset-0 bg-gray-500 bg-opacity-75 backdrop-blur-sm backdrop-filter transition-opacity"></div>
   <div class="fixed inset-0 overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
       <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -20,7 +21,7 @@
                 Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
                     From: "translate-x-0"
                     To: "translate-x-full" -->
-        <div  x-show="$store.utils.isMobile() && percent == 100 && showCommentsPanel || !$store.utils.isMobile() && showCommentsPanel" x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:enter-start="translate-x-full " x-transition:enter-end="translate-x-0 " x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:leave-start="translate-x-0 " x-transition:leave-end="translate-x-full " class="pointer-events-auto w-screen max-w-md lg:max-w-xl">
+        <div  x-show="showCommentsPanel" x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:enter-start="translate-x-full " x-transition:enter-end="translate-x-0 " x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:leave-start="translate-x-0 " x-transition:leave-end="translate-x-full " class="pointer-events-auto w-screen max-w-md lg:max-w-xl">
           <div class="flex h-full flex-col divide-y divide-gray-200 bg-white shadow-xl dark:divide-gray-800 dark:bg-gray-900">
             <div class="flex min-h-0 flex-1 flex-col overflow-y-scroll py-6">
               <div class="px-4 sm:px-6">
