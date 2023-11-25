@@ -34,7 +34,7 @@ module.exports = function (grunt) {
   });
 
   // Load the plugins
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  // grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-critical');
 
 

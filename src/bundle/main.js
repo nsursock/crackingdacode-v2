@@ -14,15 +14,40 @@ Alpine.data('global', global)
 
 import { format, formatRelative, formatDistance } from 'date-fns'
 
+function combineRandomly(str1, str2) {
+  // Convert strings to arrays of characters
+  const arr1 = str1.split('');
+  const arr2 = str2.split('');
+
+  // Combine arrays randomly
+  const combinedArray = [];
+  while (arr1.length > 0 || arr2.length > 0) {
+    // Randomly choose between str1 and str2
+    const chooseFromFirst = Math.random() < 0.5;
+
+    if (chooseFromFirst && arr1.length > 0) {
+      combinedArray.push(arr1.shift());
+    } else if (arr2.length > 0) {
+      combinedArray.push(arr2.shift());
+    }
+  }
+
+  // Convert the combined array back to a string
+  const combinedString = combinedArray.join('');
+
+  return combinedString;
+}
+
 function generateUniqueID() {
   // Create a timestamp (milliseconds since the Unix epoch)
   const timestamp = new Date().getTime();
 
   // Generate a random number (between 0 and 1) and convert it to a string
-  const random = Math.random().toString(36).substr(2);
+  const random = Math.random().toString(36).substring(2);
 
   // Combine the timestamp and random number to create a unique ID
-  const uniqueID = timestamp + random;
+  const uniqueID = combineRandomly(timestamp.toString(), random.toString())
+  // console.log(uniqueID);
 
   return uniqueID;
 }
@@ -37,10 +62,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const uniqueID = localStorage.getItem('crdacode_UniqueUserID');
   if (!uniqueID) { // new user
     localStorage.setItem('crdacode_UniqueUserID', generateUniqueID());
-
-    Alpine.start()
   }
-})
+
+  Alpine.start()
+});
 
 // Basic Store Example in Alpine.
 window.addEventListener('alpine:initializing', () => {
