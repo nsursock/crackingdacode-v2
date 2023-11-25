@@ -33,7 +33,9 @@
       }
     </style>
     {% if not env.devMode %}
-      <script async src="https://cdn.splitbee.io/sb.js"></script>
+      <template x-if="!('crdacode_InternalTraffic' in localStorage) && window.location.hostname !== 'localhost'">
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
+      </template>
     {% endif %}
   </head>
   <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}" x-data="global">
