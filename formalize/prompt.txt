@@ -7,7 +7,7 @@ Output should be plain text.
 
 # Article
 1. Identify a single compelling word, create an attention-grabbing headline, and craft a concise paragraph (1 sentence) to promote the song.
-2. Then write sections 150-200 words long about the themes evoked in the song (with title):
+2. Then write sections 150-200 words long about the themes evoked in the song:
  - pain catastrophization,
  - the probabilistic aspect of life,
  - distance and space in a relationship,
@@ -20,9 +20,9 @@ Please adhere to the following guidelines:
 - Titles ought to encompass a judicious mix of commonplace, uncommon, powerful, and emotive words.
 - Sections should be comprised of 4 or 5 well-structured paragraphs.
 - Paragraphs should consist of 3 or 4 sentences each.
-3. Discern and designate 1 long tail keyword (a minimum of 4 words) pertinent to the section.
-4. Present an image prompt suitable for dall-e, illustrating the section with a photorealistic image.
-5. Indicate word count of each section.
+- Discern and designate 1 long tail keyword (a minimum of 4 words) pertinent to the section.
+- Present an image prompt suitable for dall-e, illustrating the section with a photorealistic image.
+- Indicate word count of each section.
 
 Output: Your response is anticipated in JSON format (not markdown) as per the specified structure:
 

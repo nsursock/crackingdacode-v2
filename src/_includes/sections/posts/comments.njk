@@ -20,7 +20,7 @@
                 Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
                     From: "translate-x-0"
                     To: "translate-x-full" -->
-        <div  x-show="$store.utils.isMobile() && percent == 100 && showCommentsPanel || !$store.utils.isMobile() && showCommentsPanel" x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:enter-start="translate-x-full " x-transition:enter-end="translate-x-0 " x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:leave-start="translate-x-0 " x-transition:leave-end="translate-x-full " class="pointer-events-auto w-screen max-w-md">
+        <div  x-show="$store.utils.isMobile() && percent == 100 && showCommentsPanel || !$store.utils.isMobile() && showCommentsPanel" x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:enter-start="translate-x-full " x-transition:enter-end="translate-x-0 " x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700 " x-transition:leave-start="translate-x-0 " x-transition:leave-end="translate-x-full " class="pointer-events-auto w-screen max-w-md lg:max-w-xl">
           <div class="flex h-full flex-col divide-y divide-gray-200 bg-white shadow-xl dark:divide-gray-800 dark:bg-gray-900">
             <div class="flex min-h-0 flex-1 flex-col overflow-y-scroll py-6">
               <div class="px-4 sm:px-6">
@@ -144,7 +144,7 @@
                                   <span x-text="$store.utils.formatDate(new Date(item.created_at), 'MMM dd, yyyy') + ' at ' + $store.utils.formatDate(new Date(item.created_at), 'kk:mm')"></span>
                                 </p>
                               </div>
-                              <p class="text-justify text-sm text-gray-500">
+                              <p class="text-sm text-gray-500">
                                 <span x-text="item.content"></span>
                               </p>
                             </div>

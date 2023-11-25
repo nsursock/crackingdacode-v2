@@ -35,6 +35,7 @@ export default () => ({
     // mixpanel.track(oneWord)
     // gtag('event', label + '_' + type)
     console.log(oneWord)
+    splitbee.track(oneWord)
     // plausible(label[0].toUpperCase() + label.slice(1, label.length))
     // {
     //   'app_name': 'myAppName',
