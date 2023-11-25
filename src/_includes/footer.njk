@@ -158,6 +158,14 @@
       {# {% endif %} #}
     </div>
   </div>
+
+  {% if env.environment == "production" %}
+    <template x-if="!('crdacode_InternalTraffic' in localStorage) && window.location.hostname !== 'localhost'">
+      <div>
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
+      </div>
+    </template>
+  {% endif %}
 </section>
 
 <script>
