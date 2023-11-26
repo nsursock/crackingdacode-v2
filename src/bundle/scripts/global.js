@@ -76,7 +76,9 @@ export default () => ({
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
       const percentage = (scrollPosition / documentHeight) * 100;
 
-      this.percent = Math.round(percentage);
+      // dirty hack but it works
+      this.percent = Math.round(percentage * 100 / 75); 
+      if (Alpine.store('utils').isMobile()) this.percent = Math.round(this.percent * 100 / 80)
       // console.log(`User has read ${this.percent.toFixed(2)}% of the article`);
 
       const updateStep = (step, label) => {
