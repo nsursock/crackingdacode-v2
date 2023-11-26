@@ -5,11 +5,11 @@ import intersect from '@alpinejs/intersect'
 Alpine.plugin(intersect)
 
 import global from './scripts/global.js'
-// import form from './form.js'
+import form from './scripts/form.js'
 // import testimonials from './testimonials.js'
 
 Alpine.data('global', global)
-// Alpine.data('form', form)
+Alpine.data('form', form)
 // Alpine.data('testimonials', testimonials)
 
 import { format, formatRelative, formatDistance } from 'date-fns'
