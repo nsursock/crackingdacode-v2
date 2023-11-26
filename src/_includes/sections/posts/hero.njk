@@ -84,9 +84,9 @@
               {% endif %}
             {% endfor %}
           </div>
-          <template x-if="'{{ featured }}'.includes('unsplash') && tags.includes('processed')">
+          <template x-if="'{{ featured }}'.includes('unsplash') && (tags.includes('processed') || tags.includes('critic'))">
             <div class="mt-8 -mb-4 sm:mb-8 text-center sm:flex sm:justify-center">
-              <div class="relative rounded-full px-5 py-2 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <div class="relative rounded-full px-5 py-2 text-sm leading-6 dark:text-gray-500 text-gray-600 ring-1 dark:ring-gray-100/10 dark:hover:ring-gray-100/20 ring-gray-900/10 hover:ring-gray-900/20">
                 <div x-data="{ name: '{{ name }}', handle: '{{ handle }}' }">
                         Photo by
                         <a class="underline" :href="`https://unsplash.com/${handle}?utm_source=crackingdacode&utm_medium=referral`">
