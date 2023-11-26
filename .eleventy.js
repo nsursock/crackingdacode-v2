@@ -1,5 +1,6 @@
 const yaml = require('js-yaml')
 const format = require('date-fns/format')
+const natural = require('natural');
 const { devMode, statPwd } = require('./src/_data/env')
 const websiteId = 'ca5ab971-2008-4b4e-b29b-291db540c3af'
 
@@ -41,8 +42,39 @@ module.exports = function (eleventyConfig) {
       )
       return [...prev, [year, filteredPosts]]
     }, [])
-    
+
     return postsByYear
+  })
+
+  eleventyConfig.addCollection('related', function (collectionApi) {
+    return function (currentPost) {
+      // Get all posts
+      const allPosts = collectionApi.getAll();
+
+      // Filter posts with the "featured" tag
+      const featuredPosts = allPosts.filter(post => post.data.tags && post.data.tags.includes('blog'));
+
+      // Tokenize and stem the content of the current post
+      const tokenizer = new natural.WordTokenizer();
+      const stemmer = natural.PorterStemmer;
+      const currentTokens = [...new Set(tokenizer.tokenize(currentPost.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')))].map(token => stemmer.stem(token));
+
+      // Calculate Jaro-Winkler similarity and sort the featured posts
+      const sortedFeaturedPosts = featuredPosts
+        .map(post => {
+          const postTokens = [...new Set(tokenizer.tokenize(post.templateContent.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '')))].map(token => stemmer.stem(token));
+          const similarity = natural.JaroWinklerDistance(currentTokens.join(' '), postTokens.join(' '));
+          return { post, similarity };
+        })
+        .filter(entry => entry.similarity > 0.3) // Adjust threshold as needed
+        .sort((a, b) => b.similarity - a.similarity)
+        .map(entry => entry.post);
+
+      // Take the top 3 most related posts
+      const top3RelatedPosts = sortedFeaturedPosts.slice(1, 4);
+
+      return top3RelatedPosts;
+    };
   })
 
   // Statistics functions
@@ -82,7 +114,7 @@ module.exports = function (eleventyConfig) {
 
     tops = tops.map((top) => {
       const index = posts.findIndex((post) => {
-        return post.url.split('/')[2] === top.x.split('/')[2] 
+        return post.url.split('/')[2] === top.x.split('/')[2]
       })
       if (index !== -1) return posts[index]
     }).filter((top) => top !== undefined)
