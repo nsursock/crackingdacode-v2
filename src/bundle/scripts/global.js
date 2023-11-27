@@ -45,6 +45,15 @@ export default () => ({
     // }
   },
 
+  // Function to check if a URL contains 'posts' followed by something
+  containsPosts(url) {
+    // Define a regular expression pattern
+    var pattern = /posts\/.+/;
+
+    // Test the URL against the pattern
+    return pattern.test(url);
+  },
+
   splitHeadlineBalanced(headline) {
     const words = headline.split(' ');
     const totalWords = words.length;
@@ -77,7 +86,7 @@ export default () => ({
       const percentage = (scrollPosition / documentHeight) * 100;
 
       // dirty hack but it works
-      this.percent = Math.round(percentage * 100 / 75); 
+      this.percent = Math.round(percentage * 100 / 75);
       if (Alpine.store('utils').isMobile()) this.percent = Math.round(this.percent * 100 / 80)
       // console.log(`User has read ${this.percent.toFixed(2)}% of the article`);
 
