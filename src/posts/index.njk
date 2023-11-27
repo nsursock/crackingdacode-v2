@@ -1,11 +1,16 @@
 ---
 layout: layouts/page.njk
-title: Browse Articles  
 description: Explore our meticulously curated posts catalog, offering a diverse array of insightful articles spanning various topics, meticulously organized for your convenience.
 featured: https://images.unsplash.com/photo-1561187273-0d2494d76346?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 alt: low-angle photo gray top road
 name: Jake Weirick
 handle: weirick
+pagination:
+  data: collections.blog
+  size: 3
+  reverse: true
+eleventyComputed:
+  title: Browse Articles (Page {{ pagination.pageNumber + 1 }})
 ---
 
 {% block head %}
@@ -23,7 +28,7 @@ handle: weirick
       <div class="">
         <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Popular Posts</h2>
         {% set postslist = collections.posts | top %}
-        <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
+        <ol class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
           {% for post in postslist %}
             {% include 'partials/post-card.njk' %}
           {% endfor %}
@@ -34,11 +39,12 @@ handle: weirick
     <div class="">
       <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Latest Posts</h2>
       {% set postslist = collections.posts | reverse %}
-      <ol x-data="{ showArticle: false }" class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
-        {% for post in postslist %}
+      <ol class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
+        {% for post in pagination.items %}
           {% include 'partials/post-card.njk' %}
         {% endfor %}
       </ol>
+      {% include 'partials/pagination.njk' %}
     </div>
 
   </div>
