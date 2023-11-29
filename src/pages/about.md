@@ -1,17 +1,22 @@
 ---
-layout: layouts/base.njk
-title: About 
-title2: And The Grail
-description: An artist at war with the world because the dead rule the living. Music is the only way out!
+layout: layouts/about.njk
+title: Delving into My Musical Passion  
+title2: and the Purpose Behind This
+description: In a world where the deceased reign over the living, an artist wages a musical war for freedom—where every note is a step towards liberation.
 date: 2022-06-07T04:40:32Z
 author: Nicolas Sursock
-featured: https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop
+featured: https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt: two person standing on gray tile paving
+name: Ian Schneider
+handle: goian
 track: Little Wing
 versions:
     - artist: Jimi Hendrix
       link: https://apple.co/3azWESt
     - artist: Corinne Bailey Rae
       link: https://apple.co/3GX8qCz
+permalink: /about
+tags: [processed]
 ---
 
 I came into the world in Beirut on the 5th of October, 1980, coincidentally sharing my birthday with both of my grandfathers. This momentous occasion, however, unfolded in the midst of a turbulent period for Lebanon, marked by a devastating Civil War that compelled many Lebanese families, including my own, to seek refuge abroad.
