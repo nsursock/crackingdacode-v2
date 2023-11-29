@@ -101,6 +101,7 @@
                   </button>
                 </div>
               </div>
+              {% include 'partials/modals/donation.njk' %}
             </div>
             {# <form class="max-w-sm">
             <h2 class="font-display text-sm font-semibold tracking-wider text-gray-900">Sign up for our newsletter</h2>
@@ -189,42 +190,68 @@
   }
   function dataCta() {
     return {
-      isFetching: false, amount: '0.00', //(Math.random() * 100).toFixed(2),
+      isFetching: false,
+      amount: 3.00,
       currency: 'USD',
       stripe: null,
+      elements: null,
+      intentId: '',
       async pay() {
-        //        this.registerEvent('donate', 'click')
-
+        this.isFetching = !this.isFetching
         await loadScript('https://js.stripe.com/v3')
         this.stripe = Stripe('{{ env.stripeKey }}')
-        var purchase = {
+        const data = {
           amount: this.amount,
-          currency: this.currency,
-          domain: window.location.origin
+          currency: this.currency
         }
-        this.isFetching = true
-        fetch('/api/payment', {
+        const response = await fetch('/api/payment?mode=donate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(purchase)
+          body: JSON.stringify(data)
         })
-          .then((response) => response.json())
-          .then((session) => {
-            this
-              .stripe
-              .redirectToCheckout({sessionId: session.id})
-          })
-          .then(function (result) {
-            if (result.error) {
-              console.error('Error:', result.error.message)
-            }
-          })
-          .catch(function (error) {
-            console.error('Error:', error)
-          })
+        const json = await response.json()
+        const clientSecret = json.client_secret
+        this.intentId = json.intentId
+
+        const appearance = {
+          theme: document
+            .documentElement
+            .classList
+            .contains('dark')
+              ? 'night'
+              : 'stripe',
+          variables: {
+            fontFamily: 'Aldrich'
+          }
         }
+        const options = {
+          clientSecret: clientSecret,
+          // Fully customizable with appearance API.
+          appearance: appearance,
+          fonts: [
+            {
+              family: 'Aldrich',
+              src: 'url(/assets/fonts/aldrich/aldrich-v17-latin-regular.ttf)',
+              weight: '400',
+              display: 'block',
+              style: 'normal'
+            }
+          ]
+        }
+        // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 2
+        this.elements = this
+          .stripe
+          .elements(options)
+        // Create and mount the Payment Element
+        const paymentElement = this
+          .elements
+          .create('payment')
+        paymentElement.mount('#payment-element')
+        this.showDonationModal = !this.showDonationModal
+        this.isFetching = !this.isFetching
+      }
     }
   }
 </script>

@@ -1,0 +1,130 @@
+<div class="relative z-[500]" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="showDonationModal" x-cloak>
+  <!-- Background backdrop, show/hide based on modal state.
+    
+    Entering: "ease-out duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+    Leaving: "ease-in duration-200"
+        From: "opacity-100"
+        To: "opacity-0" -->
+  <div x-show="showDonationModal" x-transition:enter=" ease-out duration-300 " x-transition:enter-start="opacity-0 " x-transition:enter-end="opacity-100  " x-transition:leave=" ease-in duration-200 " x-transition:leave-start="opacity-100 " x-transition:leave-end="opacity-0 " class="fixed inset-0 bg-gray-500 bg-opacity-75 backdrop-blur backdrop-filter transition-opacity"></div>
+  <div class="fixed inset-0 z-10 overflow-y-auto">
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <!-- Modal panel, show/hide based on modal state.
+            
+            Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+            Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" -->
+      <div x-show="showDonationModal" @click.outside="showDonationModal = !showDonationModal" x-transition:enter=" ease-out duration-300 " x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95 " x-transition:enter-end="opacity-100 translate-y-0 md:scale-100  " x-transition:leave=" ease-in duration-200 " x-transition:leave-start="opacity-100 translate-y-0 md:scale-100 " x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95 " class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all dark:bg-gray-800 sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+        <div>
+
+          <div x-data="dataDonation()">
+            <div>
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
+                <!-- Heroicon name: outline/check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11
+                                            0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="mt-3 text-center sm:mt-5">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-50" id="modal-title">Payment</h3>
+                <div class="mt-2">
+
+                  <p class="text-sm text-gray-500 dark:text-gray-400">This website utilizes Stripe for secure payment processing, prioritizing the safety of your information.</p>
+
+                </div>
+              </div>
+            </div>
+            <form id="payment-form" class="mt-5 sm:mt-6" @submit.prevent="pay">
+              <div class="mb-3">
+                <label for="email-address" class="block text-sm font-medium text-gray-900 dark:text-gray-100">Email address</label>
+                <input x-model="email" placeholder="john.doe@example.com" type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 block w-full rounded-md border-gray-300 text-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              </div>
+              <div id="payment-element">
+                <!-- Elements will create form elements here -->
+              </div>
+              <button :disabled="isFetching2" id="submit" class="mt-5 inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-6 sm:text-sm">
+                <span x-show="isFetching2" class="inline-flex">
+                  <svg class="mr-3 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Processing...
+                </span>
+                <span x-show="!isFetching2" x-text="`Pay ${currency} ${amount}`"></span>
+              </button>
+              <template x-if="error">
+                <div class="mt-1 flex items-center rounded-md border border-transparent bg-red-600 py-2 px-3 text-sm font-medium text-red-100" id="error-message">
+                  <!-- Display error message to your customers here -->
+                  <span class="flex h-6 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewbox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                  <span class="ml-2" x-text="error"></span>
+                </div>
+              </template>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function dataDonation() {
+    return {
+      isFetching2: false,
+      email: '',
+      error: '',
+      
+      async pay() {
+        this.isFetching2 = true
+        this.error = ''
+        this.registerEvent('donate', 'click')
+        const {error} = await this
+          .stripe
+          .confirmPayment({
+            // `Elements` instance that was used to create the Payment Element
+            elements: this.elements,
+            redirect: 'if_required',
+            confirmParams: {
+              return_url: `${window.location.href}/?success=true&id=${this.intentId}`,
+              payment_method_data: {
+                billing_details: {
+                  email: this.email
+                }
+              }
+            }
+          })
+        if (error) {
+          // This point will only be reached if there is an immediate error when confirming the payment. Show error to your
+          // customer (for example, payment details incomplete)
+          this.isFetching2 = false
+          this.error = error.message
+          console.error(error)
+
+        } else {
+          this.isFetching2 = false
+          this.isFetching = false
+          this.showDonationModal = !this.showDonationModal
+          this.showNotification = !this.showNotification
+          this.success = true
+          this.status = 'Payment Confirmed'
+          this.details = 'Your donation was correctly received. Thank you for helping us thrive!'
+
+          // Your customer will be redirected to your `return_url`. For some payment methods like iDEAL, your customer will be
+          // redirected to an intermediate site first to authorize the payment, then redirected to the `return_url`.
+        }
+      }
+    }
+  }
+</script>

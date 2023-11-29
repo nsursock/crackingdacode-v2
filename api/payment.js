@@ -63,6 +63,17 @@ export default async function handler(request, response) {
       response.status(200).json({ client_secret: intent.client_secret, intentId: intent.id })
       break;
 
+    case 'donate': {
+      const { currency, amount } = request.body
+      const intent = await stripe.paymentIntents.create({
+        amount: Math.round(parseFloat(amount) * 100),
+        currency: currency,
+        automatic_payment_methods: { enabled: true },
+      })
+      response.status(200).json({ client_secret: intent.client_secret, intentId: intent.id })
+    }
+      break;
+
     default:
       const { currency, amount, domain } = request.body
       const session = await stripe.checkout.sessions.create({

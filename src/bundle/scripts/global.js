@@ -3,6 +3,7 @@ export default () => ({
   // For toggling panels and modals
   showCommentsPanel: false,
   showSharingModal: false,
+  showDonationModal: false,
 
   // For scrolling detection
   landingPageOffset: 400,
