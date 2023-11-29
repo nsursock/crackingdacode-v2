@@ -84,12 +84,9 @@
     return {
       isFetching2: false,
       email: '',
-      error: '',
-      
+
       async pay() {
         this.isFetching2 = true
-        this.error = ''
-        this.registerEvent('donate', 'click')
         const {error} = await this
           .stripe
           .confirmPayment({
@@ -110,9 +107,10 @@
           // customer (for example, payment details incomplete)
           this.isFetching2 = false
           this.error = error.message
-          console.error(error)
+          //          console.error(error)
 
         } else {
+          this.registerEvent('donate', 'click')
           this.isFetching2 = false
           this.isFetching = false
           this.showDonationModal = !this.showDonationModal

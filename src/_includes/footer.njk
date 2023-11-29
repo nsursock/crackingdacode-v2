@@ -191,12 +191,14 @@
   function dataCta() {
     return {
       isFetching: false,
+      error: '',
       amount: 3.00,
       currency: 'USD',
       stripe: null,
       elements: null,
       intentId: '',
       async pay() {
+        this.error = ''
         this.isFetching = !this.isFetching
         await loadScript('https://js.stripe.com/v3')
         this.stripe = Stripe('{{ env.stripeKey }}')
