@@ -1,5 +1,5 @@
 ---
-layout: layouts/about.njk
+layout: layouts/post.njk
 title: Delving into My Musical Passion  
 title2: and the Purpose Behind This
 description: In a world where the deceased reign over the living, an artist wages a musical war for freedom—where every note is a step towards liberation.
@@ -15,7 +15,6 @@ versions:
       link: https://apple.co/3azWESt
     - artist: Corinne Bailey Rae
       link: https://apple.co/3GX8qCz
-permalink: /about
 tags: [processed]
 ---
 
