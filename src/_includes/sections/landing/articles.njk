@@ -10,27 +10,8 @@
         <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">Please peruse the most widely viewed posts featured below. Alternatively, you are welcome to delve into our latest publications, freshly served for your reading pleasure.</p>
       </div>
 
-      {% if not env.devMode %}
-        <div class="">
-          <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Popular Posts</h2>
-          {% set postslist = collections.posts | top %}
-          <ol class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
-            {% for post in postslist %}
-              {% include 'partials/post-card.njk' %}
-            {% endfor %}
-          </ol>
-        </div>
-      {% endif %}
-
-      <div class="">
-        <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Latest Posts</h2>
-        {% set postslist = collections.posts | reverse %}
-        <ol class="mx-auto mt-2 grid max-w-2xl grid-cols-1 gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
-          {% for post in postslist.slice(0, 9) %}
-            {% include 'partials/post-card.njk' %}
-          {% endfor %}
-        </ol>
-      </div>
+      {% set articles = collections.posts %}
+      {% include 'partials/postlist.njk' %}
 
     </div>
   </div>

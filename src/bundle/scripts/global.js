@@ -1,5 +1,17 @@
 export default () => ({
 
+  // For protection modal
+  showAuthLoginModal: false,
+  showAuthSignupModal: false,
+  email: '',
+  name: '',
+  password: '',
+  paymentMade: false,
+  currentStep: 1,
+  discount: 50,
+  threshold: 25,
+  processFinished: false,
+
   // For toggling panels and modals
   showCommentsPanel: false,
   showSharingModal: false,
@@ -82,14 +94,12 @@ export default () => ({
       const articleElement = document.querySelector('#article');
       if (!articleElement) return;
 
-      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const articleHeight = articleElement.offsetHeight;
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-      const percentage = (scrollPosition / documentHeight) * 100;
+      const percentage = (scrollPosition / articleHeight) * 100;
 
-      // dirty hack but it works
-      this.percent = Math.round(percentage * 100 / 75);
-      if (Alpine.store('utils').isMobile()) this.percent = Math.round(this.percent * 100 / 80)
-      // console.log(`User has read ${this.percent.toFixed(2)}% of the article`);
+      this.percent = Math.round(percentage);
+      // console.log(`User has read ${percentage.toFixed(2)}% of the article`);
 
       const updateStep = (step, label) => {
         if (
