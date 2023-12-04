@@ -1,11 +1,6 @@
 export default () => ({
 
   // For protection modal
-  showAuthLoginModal: false,
-  showAuthSignupModal: false,
-  email: '',
-  name: '',
-  password: '',
   paymentMade: false,
   currentStep: 1,
   discount: 50,
@@ -80,6 +75,25 @@ export default () => ({
     const secondPart = words.slice(middle).join(' ');
 
     return [firstPart.replace(/"/g, ''), secondPart.replace(/"/g, '')];
+  },
+
+  async checkPermission(postsDirectory, codeArticle) {
+    if (!Alpine.store('auth').user)
+      return false
+
+    const res = await fetch('/api/payment?mode=check', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: Alpine.store('auth').user.email,
+        article: window.location.pathname,
+        url: `/${postsDirectory}/${codeArticle}/`
+      }),
+    })
+    const json = await res.json()
+    return json.data.length !== 0
   },
 
   async init() {

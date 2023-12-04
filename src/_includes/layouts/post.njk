@@ -69,7 +69,8 @@ eleventyComputed:
               <h1 class="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">{{ headline }}</h1>
               <p class="mt-6 text-xl lg:text-2xl leading-8 dark:text-gray-300 text-gray-700">{{ paragraph }}</p>
             </div>
-            <div id="article" class="prose lg:prose-xl dark:prose-invert dark:text-gray-400 max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+            <div id="article" x-effect="if ($store.auth.user) checkPermission('posts', 'principles-for-a-liberated-existence').then(cond => paymentMade = cond)"
+              class="prose lg:prose-xl dark:prose-invert dark:text-gray-400 max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               {{ content | safe}}
               ({{ content | wordcount }} words)
             </div>
