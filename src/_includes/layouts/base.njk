@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {# <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' http://localhost:8888;"> #}
+    {# <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-eval' 'unsafe-inline'; img-src 'self' http://localhost:8888 https://www.w3.org https://images.unsplash.com; frame-src 'self' http://localhost:8888;"> #}
     <title>{{ title }} | Cracking Da Code</title>
     <meta name="description" content="{{ description }}">
     <!-- Add any common styles or meta tags here -->
@@ -35,7 +35,8 @@
     </style>
     
   </head>
-  <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}" x-data="global">
+  <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}" x-data="global"
+     x-effect="if ($store.auth.user) checkPermission('posts', 'principles-for-a-liberated-existence').then(cond => paymentMade = cond)">
     {{ content | safe }}
     {% include '../footer.njk' %}
   </body>

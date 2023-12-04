@@ -6,7 +6,7 @@
   "scripts": {
     "build:11ty": "eleventy --quiet",
     "build:css": "tailwindcss -i src/bundle/main.pcss -o dist/assets/main.bundle.css --minify --postcss",
-    "build:js": "esbuild src/bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --platform=browser",
+    "build:js": "esbuild src/bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --minify --platform=browser",
     "clean": "rm -rf dist",
     "dev:11ty": "eleventy --serve --port=$PORT",
     "dev:css": "tailwindcss -i src/bundle/main.pcss -o dist/assets/main.bundle.css --watch --postcss",

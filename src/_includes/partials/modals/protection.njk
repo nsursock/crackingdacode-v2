@@ -274,7 +274,7 @@
               </div>
             </div>
             <div class="mt-5 sm:mt-6">
-              <button @click="processFinished = true; registerEvent('step4', 'focus'); gtag('event', 'conversion', { 
+              <button @click="processFinished = true; registerEvent('step4', 'focus'); typeof gtag !== 'undefined' && gtag('event', 'conversion', { 
                 'send_to': 'AW-824380923/R0R1CMLumO4YEPubjIkD',
                 'value': price,
                 'currency': 'EUR', 'transaction_id': id })
@@ -300,7 +300,7 @@
           </section>
           #}
           <!-- This example requires Tailwind CSS v2.0+ -->
-          <nav class="mt-3 flex items-center justify-center" aria-label="Progress">
+          <nav class="mt-6 flex items-center justify-center" aria-label="Progress">
             <p class="text-sm font-medium dark:text-white">
               Step
               <span x-text="`${currentStep} of ${numSteps}`"></span>
