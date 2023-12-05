@@ -25,7 +25,7 @@ menus:
         icon: 'choice'
       - name: Settings
         description: Personalize settings, including photos and occupation, in this configuration section.
-        route: /settings
+        route: /settings.html
         icon: 'settings'
   - name: Services
     route: /services
