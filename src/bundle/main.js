@@ -12,6 +12,19 @@ Alpine.data('global', global)
 Alpine.data('form', form)
 // Alpine.data('testimonials', testimonials)
 
+Alpine.directive(
+  'else',
+  (el, { expression, modifiers }, { evaluateLater, cleanup }) => {
+    const previous = el.previousElementSibling
+
+    if (!previous || previous.tagName.toLowerCase() !== 'template' || !previous.hasAttribute('x-if')) {
+      throw new Error('`x-else` encountered without a previous `x-if` sibling.')
+    }
+
+    el.setAttribute('x-if', `! (${previous.getAttribute('x-if')})`)
+  }
+)
+
 import { format, formatRelative, formatDistance } from 'date-fns'
 
 function combineRandomly(str1, str2) {
@@ -75,9 +88,11 @@ window.addEventListener('alpine:initializing', () => {
       else if (dateFormat === 'distance') return formatDistance(date, new Date(), { addSuffix: true })
       else return format(date, dateFormat)
     },
+
     isMobile() {
       return this.getDeviceType() === 'Mobile'
     },
+
     getDeviceType() {
       const screenWidth = window.innerWidth;
 
