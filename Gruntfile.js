@@ -1,18 +1,18 @@
 module.exports = function (grunt) {
 
   grunt.initConfig({
-    uglify: {
-      options: {
-        compress: {
-          unused: true
-        }
-      },
-      my_target: {
-        files: {
-          'dist/assets/_main.js': ['dist/assets/_main.js'],
-        }
-      }
-    },
+    // uglify: {
+    //   options: {
+    //     compress: {
+    //       unused: true
+    //     }
+    //   },
+    //   my_target: {
+    //     files: {
+    //       'dist/assets/_main.js': ['dist/assets/_main.js'],
+    //     }
+    //   }
+    // },
     critical: {
       dist: {
         options: {
@@ -24,10 +24,15 @@ module.exports = function (grunt) {
           {
             width: 500,
             height: 900
-          }]
+          }],
         },
         files: [
-          { src: ['dist/index.html'], dest: 'dist/index.html' }
+          {
+            expand: true,
+            cwd: 'dist/', // Set the current working directory
+            src: ['index.html', 'posts/**/*.html'], // Specify source files
+            dest: 'dist/' // Specify the destination directory
+          }
         ]
       }
     }
