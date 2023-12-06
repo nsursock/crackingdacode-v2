@@ -4,12 +4,12 @@ menus:
     route: /
     icon: 'home'
   - name: About
-    route: /about.html
+    route: /posts/about-the-author-of-this-blog/
     icon: 'annotation'
     submenus:
       - name: Biography
         description: Gain insight into the author with a brief history to understand the person behind the website.
-        route: /about.html
+        route: /posts/about-the-author-of-this-blog/
         icon: 'dna'
       - name: Portfolio
         description: Discover the website creator's skills and details on how this site was made.

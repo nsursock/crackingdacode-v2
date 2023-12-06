@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: Delving into My Musical Passion  
-title2: and the Purpose Behind This
+title2: and the Purpose Behind All This
 description: In a world where the deceased reign over the living, an artist wages a musical war for freedom—where every note is a step towards liberation.
 date: 2022-06-07T04:40:32Z
 author: Nicolas Sursock
@@ -15,8 +15,7 @@ versions:
       link: https://apple.co/3azWESt
     - artist: Corinne Bailey Rae
       link: https://apple.co/3GX8qCz
-tags: [processed]
-permalink: about.html
+tags: [History,Creativity,Health,Wellness,Philosophy,processed]
 ---
 
 I came into the world in Beirut on the 5th of October, 1980, coincidentally sharing my birthday with both of my grandfathers. This momentous occasion, however, unfolded in the midst of a turbulent period for Lebanon, marked by a devastating Civil War that compelled many Lebanese families, including my own, to seek refuge abroad.
