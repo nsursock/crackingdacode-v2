@@ -16,6 +16,7 @@ versions:
     - artist: Corinne Bailey Rae
       link: https://apple.co/3GX8qCz
 tags: [processed]
+permalink: about.html
 ---
 
 I came into the world in Beirut on the 5th of October, 1980, coincidentally sharing my birthday with both of my grandfathers. This momentous occasion, however, unfolded in the midst of a turbulent period for Lebanon, marked by a devastating Civil War that compelled many Lebanese families, including my own, to seek refuge abroad.
