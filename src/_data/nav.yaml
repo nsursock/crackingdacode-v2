@@ -17,7 +17,7 @@ menus:
         icon: 'bolt'
       - name: Quizzes
         description: Take musical culture quizzes to gauge your knowledge level.
-        route: /quiz
+        route: /quizzes.html
         icon: 'choice'
       - name: Settings
         description: Personalize settings, including photos and occupation, in this configuration section.
