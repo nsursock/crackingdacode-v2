@@ -11,10 +11,6 @@ menus:
         description: Gain insight into the author with a brief history to understand the person behind the website.
         route: /posts/about-the-author-of-this-blog/
         icon: 'dna'
-      - name: Portfolio
-        description: Discover the website creator's skills and details on how this site was made.
-        route: /webdev
-        icon: 'folio'
       - name: Blog
         description: Explore a comprehensive list of articles on this anti-war music blog.
         route: /posts
