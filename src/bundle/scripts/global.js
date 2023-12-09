@@ -3,8 +3,8 @@ export default () => ({
   // For protection modal
   paymentMade: false,
   currentStep: 1,
-  discount: 50,
-  threshold: 25,
+  discount: 35,
+  threshold: 30,
   processFinished: false,
 
   // For toggling panels and modals
@@ -16,7 +16,7 @@ export default () => ({
   landingPageOffset: 400,
   lastScrollTop: window.scrollY || document.documentElement.scrollTop,
   isScrollingUp: false,
-  prevPercent: 0,
+  // prevPercent: 0,
   percent: 0,
   circumference: 30 * 2 * Math.PI,
   currStep: [],
@@ -100,7 +100,7 @@ export default () => ({
 
     window.addEventListener('scroll', () => {
 
-      this.prevPercent = this.percent
+      // this.prevPercent = this.percent
       var st = window.scrollY || document.documentElement.scrollTop
       this.isScrollingUp = st <= this.lastScrollTop
       this.lastScrollTop = st <= 0 ? 0 : st // for mobile or negative scrolling

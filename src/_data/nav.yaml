@@ -27,6 +27,26 @@ menus:
         description: Personalize settings, including photos and occupation, in this configuration section.
         route: /settings.html
         icon: 'settings'
+      - name: Contact
+        description: Connect with us easily through our contact page for inquiries.
+        route: /contact
+        icon: 'at-symbol'
+  - name: Critics
+    route: /critic
+    icon: 'id'
+    submenus:
+    - name: Songs
+      description: Analytical insights from distinguished critics on various songs.
+      route: /tags/song
+      icon: 'note'
+    - name: Albums
+      description: Expert evaluations and critiques of diverse music albums.
+      route: /tags/album
+      icon: 'circle'
+    - name: Artists
+      description: In-depth analyses by reputable critics on prominent music artists.
+      route: /tags/artist
+      icon: 'group'
   - name: Services
     route: /services
     icon: 'ticket'
@@ -75,6 +95,4 @@ menus:
         description: Get a great song recommendation that only requires production.
         route: /products
         icon: 'note'
-  - name: Contact
-    route: /contact
-    icon: 'at-symbol'
+  
