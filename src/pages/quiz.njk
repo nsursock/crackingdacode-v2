@@ -210,7 +210,7 @@ permalink: quizzes.html
                               </template>
                               <template x-if="leader.player.avatar">
                                 <img x-data="{ url: new URL(leader.player.avatar).pathname.replace('/storage/v1/object/public/', '') }" 
-                                class="object-cover h-10 w-10 rounded-full" :src="`https://crdacode.imgix.net/${url}?h=100&w=100&fm=webp`" alt="">
+                                class="object-cover h-10 w-10 rounded-full" :src="`https://crdacode.imgix.net/${url}?fit=facearea&facepad=2&h=100&w=100&fm=webp`" alt="">
                               </template>
                             </div>
                             <div class="ml-4">
