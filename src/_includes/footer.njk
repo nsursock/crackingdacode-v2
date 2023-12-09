@@ -5,10 +5,10 @@
 >
   <footer x-cloak x-show="isInViewport" class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 w-full sm:mt-32 lg:mt-40 dark:bg-gray-900">
     <div class="mx-auto max-w-2xl lg:max-w-none">
-      <div>
-        <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+      <div class="w-full">
+        <div class="gap-x-8 gap-y-16 flex flex-col md:flex-row md:justify-between md:items-center">
           <nav>
-            <ul role="list" class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <ul role="list" class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
               {% for menu in nav.menus %}
                 {% if menu.submenus %}
                   <li>
