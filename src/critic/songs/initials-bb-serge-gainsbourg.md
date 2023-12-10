@@ -1,14 +1,13 @@
 ---
 title: "Is 'Initials B.B.' by Serge Gainsbourg the Ultimate Ode to Desire?"
 description: Explore the timeless allure of 'Initials B.B.' – a musical masterpiece capturing passion, seduction, and the enigma of Brigitte Bardot in just three minutes.
-date: 2023-11-26T05:10:00Z
+date: 1968-04-01T12:00:00Z
 author: Nicolas Sursock
 featured: https://images.unsplash.com/photo-1516684402831-c151c11c6023?fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 alt: person touching clear shower glass
 name: Skyler King
 handle: skylerorking
 tags: [French Pop, Chanson, Baroque Pop, song]
-release: 1968
 layout: layouts/post.njk
 ---
 

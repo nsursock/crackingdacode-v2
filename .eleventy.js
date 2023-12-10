@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
   //   return items.slice(0, 9)
   // })
 
+  eleventyConfig.addFilter('log', value => {
+    console.log(value)
+  })
+
   eleventyConfig.addFilter('shuffle', function (array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
@@ -42,7 +46,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection('year', (collection) => {
-    const posts = collection.getFilteredByTag('blog')
+    const posts = collection.getFilteredByGlob("src/**/*.md"); //collection.getFilteredByTag('blog')
     const years = posts.map((post) => post.date.getFullYear())
     const uniqueYears = [...new Set(years)]
 

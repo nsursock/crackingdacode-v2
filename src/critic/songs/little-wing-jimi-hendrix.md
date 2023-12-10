@@ -1,14 +1,13 @@
 ---
 title: "Unveiling Hendrix's 'Little Wing': A Soulful Lyrical Masterpiece Explored"
 description: "Dive into the serene beauty of Hendrix's 'Little Wing.' Explore the song's soulful depths and enduring legacy in music history."
-date: 2023-12-09T05:10:00Z
+date: 1967-10-25T00:00:00Z 
 author: Nicolas Sursock
-featured: https://images.unsplash.com/photo-1516684402831-c151c11c6023?fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-alt: person touching clear shower glass
-name: Skyler King
-handle: skylerorking
+featured: https://images.unsplash.com/photo-1558690295-5dc6a19d8327?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt: angel bas relief photo
+name: Cosmin Gurau
+handle: cosmingurau
 tags: [Blues Rock, Psychedelic Rock, Soul, R&B, Folk Rock, song]
-release: 1967
 layout: layouts/post.njk
 ---
 

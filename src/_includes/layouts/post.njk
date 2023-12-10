@@ -152,11 +152,20 @@ eleventyComputed:
           <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">I am pleased to present to you a comprehensive list of articles that have been curated with the intention of aligning with your potential areas of interest.</p>
         </div>
 
+        {% set slug = page.url.split('/')[1] %}
+        {% if slug == 'critic' %}
+          {% set collectionName = page.url.split('/')[2] %}
+          {% set modifiedSlug = collectionName.slice(0, -1) %}
+        {% else %}
+          {% set modifiedSlug = 'posts' %}
+        {% endif %}
+        {% set articles = collections[modifiedSlug] %}
+
         <div class="">
           <h2 class="mt-10 text-lg font-medium leading-6 text-gray-900 dark:text-white">Sequential Posts</h2>
           <ol class="mx-auto mt-2 flex flex-col lg:flex-row max-w-2xl gap-4 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-2 sm:pt-4 lg:mx-0 lg:max-w-none ">
-            {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-            {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+            {% set previousPost = articles | getPreviousCollectionItem(page) %}
+            {% set nextPost = articles | getNextCollectionItem(page) %}
             {% if previousPost %}
               {% set post = previousPost %}
               {% include 'partials/postcard.njk' %}
@@ -168,9 +177,7 @@ eleventyComputed:
           </ol>
         </div>
 
-        {% set articles = collections.posts %}
         {% include 'partials/postlist.njk' %}
-
       </div>
     </div>
   {% endif %}
