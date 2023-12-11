@@ -35,14 +35,26 @@ menus:
       description: Analytical insights from distinguished critics on various songs.
       route: /tags/song
       icon: 'note'
+      photo: https://images.unsplash.com/photo-1471029093449-ca61fffdc2af?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      alt: vinyl record on white vinyl player
+      title: Chart-topping Melodic Moments
+      description2: "Dive into individual tracks that capture the essence of an artist’s vision, encapsulate stories, and define moments in music history. From chart-toppers to hidden gems, explore the layers behind each melody and lyric that resonates with listeners."
     - name: Albums
       description: Expert evaluations and critiques of diverse music albums.
       route: /tags/album
       icon: 'circle'
+      photo: https://images.unsplash.com/photo-1513746347121-4cfd77c7dc37?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      alt: brown wooden shelf
+      title: Iconic Album Breakdown Archives
+      description2: "Unpack the thematic and sonic journeys that artists craft within their albums. This section reviews collections of work that showcase creative evolution, coherence, and the impact they have on the musical landscape at the time of their release."
     - name: Artists
       description: In-depth analyses by reputable critics on prominent music artists.
       route: /tags/artist
       icon: 'group'
+      photo: https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      alt: man in gray quarter-sleeved shirt singing
+      title: Artist Spotlights, Profiles & Journeys
+      description2: "Focus on the musicians and bands behind the magic. Discover the biographies, inspirations, and the creative processes that shape the identities of both emerging talents and established icons within the diverse world of music."
   - name: Services
     route: /services
     icon: 'ticket'
