@@ -6,15 +6,15 @@ layout: layouts/base.njk
 
 {% include 'header.njk' %}
 
-<div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+<div class="relative isolate overflow-hidden dark:bg-gray-900 bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
   <div class="absolute inset-0 -z-10 overflow-hidden">
-    <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+    <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 dark:stroke-gray-800 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
       <defs>
         <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
           <path d="M100 200V.5M.5 .5H200" fill="none"/>
         </pattern>
       </defs>
-      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50 dark:fill-gray-850">
         <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0"/>
       </svg>
       <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"/>
@@ -24,9 +24,9 @@ layout: layouts/base.njk
     <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div class="lg:pr-4">
         <div class="lg:max-w-lg">
-          <p class="text-base font-semibold leading-7 text-indigo-600">Insightful Analysis</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Music Criticism Matters</h1>
-          <p class="mt-6 text-2xl leading-8 text-gray-700">Music critics on a blog provide essential insights and benefits, serving both listeners and artists alike.</p>
+          <p class="text-base font-semibold leading-7 dark:text-indigo-500 text-indigo-600">Insightful Analysis</p>
+          <h1 class="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">Music Criticism Matters</h1>
+          <p class="mt-6 text-2xl leading-8 dark:text-gray-300 text-gray-700">Music critics on a blog provide essential insights and benefits, serving both listeners and artists alike.</p>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@ layout: layouts/base.njk
           {% if menu.name == 'Critics' %}
             <div class="grid grid-cols-1 items-center w-full mx-auto gap-5 mt-10">
               {% for submenu in menu.submenus %}
-                <a href="{{ submenu.route }}" class=" mb-6 max-w-md lg:max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden xl:max-w-xl
+                <a href="{{ submenu.route }}" class=" mb-6 max-w-md lg:max-w-lg mx-auto bg-white dark:bg-gray-850 rounded-xl shadow-lg overflow-hidden xl:max-w-xl
             2xl:max-w-2xl ">
                   <div class="xl:flex xl:h-full">
                     <div class="xl:flex-shrink-0">
@@ -44,7 +44,7 @@ layout: layouts/base.njk
                         class="h-48 w-full object-cover xl:h-full xl:w-48" 
                         data-src="{{ submenu.photo }}&q=80&w=480&h=320&fm=webp" alt="{{ submenu.alt }}"/>
                     </div>
-                    <div class="p-8 dark:bg-gray-800">
+                    <div class="p-8 dark:bg-gray-850">
                       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                         {{ submenu.name }}
                       </div>
@@ -66,7 +66,7 @@ layout: layouts/base.njk
     </div>
     <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div class="lg:pr-4">
-        <div class="prose-lg lg:prose-xl max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+        <div class="prose lg:prose-xl dark:prose-invert dark:text-gray-400 max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
 
           <p>Critics often have extensive knowledge about music history, genres, and theory. Their educated perspectives can illuminate nuances in music that average listeners might overlook, enriching the overall appreciation of the work.</p>
           <p>Good critics place music within a broader cultural and social context, helping readers understand the significance of certain trends, lyrics or compositional techniques within the prevailing socio-political landscape.</p>
