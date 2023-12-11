@@ -30,7 +30,7 @@ layout: layouts/base.njk
         </div>
       </div>
     </div>
-    <div class="lg:-ml-12 lg:-mt-12 lg:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+    <div class="order-last lg:-ml-12 lg:-mt-12 lg:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
       {% if nav.menus %}
         {% for menu in nav.menus %}
           {% if menu.name == 'Critics' %}
@@ -40,7 +40,9 @@ layout: layouts/base.njk
             2xl:max-w-2xl ">
                   <div class="xl:flex xl:h-full">
                     <div class="xl:flex-shrink-0">
-                      <img class="h-48 w-full object-cover xl:h-full xl:w-48" src="{{ submenu.photo }}&q=80&w=480&h=320&fm=webp" alt="{{ submenu.alt }}"/>
+                      <img x-intersect.once="$el.src = $el.dataset.src" 
+                        class="h-48 w-full object-cover xl:h-full xl:w-48" 
+                        data-src="{{ submenu.photo }}&q=80&w=480&h=320&fm=webp" alt="{{ submenu.alt }}"/>
                     </div>
                     <div class="p-8 dark:bg-gray-800">
                       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
