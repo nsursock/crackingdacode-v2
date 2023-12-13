@@ -18,9 +18,9 @@
             Leaving: "ease-in duration-200"
                 From: "opacity-100 translate-y-0 sm:scale-100"
                 To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" -->
-      <div x-show="(!$store.auth.user || ($store.auth.user && !paymentMade)) && percent > threshold && !processFinished" x-transition:enter=" ease-out duration-300 " x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95 " x-transition:enter-end="opacity-100 translate-y-0 md:scale-100  " x-transition:leave=" ease-in duration-200 " x-transition:leave-start="opacity-100 translate-y-0 md:scale-100 " x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95 " class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all dark:bg-gray-800 sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+      <div x-data="protection" x-show="(!$store.auth.user || ($store.auth.user && !paymentMade)) && percent > threshold && !processFinished" x-transition:enter=" ease-out duration-300 " x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95 " x-transition:enter-end="opacity-100 translate-y-0 md:scale-100  " x-transition:leave=" ease-in duration-200 " x-transition:leave-start="opacity-100 translate-y-0 md:scale-100 " x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95 " class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all dark:bg-gray-800 sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
         <div
-          x-data="{ 
+          x-data="{ stripeKey: '{{ env.stripeKey }}',
                     numSteps: 4, 
                     price: ((Math.round('{{ protection }}' - (window.location.search.includes('discount=true') ? 
                         ('{{ protection }}' * discount / 100) : 0)) * 500) / 500 - 0.05).toFixed(2) }"
@@ -51,7 +51,7 @@
               <button @click="currentStep++; registerEvent('step1', 'focus')" class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Proceed</button>
             </div>
           </div>
-          <div x-show="currentStep === 2" x-data="dataCodeAuth()">
+          <div x-show="currentStep === 2">
             <div>
               <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
                 <!-- Heroicon name: outline/check -->
@@ -200,7 +200,7 @@
               </div>
             </template>
           </div>
-          <div x-show="currentStep === 3" x-data="dataCodePayment()" x-intersect.once="initStripe()">
+          <div x-show="currentStep === 3" x-intersect.once="initStripe()">
             <div>
               <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
                 <!-- Heroicon name: outline/check -->
@@ -348,214 +348,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  function loadScript(src) {
-    return new Promise(function (resolve, reject) {
-      var s
-      s = document.createElement('script')
-      s.src = src
-      s.onload = resolve
-      s.onerror = reject
-      if (document.body == null) {
-        document.head.appendChild(s)
-      } else {
-        document.body.appendChild(s)
-      }
-    })
-  }
-  function dataCodeAuth() {
-    return {
-      isFetching: false,
-      error: '',
-      login() {
-        this.isFetching = true
-        this.registerEvent('step2', 'focus')
-        this.registerEvent('login', 'click')
-        this.error = ''
-        var data = {
-          email: this.email,
-          password: this.password,
-        }
-        fetch('/api/auth?mode=login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => response.json())
-          .then((message) => {
-            if (!message.success) {
-              this.isFetching = false
-              this.error = message.error
-            } else {
-              localStorage.setItem('crdacode_token', message.user.token)
-              Alpine.store('auth').setUser(message.user)
-              this.currentStep++
-            }
-          })
-          .catch((error) => {
-            this.isFetching = false
-            this.error = error
-          })
-      },
-      signup() {
-        this.isFetching = true
-        this.registerEvent('step2', 'focus')
-        this.registerEvent('signup', 'click')
-        this.error = ''
-        var data = {
-          email: this.email,
-          name: this.name,
-          password: this.password,
-        }
-        fetch('/api/auth?mode=signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => response.json())
-          .then((message) => {
-            if (!message.success) {
-              this.isFetching = false
-              this.error = message.error
-            } else {
-              localStorage.setItem('crdacode_token', message.user.token)
-              Alpine.store('auth').setUser(message.user)
-              this.currentStep++
-            }
-          })
-          .catch((error) => {
-            this.isFetching = false
-            this.error = error
-          })
-      },
-    }
-  }
-  function dataCodePayment() {
-    return {
-      isFetching: false,
-      email: '',
-      error: '',
-      stripe: null,
-      elements: null,
-      intentId: '',
-      async initStripe() {
-        await loadScript('https://js.stripe.com/v3')
-        this.stripe = Stripe('{{ env.stripeKey }}')
-        const data = {
-          protection: this.price,
-        }
-        const response = await fetch('/api/payment?mode=code', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-        const json = await response.json()
-        const clientSecret = json.client_secret
-        this.intentId = json.intentId
-
-        const appearance = {
-          theme: document.documentElement.classList.contains('dark')
-            ? 'night'
-            : 'stripe',
-          variables: {
-            fontFamily: 'Aldrich',
-          },
-        }
-        const options = {
-          clientSecret: clientSecret,
-          // Fully customizable with appearance API.
-          appearance: appearance,
-          fonts: [
-            {
-              family: 'Aldrich',
-              src: 'url(/assets/fonts/aldrich/aldrich-v17-latin-regular.ttf)',
-              weight: '400',
-              display: 'block',
-              style: 'normal',
-            },
-          ],
-        }
-        // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 2
-        this.elements = this.stripe.elements(options)
-        // Create and mount the Payment Element
-        const paymentElement = this.elements.create('payment')
-        paymentElement.mount('#payment-element2')
-      },
-      async pay() {
-        this.isFetching = true
-        this.registerEvent('step3', 'focus')
-        const { error } = await this.stripe.confirmPayment({
-          // `Elements` instance that was used to create the Payment Element
-          elements: this.elements,
-          redirect: 'if_required',
-          confirmParams: {
-            return_url: `${window.location.href}/?success=true&id=${this.intentId}`,
-            payment_method_data: {
-              billing_details: {
-//                name: Alpine.store('auth').user.user_name,
-                email: Alpine.store('auth').user.email,
-              },
-            },
-          },
-        })
-        if (error) {
-          // This point will only be reached if there is an immediate error when confirming the payment. Show error to your
-          // customer (for example, payment details incomplete)
-          this.isFetching = false
-          this.error = error.message
-          //console.error(error)
-
-          const payload = {
-            type: error.type,
-            code: error.code,
-            decline_code: error.decline_code,
-            message: error.message,
-            log: error.request_log_url,
-          }
-          fetch('/api/payment?mode=error', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload),
-          })
-
-        } else {
-          var data = {
-            user: Alpine.store('auth').user.email,
-            article: window.location.pathname,
-          }
-          fetch('/api/payment?mode=update', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-          })
-            .then((response) => response.json())
-            .then((message) => {
-              if (!message.success) {
-                this.isFetching = false
-                this.error = message.error
-              } else {
-                this.currentStep++
-              }
-            })
-            .catch((error) => {
-              this.isFetching = false
-              this.error = error
-            })
-          // Your customer will be redirected to your `return_url`. For some payment methods like iDEAL, your customer will be
-          // redirected to an intermediate site first to authorize the payment, then redirected to the `return_url`.
-        }
-      },
-    }
-  }
-</script>

@@ -11,7 +11,7 @@
     "dev:11ty": "eleventy --serve --port=$PORT",
     "dev:css": "tailwindcss -i src/bundle/main.pcss -o dist/assets/main.bundle.css --watch --postcss",
     "dev:js": "esbuild src/bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --watch --platform=browser",
-    "build": "cross-env NODE_ENV=production npm-run-all clean -p 'build:*' && grunt",
+    "build": "cross-env NODE_ENV=production npm-run-all clean -p 'build:*'",
     "dev": "cross-env NODE_ENV=development npm-run-all -p 'dev:*'"
   },
   "keywords": [],

@@ -6,7 +6,7 @@ layout: layouts/base.njk
 
 {% include 'header.njk' %}
 
-<div class="relative isolate overflow-hidden dark:bg-gray-900 bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+<div class="max-w-7xl mx-auto relative isolate overflow-hidden dark:bg-gray-900 bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 dark:stroke-gray-800 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
       <defs>
@@ -36,7 +36,7 @@ layout: layouts/base.njk
           {% if menu.name == 'Critics' %}
             <div class="grid grid-cols-1 items-center w-full mx-auto gap-5 mt-10">
               {% for submenu in menu.submenus %}
-                <a href="{{ submenu.route }}" class=" mb-6 max-w-md lg:max-w-lg mx-auto bg-white dark:bg-gray-850 rounded-xl shadow-lg overflow-hidden xl:max-w-xl
+                <a href="{{ submenu.route }}" class=" mb-6 max-w-lg lg:max-w-xl mx-auto bg-white dark:bg-gray-850 rounded-xl shadow-lg overflow-hidden xl:max-w-xl
             2xl:max-w-2xl ">
                   <div class="xl:flex xl:h-full">
                     <div class="xl:flex-shrink-0">

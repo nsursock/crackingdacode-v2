@@ -1,6 +1,6 @@
 <section
   class="dark:bg-gray-900 dark:text-gray-200"
-  x-data="{ isInViewport: false }"
+  x-data="{ isInViewport: false, stripeKey: '{{ env.stripeKey }}' }"
   x-intersect.once="isInViewport = !isInViewport"
 >
   <footer x-cloak x-show="isInViewport" class="mx-auto max-w-7xl px-6 lg:px-8 mt-24 w-full sm:mt-32 lg:mt-40 dark:bg-gray-900">
@@ -25,7 +25,7 @@
               {% endfor %}
             </ul>
           </nav>
-          <div class="flex lg:justify-end max-w-sm" x-data="dataCta">
+          <div class="flex lg:justify-end max-w-sm" x-data="cta">
             <div class="mt-5 sm:mt-8 sm:flex sm:flex-col sm:items-center sm:justify-center lg:block" >
               <h3
                 class="text-sm font-semibold text-indigo-500 tracking-wider uppercase"
@@ -79,7 +79,7 @@
                 <div class="inline-flex rounded-md shadow relative ml-3 ">
                   <div class=" absolute -inset-0.5 bg-indigo-600 dark:bg-indigo-500 rounded-md blur"></div>
                   <button :disabled="parseFloat(amount) < 3"
-            @click="pay"
+            @click="setup"
             id="donate-button"
             class="relative inline-flex items-center justify-center px-5 py-3 border border-indigo-500 text-base font-medium rounded-md
               text-white bg-indigo-600 hover:bg-indigo-700">
@@ -168,92 +168,3 @@
     </template>
   {% endif %}
 </section>
-
-<script>
-  function loadScript(src) {
-    return new Promise(function (resolve, reject) {
-      var s
-      s = document.createElement('script')
-      s.src = src
-      s.onload = resolve
-      s.onerror = reject
-      if (document.body == null) {
-        document
-          .head
-          .appendChild(s)
-      } else {
-        document
-          .body
-          .appendChild(s)
-      }
-    })
-  }
-  function dataCta() {
-    return {
-      isFetching: false,
-      error: '',
-      amount: 3.00,
-      currency: 'USD',
-      stripe: null,
-      elements: null,
-      intentId: '',
-      async pay() {
-        this.error = ''
-        this.isFetching = !this.isFetching
-        await loadScript('https://js.stripe.com/v3')
-        this.stripe = Stripe('{{ env.stripeKey }}')
-        const data = {
-          amount: this.amount,
-          currency: this.currency
-        }
-        const response = await fetch('/api/payment?mode=donate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        const json = await response.json()
-        const clientSecret = json.client_secret
-        this.intentId = json.intentId
-
-        const appearance = {
-          theme: document
-            .documentElement
-            .classList
-            .contains('dark')
-              ? 'night'
-              : 'stripe',
-          variables: {
-            fontFamily: 'Aldrich'
-          }
-        }
-        const options = {
-          clientSecret: clientSecret,
-          // Fully customizable with appearance API.
-          appearance: appearance,
-          fonts: [
-            {
-              family: 'Aldrich',
-              src: 'url(/assets/fonts/aldrich/aldrich-v17-latin-regular.ttf)',
-              weight: '400',
-              display: 'block',
-              style: 'normal'
-            }
-          ]
-        }
-        // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 2
-        this.elements = this
-          .stripe
-          .elements(options)
-        // Create and mount the Payment Element
-        const paymentElement = this
-          .elements
-          .create('payment')
-        paymentElement.mount('#payment-element')
-        this.showDonationModal = !this.showDonationModal
-        this.isFetching = !this.isFetching
-      }
-    }
-  }
-</script>

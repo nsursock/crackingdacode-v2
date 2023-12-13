@@ -6,10 +6,18 @@ Alpine.plugin(intersect)
 
 import global from './scripts/global.js'
 import form from './scripts/form.js'
+import cta from './scripts/cta.js'
+import comments from './scripts/comments.js'
+import auth from './scripts/auth.js'
+import protection from './scripts/protection.js'
 // import testimonials from './testimonials.js'
 
 Alpine.data('global', global)
 Alpine.data('form', form)
+Alpine.data('cta', cta)
+Alpine.data('comments', comments)
+Alpine.data('auth', auth)
+Alpine.data('protection', protection)
 // Alpine.data('testimonials', testimonials)
 
 Alpine.directive(

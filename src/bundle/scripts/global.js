@@ -34,6 +34,25 @@ export default () => ({
   name: '',
   password: '',
 
+  loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s
+      s = document.createElement('script')
+      s.src = src
+      s.onload = resolve
+      s.onerror = reject
+      if (document.body == null) {
+        document
+          .head
+          .appendChild(s)
+      } else {
+        document
+          .body
+          .appendChild(s)
+      }
+    })
+  },
+
   registerEvent(label, type) {
     // if (process.env.NODE_ENV.startsWith('prod')) {
     // if (typeof umami !== 'undefined') {
