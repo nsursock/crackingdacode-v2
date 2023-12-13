@@ -18,7 +18,7 @@ export default () => ({
         elements: this.elements,
         redirect: 'if_required',
         confirmParams: {
-          return_url: `${window.location.href}/?success=true&id=${this.intentId}`,
+          // return_url: `${window.location.href}/?success=true&id=${this.intentId}`,
           payment_method_data: {
             billing_details: {
               email: this.email
