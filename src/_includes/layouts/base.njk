@@ -43,8 +43,7 @@
     </style>
 
   </head>
-  <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}" x-data="global"
-     x-effect="if ($store.auth.user) checkPermission('posts', 'principles-for-a-liberated-existence').then(cond => paymentMade = cond)">
+  <body class="dark:bg-gray-900 {{ 'debug-screens' if env.devMode }}" x-data="global">
     {{ content | safe }}
     {% include '../footer.njk' %}
   </body>
