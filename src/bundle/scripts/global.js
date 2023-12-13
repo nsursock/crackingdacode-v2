@@ -101,6 +101,7 @@ export default () => ({
     if (!Alpine.store('auth').user)
       return false
 
+      console.log('>>>>> /api/payment?mode=check');
     const res = await fetch('/api/payment?mode=check', {
       method: 'POST',
       headers: {
@@ -112,6 +113,7 @@ export default () => ({
         url: `/${postsDirectory}/${codeArticle}/`
       }),
     })
+    console.log('<<<<<< /api/payment?mode=check');
     const json = await res.json()
     const isAuthorized = json.data.length !== 0
     this.isChecking = false
