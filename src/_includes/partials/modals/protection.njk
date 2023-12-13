@@ -51,7 +51,7 @@
               <template x-if="!isChecking">
                 <button @click="currentStep++; registerEvent('step1', 'focus')" class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Proceed</button>
               </template>
-              <template x-else>
+              <template x-if="isChecking">
                 <div class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">
                   <svg
                       class="mr-2 animate-spin h-5 w-5 text-white"

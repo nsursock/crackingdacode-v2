@@ -98,26 +98,23 @@ export default () => ({
   },
 
   async checkPermission(postsDirectory, codeArticle) {
-    if (!Alpine.store('auth').user)
-      return false
+    const isAuthenticated = Alpine.store('auth').user
 
-      console.log('>>>>> /api/payment?mode=check');
     const res = await fetch('/api/payment?mode=check', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        user: Alpine.store('auth').user.email,
+        user: Alpine.store('auth').user?.email,
         article: window.location.pathname,
         url: `/${postsDirectory}/${codeArticle}/`
       }),
     })
-    console.log('<<<<<< /api/payment?mode=check');
     const json = await res.json()
     const isAuthorized = json.data.length !== 0
     this.isChecking = false
-    return isAuthorized
+    return isAuthenticated && isAuthorized
   },
 
   async init() {

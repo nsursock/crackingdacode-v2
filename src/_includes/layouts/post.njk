@@ -55,7 +55,7 @@ eleventyComputed:
   {% include 'sections/posts/hero.njk' %}
 
 <!-- x-data="dataPosts" x-init="adapt($el)"  -->
-  <article x-effect="if ($store.auth.user && {{ protection }}) checkPermission('posts', 'principles-for-a-liberated-existence').then(cond => paymentMade = cond)"
+  <article x-effect="checkPermission('posts', 'principles-for-a-liberated-existence').then(cond => paymentMade = cond)"
     class=" dark:bg-gray-900 relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
     <div class="relative bg-white dark:bg-gray-900">
       <div class="mx-auto max-w-7xl px-4 sm:px-6">
