@@ -6,6 +6,7 @@ export default () => ({
   discount: 35,
   threshold: 30,
   processFinished: false,
+  isChecking: true,
 
   // For toggling panels and modals
   showCommentsPanel: false,
@@ -112,7 +113,9 @@ export default () => ({
       }),
     })
     const json = await res.json()
-    return json.data.length !== 0
+    const isAuthorized = json.data.length !== 0
+    this.isChecking = false
+    return isAuthorized
   },
 
   async init() {

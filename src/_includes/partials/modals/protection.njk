@@ -30,7 +30,7 @@
               <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
                 <!-- Heroicon name: outline/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                 </svg>
               </div>
               <div class="mt-3 text-center sm:mt-5">
@@ -48,7 +48,25 @@
               </div>
             </div>
             <div class="mt-5 sm:mt-6">
-              <button @click="currentStep++; registerEvent('step1', 'focus')" class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Proceed</button>
+              <template x-if="!isChecking">
+                <button @click="currentStep++; registerEvent('step1', 'focus')" class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Proceed</button>
+              </template>
+              <template x-else>
+                <div class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">
+                  <svg
+                      class="mr-2 animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewbox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path
+                        class="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Verifying...
+                </div>
+              </template>
             </div>
           </div>
           <div x-show="currentStep === 2">
@@ -59,7 +77,7 @@
                   <path
                     d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0
                                     018 0z"
-                  />
+/>
                 </svg>
               </div>
               <div class="mt-3 text-center sm:mt-5">
@@ -72,13 +90,15 @@
                       All you need to do now is make a payment of {{ protection }}€ to unlock the article.
                     </p>
                   </template>
-                  #} {#
+                  #}
+                  {#
                   <template x-if="!$store.auth.user">
-                    #} {#
+                    #}
+                  {#
                     <p class="text-sm text-gray-500 dark:text-gray-400">If you're already a member, use the login panel. Otherwise, you can easily signup using the other panel.</p>
                     #}
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ lantern[1].text }}</p>
-                    {#
+                  <p class="text-sm text-gray-500 dark:text-gray-400">{{ lantern[1].text }}</p>
+                  {#
                   </template>
                   #}
                   <template x-if="$store.auth.user">
@@ -115,19 +135,19 @@
                 <!-- The tabs content -->
                 <div x-show="tab === 'signup'">
                   <form @submit.prevent="signup" class="mt-8 space-y-6" action="#" method="POST">
-                    <input type="hidden" name="remember" value="true" />
+                    <input type="hidden" name="remember" value="true"/>
                     <div class="-space-y-px rounded-md shadow-sm">
                       <div>
                         <label for="email-address-signup-protect" class="sr-only"> Email address </label>
-                        <input x-model="email" id="email-address-signup-protect" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Email address" />
+                        <input x-model="email" id="email-address-signup-protect" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Email address"/>
                       </div>
                       <div>
                         <label for="display-name-signup-protect" class="sr-only"> User name </label>
-                        <input x-model="name" id="display-name-signup-protect" name="name" type="name" required class="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="User name" />
+                        <input x-model="name" id="display-name-signup-protect" name="name" type="name" required class="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="User name"/>
                       </div>
                       <div>
                         <label for="password-signup-protect" class="sr-only"> Password </label>
-                        <input x-model="password" id="password-signup-protect" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Password" />
+                        <input x-model="password" id="password-signup-protect" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Password"/>
                       </div>
                     </div>
                     <div>
@@ -135,7 +155,7 @@
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                           <!-- Heroicon name: solid/lock-closed -->
                           <svg x-show="!isFetching" class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
                           </svg>
                           <svg x-show="isFetching" class="h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -148,7 +168,7 @@
                         <div class="mt-1 flex items-center rounded-md border border-transparent bg-red-600 py-2 px-3 text-sm font-medium text-red-100">
                           <span class="flex h-6 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewbox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                             </svg>
                           </span>
                           <span class="ml-2" x-text="error"></span>
@@ -159,15 +179,15 @@
                 </div>
                 <div x-show="tab === 'login'">
                   <form @submit.prevent="login" class="mt-8 space-y-6" action="#" method="POST">
-                    <input type="hidden" name="remember" value="true" />
+                    <input type="hidden" name="remember" value="true"/>
                     <div class="-space-y-px rounded-md shadow-sm">
                       <div>
                         <label for="email-address-login-protect" class="sr-only"> Email address </label>
-                        <input x-model="email" id="email-address-login-protect" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Email address" />
+                        <input x-model="email" id="email-address-login-protect" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Email address"/>
                       </div>
                       <div>
                         <label for="password-login-protect" class="sr-only"> Password </label>
-                        <input x-model="password" id="password-login-protect" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Password" />
+                        <input x-model="password" id="password-login-protect" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 sm:text-sm" placeholder="Password"/>
                       </div>
                     </div>
                     <div>
@@ -175,7 +195,7 @@
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                           <!-- Heroicon name: solid/lock-closed -->
                           <svg x-show="!isFetching" class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
                           </svg>
                           <svg x-show="isFetching" class="h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -188,7 +208,7 @@
                         <div class="mt-1 flex items-center rounded-md border border-transparent bg-red-600 py-2 px-3 text-sm font-medium text-red-100">
                           <span class="flex h-6 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewbox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                             </svg>
                           </span>
                           <span class="ml-2" x-text="error"></span>
@@ -210,7 +230,7 @@
                     stroke-linejoin="round"
                     d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11
                                             0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
+/>
                 </svg>
               </div>
               <div class="mt-3 text-center sm:mt-5">
@@ -223,11 +243,11 @@
                 </div>
               </div>
             </div>
-            <form id="payment-form" class="mt-5 sm:mt-6" @submit.prevent="pay">
+            <form id="payment-form2" class="mt-5 sm:mt-6" @submit.prevent="pay">
               <div id="payment-element2">
                 <!-- Elements will create form elements here -->
               </div>
-              <button :disabled="isFetching" id="submit" class="mt-5 inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-6 sm:text-sm">
+              <button :disabled="isFetching" id="submit2" class="mt-5 inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-6 sm:text-sm">
                 <span x-show="isFetching" class="inline-flex">
                   <svg class="mr-3 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -242,7 +262,7 @@
                   <!-- Display error message to your customers here -->
                   <span class="flex h-6 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewbox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                     </svg>
                   </span>
                   <span class="ml-2" x-text="error"></span>
@@ -260,7 +280,7 @@
               <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
                 <!-- Heroicon name: outline/check -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
               </div>
               <div class="mt-3 text-center sm:mt-5">

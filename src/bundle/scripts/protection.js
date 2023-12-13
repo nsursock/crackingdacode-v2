@@ -72,6 +72,8 @@ export default () => ({
   elements: null,
   intentId: '',
   async initStripe() {
+    this.isFetching = false
+    this.error = ''
     await this.loadScript('https://js.stripe.com/v3')
     this.stripe = Stripe(this.stripeKey)
     const data = {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
+      connect-src wss://*.supabase.co https://*.supabase.co 'self';
       frame-src https://connect-js.stripe.com https://js.stripe.com 'self';
       img-src https://*.stripe.com 'self' *.unsplash.com *.imgix.net data:;
       script-src 'unsafe-eval' https://connect-js.stripe.com https://js.stripe.com 'self' 'nonce-sha256-GGkiBxgeYp8KWuyuLUq00WN0wyCneazCLxO0I1HtHDk=';
