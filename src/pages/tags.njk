@@ -15,8 +15,12 @@ pagination:
     - processed
 layout: layouts/page.njk
 eleventyComputed:
-  title: Tagged {{ tag }}
-  description: A list of all {{ collections[tag].length }} post(s) related to {{ tag | lower }}
+  title: |
+    {% set category = categories.categories | filter('name', tag) | first %}
+    Tagged {{ tag }}: {{ category.tagline }}
+  description: |
+    {% set category = categories.categories | filter('name', tag) | first %}
+    A list of all {{ collections[tag].length }} post(s) related to {{ tag | lower }}: {{ category.description }}
 permalink: /tags/{{ tag | slug }}/
 featured: https://images.unsplash.com/photo-1513407135356-a5276958b57e?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 alt: brown Ema plates on brown wooden board
@@ -30,11 +34,11 @@ handle: thetalkinglens
 
 <div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:mx-0">
+    {# <div class="mx-auto max-w-2xl lg:mx-0">
       {% set category = categories.categories | filter('name', tag) | first %}
       <h2 class="text-3xl font-bold tracking-tight dark:text-gray-100 text-gray-900 sm:text-4xl">{{ category.tagline }}</h2>
       <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">{{ category.description }}</p>
-    </div>
+    </div> #}
 
     {% set articles = collections[tag] %}
     {% include 'partials/postlist.njk' %}
