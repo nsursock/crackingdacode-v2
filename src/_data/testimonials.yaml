@@ -41,6 +41,13 @@ production:
       Your chosen themes resonate so profoundly. Your writing goes beyond words;
       it's an impactful journey that has shaped my perspective and
       understanding. Forever grateful for the insights and wisdom you share.
+  - person: Ava Parker
+    title: Analyst
+    photo: >-
+      https://crdacode.imgix.net/testimonials/public/056222a515f65affed8083b00.jpeg
+    text: >-
+      Your insightful blog imparts simplicity to life, prompting me to shelve my
+      tendency to overthink and embrace a more relaxed approach.
 development:
   - person: David Anderson
     title: Developer
@@ -115,13 +122,6 @@ development:
     text: >-
       Is it the magic of your blog? Absolutely! I'm reenergized and prepared to
       tackle the world with a newfound vigor.
-  - person: Ava Parker
-    title: Analyst
-    photo: >-
-      https://crdacode.imgix.net/testimonials/public/056222a515f65affed8083b00.jpeg
-    text: >-
-      Your insightful blog imparts simplicity to life, prompting me to shelve my
-      tendency to overthink and embrace a more relaxed approach.
   - person: Mia Foster
     title: Nurse
     photo: >-
