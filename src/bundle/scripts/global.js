@@ -35,6 +35,34 @@ export default () => ({
   name: '',
   password: '',
 
+  replaceImages(el) {
+    // Get all paragraphs containing images
+    const imageParagraphs = Array.from(el.querySelectorAll('p > img'));
+  
+    imageParagraphs.forEach((imgElement) => {
+      const imgSrc = imgElement.getAttribute('src');
+      const imgAlt = imgElement.getAttribute('alt');
+  
+      // Get the sibling em element
+      const emElement = imgElement.nextElementSibling;
+  
+      if (emElement && emElement.tagName.toLowerCase() === 'em') {
+        const caption = emElement.innerHTML.trim();
+  
+        // Replace the image and its parent p with the reconstructed HTML
+        const reconstructedHTML = `
+          <figure>
+            <img class="rounded-lg" alt="${imgAlt}" src="${imgSrc}">
+            <figcaption class="text-center">${caption}</figcaption>
+          </figure>
+        `;
+  
+        // Replace the old image and its parent p with the reconstructed HTML
+        imgElement.parentNode.outerHTML = reconstructedHTML;
+      }
+    });
+  },
+
   loadScript(src) {
     return new Promise(function (resolve, reject) {
       var s

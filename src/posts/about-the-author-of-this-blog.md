@@ -31,6 +31,9 @@ The tone Jimi achieves is warm and round, yet capable of piercing through the mi
 
 ## Born Under a Spellbinding Sign
 
+![man, woman and child holding hands on seashore](https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTk4NzA2ODd8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Natalya Zaritskaya](https://unsplash.com/@goodmood77?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+
 I came into the world in Beirut on the 5th of October, 1980, coincidentally sharing my birthday with both of my grandfathers. This momentous occasion, however, unfolded in the midst of a turbulent period for Lebanon, marked by a devastating Civil War that compelled many Lebanese families, including my own, to seek refuge abroad.
 
 In the year 1983, when I was just a mere three years of age, the relentless bombardments became so pervasive that peaceful slumber became an elusive luxury. Consequently, my parents made the arduous decision to establish our new home in Paris, France, where I have resided to this day.
