@@ -8,5 +8,5 @@ module.exports = {
   supaKey: process.env.SUPABASE_KEY,
   rosebud: process.env.ROSEBUD,
   url: 'https://www.crackingdacode.com',
-  tagline: 'Break Through The Mist'
+  tagline: 'A Life Based On Music'
 }

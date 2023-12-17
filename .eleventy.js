@@ -11,6 +11,11 @@ module.exports = function (eleventyConfig) {
   //   return items.slice(0, 9)
   // })
 
+  eleventyConfig.addFilter('getRandom', function (items) {
+    let selected = items[Math.floor(Math.random() * items.length)]
+    return selected
+  })
+
   eleventyConfig.addFilter('log', value => {
     console.log(value)
   })
