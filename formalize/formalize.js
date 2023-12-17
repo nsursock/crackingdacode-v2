@@ -8,8 +8,8 @@ const matter = require('gray-matter');
 const cheerio = require('cheerio');
 
 const sourceDirectory = '../src/blog/';
-const numVariations = 1 // variations for images
-const isDebugMode = true // when json have been generated
+const numVariations = 3 // variations for images
+const isDebugMode = false // when json have been generated
 
 // ----------------------------------------------------------------
 
@@ -37,13 +37,14 @@ async function processFile(jsonDocument, file) {
       const destinationPath = path.join(destinationDirectory, fileName);
 
       // Move the file
-      fs.rename(sourcePath, destinationPath, (err) => {
-        if (err) {
-          console.error(`Error moving file: ${err}`);
-        } else {
-          console.log('File moved successfully!');
-        }
-      })
+      if (i === 0)
+        fs.rename(sourcePath, destinationPath, (err) => {
+          if (err) {
+            console.error(`Error moving file: ${err}`);
+          } else {
+            console.log('File moved successfully!');
+          }
+        })
 
     } catch (err) {
       console.error('Error writing to the file:', err);
@@ -380,5 +381,7 @@ function convertJson(filePath) {
 
     const endTime = performance.now();
     console.log(`Elapsed time: ${convertMillis(endTime - startTime)}`);
+
+    return
   }
 })();

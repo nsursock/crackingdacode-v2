@@ -52,7 +52,8 @@ export default () => ({
         // Replace the image and its parent p with the reconstructed HTML
         const reconstructedHTML = `
           <figure>
-            <img class="rounded-lg" alt="${imgAlt}" src="${imgSrc}">
+            <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
+              alt="${imgAlt}" data-src="${imgSrc}&w=480&h=320">
             <figcaption class="text-center">${caption}</figcaption>
           </figure>
         `;

@@ -2,13 +2,13 @@
 // config.js
 
 module.exports = {
-  tags: [
-    'Art', 'Basic Income', 'Business', 'Creativity', 'Culture', 'Economy',
-    'Education', 'Entertainment', 'Environment', 'Equality', 'Family', 'Fitness',
-    'Future', 'Health', 'History', 'Humor', 'Justice', 'Life', 'Love', 'Philosophy',
-    'Politics', 'Productivity', 'Psychology', 'Relationships', 'Science', 'Sexuality',
-    'Society', 'Wellness', 'World',
-  ],
+  // tags: [
+  //   'Art', 'Basic Income', 'Business', 'Creativity', 'Culture', 'Economy',
+  //   'Education', 'Entertainment', 'Environment', 'Equality', 'Family', 'Fitness',
+  //   'Future', 'Health', 'History', 'Humor', 'Justice', 'Life', 'Love', 'Philosophy',
+  //   'Politics', 'Productivity', 'Psychology', 'Relationships', 'Science', 'Sexuality',
+  //   'Society', 'Wellness', 'World',
+  // ],
 
   // Add other configuration options as needed
   promptArticle: `
@@ -56,8 +56,20 @@ module.exports = {
 
   promptRest: `
   ## Categories
-  Determine the primary category for the chosen article from the available options: ${this.tags}.
-  Identify four secondary categories for the chosen article from the provided options: ${this.tags}.
+  Determine the primary category for the chosen article from the available options: ${[
+    'Art', 'Basic Income', 'Business', 'Creativity', 'Culture', 'Economy',
+    'Education', 'Entertainment', 'Environment', 'Equality', 'Family', 'Fitness',
+    'Future', 'Health', 'History', 'Humor', 'Justice', 'Life', 'Love', 'Philosophy',
+    'Politics', 'Productivity', 'Psychology', 'Relationships', 'Science', 'Sexuality',
+    'Society', 'Wellness', 'World',
+  ].join(', ')}.
+  Identify four secondary categories for the chosen article from the provided options: ${[
+    'Art', 'Basic Income', 'Business', 'Creativity', 'Culture', 'Economy',
+    'Education', 'Entertainment', 'Environment', 'Equality', 'Family', 'Fitness',
+    'Future', 'Health', 'History', 'Humor', 'Justice', 'Life', 'Love', 'Philosophy',
+    'Politics', 'Productivity', 'Psychology', 'Relationships', 'Science', 'Sexuality',
+    'Society', 'Wellness', 'World',
+  ].join(', ')}.
   Ensure the primary category is listed first in the array.
   
   ## Keywords
