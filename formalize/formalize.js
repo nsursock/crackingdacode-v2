@@ -17,7 +17,7 @@ cloudinary.config({
 
 const sourceDirectory = '../src/blog/';
 const numVariations = 1 // variations for images
-const isDebugMode = false // when json have been generated
+const isDebugMode = true // when json have been generated
 const isImagesAI = true // generate image from dall-e
 const maxRequests = 5; // Maximum number of requests before waiting
 const waitTime = 2 * 60 * 1000; // Time to wait in milliseconds
@@ -43,7 +43,12 @@ async function processFile(jsonDocument, file) {
     const frontMatter = await generateFrontMatter(file, article, rest, jsonDocument)
 
     try {
-      const filePath = `../src/posts/${createSlug(JSON.parse(article.content).keyword)}-${i + 1}.md`
+      let filePath = `../src/posts/${createSlug(JSON.parse(article.content).keyword)}`
+      if (numVariations > 1)
+        filePath += `-${i + 1}.md`
+      else
+        filePath += '.md'
+
       fs.writeFileSync(filePath, frontMatter + finalContent.join('\n'), 'utf-8');
       console.log(`Content has been successfully written to ${filePath}`);
 
@@ -113,9 +118,9 @@ alt: ${photo?.info.detection.captioning.data.caption}`
   frontmatter += `
 keywords: ${JSON.parse(article.content).keyword}
 original: ${file}
-word: ${JSON.parse(article.content).word}
-headline: ${JSON.parse(article.content).headline}
-paragraph: ${JSON.parse(article.content).paragraph}
+word: "${JSON.parse(article.content).word}"
+headline: "${JSON.parse(article.content).headline}"
+paragraph: "${JSON.parse(article.content).paragraph}"
 tags: [${JSON.parse(rest.content).categories}, processed]
 layout: layouts/post.njk
 ${yaml.dump(yamlMusic)}
