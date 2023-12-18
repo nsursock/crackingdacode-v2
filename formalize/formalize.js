@@ -6,12 +6,30 @@ const axios = require('axios');
 const fs = require('fs');
 const matter = require('gray-matter');
 const cheerio = require('cheerio');
+const cloudinary = require('cloudinary');
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
+});
 
 const sourceDirectory = '../src/blog/';
-const numVariations = 3 // variations for images
+const numVariations = 1 // variations for images
 const isDebugMode = false // when json have been generated
+const isImagesAI = true // generate image from dall-e
+const maxRequests = 5; // Maximum number of requests before waiting
+const waitTime = 2 * 60 * 1000; // Time to wait in milliseconds
 
 // ----------------------------------------------------------------
+
+function delay(ms, message) {
+  return new Promise(resolve => {
+    console.log(`>> Waiting ${ms / 1000} seconds - ${message}`);
+    setTimeout(resolve, ms);
+  });
+}
 
 async function processFile(jsonDocument, file) {
   // Prepare the document for analysis
@@ -55,8 +73,19 @@ async function processFile(jsonDocument, file) {
 async function generateFrontMatter(file, article, rest, json) {
   const splitTitle = splitHeadlineBalanced(JSON.parse(rest.content).metadata.title);
   // const photo = await extractUnplashMetadata(json.head.featured, true)
-  const photo = await getRandomUnsplashImage(JSON.parse(rest.content).keywords)
-  // const photo = await getDallEImage(JSON.parse(rest.content).metadata.prompt + ', digital art', true)
+  let photo
+  if (!isImagesAI)
+    photo = await getRandomUnsplashImage(JSON.parse(rest.content).keywords)
+  else {
+    // delay(waitTime, 'getting hero image' + JSON.parse(rest.content).metadata.prompt)
+    photo = await getDallEImage(JSON.parse(rest.content).metadata.prompt, true)
+    photo = await cloudinary.v2.uploader
+      .upload(photo?.url, {
+        folder: 'crackingdacode',
+        resource_type: 'image',
+        detection: 'captioning'
+      })
+  }
 
   const yamlMusic = {
     track: json.head.track,
@@ -70,13 +99,23 @@ title2: "${splitTitle[1]}"
 description: "${JSON.parse(rest.content).metadata.description.replace(/"/g, '')}"
 ${yaml.dump(JSON.parse(rest.content).metadata.variations)}
 author: Nicolas Sursock
-date: ${new Date(json.head.date).toISOString().slice(0, -5) + 'Z'}
+date: ${new Date(json.head.date).toISOString().slice(0, -5) + 'Z'}`
+
+  frontmatter += !isImagesAI ? `
 featured: ${photo.urls.raw}&auto=format&fit=crop&q=80
 alt: ${photo.alt_description}
 name: ${photo.user.name}
 handle: ${photo.user.username}
+` : `
+featured: ${photo?.secure_url}
+alt: ${photo?.info.detection.captioning.data.caption}`
+
+  frontmatter += `
 keywords: ${JSON.parse(article.content).keyword}
 original: ${file}
+word: ${JSON.parse(article.content).word}
+headline: ${JSON.parse(article.content).headline}
+paragraph: ${JSON.parse(article.content).paragraph}
 tags: [${JSON.parse(rest.content).categories}, processed]
 layout: layouts/post.njk
 ${yaml.dump(yamlMusic)}
@@ -91,8 +130,10 @@ async function generateFormalText(article, music) {
     const title = `## ${section.title}`
     let markdown = ''
 
-    const photo = await getRandomUnsplashImage(section.keywords)
-    markdown += '\n' + title + '\n' + `
+    let photo
+    if (!isImagesAI) {
+      photo = await getRandomUnsplashImage(section.keywords)
+      markdown += '\n' + title + '\n' + `
 ![${photo.alt_description}](${photo.urls.raw}&auto=format&fit=crop&q=80)
 *Photo by [${photo.user.name}](https://unsplash.com/@${photo.user.username}?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
@@ -100,6 +141,30 @@ prompt: ${section.prompt}
 keyword: ${section.keywords.join(', ')}
 -->
 `
+    }
+    else {
+      photo = await getDallEImage(section.prompt)
+      photo = await cloudinary.v2.uploader
+        .upload(photo?.url, {
+          folder: 'crackingdacode',
+          resource_type: 'image',
+          detection: 'captioning'
+        })
+
+      // avoid too many requests 429
+      await delay(2000, 'index: ' + (index + 1))
+      if ((index + 1) % maxRequests === 0)
+        await delay(waitTime, 'index: ' + (index + 1))
+
+      markdown += '\n' + title + '\n' + `
+![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url})
+<!-- 
+prompt: ${section.prompt}
+keyword: ${section.keywords.join(', ')}
+-->
+`
+    }
+
     markdown += '\n' + (section.content.join('\n')).replace(/\n/g, '\n\n');
     return markdown;
   }))
@@ -259,6 +324,48 @@ async function getRandomUnsplashImage(query) {
   } catch (error) {
     console.error('Error fetching random image:', error);
     return null;
+  }
+}
+
+async function getDallEImage(prompt, hero = false) {
+  const start = performance.now();
+
+  // Prepare the request payload
+  // const payload = {
+  //   model: "dall-e-2",
+  //   prompt: prompt,
+  //   n: 1,
+  //   size: hero ? "1024x1024" : "512x512"
+  // };
+
+  const payload = {
+    model: "dall-e-3",
+    prompt: prompt,
+    size: "1792x1024",
+    // quality: "hd"
+  };
+
+  // Define the API endpoint
+  const apiUrl = 'https://api.openai.com/v1/images/generations ';
+
+  try {
+    const response = await axios.post(apiUrl, payload, {
+      headers: {
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+    })
+
+    // console.log(response.data)
+
+    const end = performance.now();
+    console.log(`Total time taken: ${convertMillis(end - start)}`);
+    return response.data.data[0];
+  } catch (e) {
+    console.error(e.message)
+  }
+  finally {
+    console.log(prompt);
   }
 }
 

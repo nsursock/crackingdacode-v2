@@ -23,12 +23,16 @@ descriptions:
 
 author: Nicolas Sursock
 date: 2019-10-07T23:41:00Z
-featured: https://images.unsplash.com/photo-1479685299024-787b75aea174?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4MDQ2Njh8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80
-alt: American flag
-name: Jp Valery
-handle: jpvalery
+featured: https://images.unsplash.com/photo-1503172455692-9a0a0cab0bd4?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY1OTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80
+alt: US flag beside road at daytime
+name: Bravo Prince
+handle: bravodavid
+
 keywords: America's influence on global progress
 original: america-natural-solution.md
+word: Progress
+headline: Does America's Unique Melody Herald Global Progress?
+paragraph: Explore how America's influence on the world stage, through innovation and culture, echoes the Renaissance's spirit of progress and transformation.
 tags: [Culture,History,Society,Travel,Space, processed]
 layout: layouts/post.njk
 track: Alphabet St.
@@ -97,8 +101,8 @@ Overall, "Alphabet St." is a testament to Prince's enduring influence on pop and
 
 ## How Has America's Unprecedented Journey Reshaped the World?
 
-![man walking on bridge](https://images.unsplash.com/photo-1517245311680-643ccb80eb87?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4MDQ2Njh8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Fabien Bazanegue](https://unsplash.com/@fbazanegue?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![American Flag on building](https://images.unsplash.com/photo-1522681790129-eacac40ff606?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY1OTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Hayes Potter](https://unsplash.com/@hayespotter?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of the American Renaissance paralleled with European Renaissance, showcasing progress in arts and innovation
 keyword: humanism in the American Renaissance, America's cultural influence on society
@@ -114,8 +118,8 @@ The intriguing potential of music to heal and transform society prompts the ques
 
 ## Can America's Melodic Legacy Guide Us to Self-Discovery?
 
-![black hiking backpack near white Fujifilm instax mini camera near black leather boots, red half-zip jacket, gray pocket watch on white map](https://images.unsplash.com/photo-1485809052957-5113b0ff51af?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4MDQ2Njh8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Alice Donovan Rouse](https://unsplash.com/@alicekat?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![Cinque tere, Italy](https://images.unsplash.com/photo-1475688621402-4257c812d6db?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY1OTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Linh Nguyen](https://unsplash.com/@bylinhnguyen?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of America as a hub of connectivity and innovation in travel and exploration
 keyword: America's role in space exploration, advancements in travel and communication
@@ -131,8 +135,8 @@ The correlation between musical evolution and technological progress presents an
 
 ## Will American Ingenuity Pave the Way for a Safer Universe?
 
-![a sandy beach with footprints in the sand](https://images.unsplash.com/photo-1679420438050-67286b160e94?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4MDQ2Njh8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Sandra Seitamaa](https://unsplash.com/@seitamaaphotography?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![black DSLR camera near passport](https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY1OTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Charlotte Noelle](https://unsplash.com/@charlottenoelle_?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of a safe and peaceful space exploration mission, inspired by American vision
 keyword: casualty-free space travel, human compassion in space exploration
@@ -148,8 +152,8 @@ The symbiosis of love and space travel on this platform elucidates the desire to
 
 ## Does America's Diverse Heritage Forge a Path for Global Unity?
 
-![a woman painting outside](https://images.unsplash.com/photo-1660092626225-f291ab2970b9?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4MDQ2Njh8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Caroline Veronez](https://unsplash.com/@carolineveronez?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![white recreational van](https://images.unsplash.com/photo-1543395136-75b39bc00e0e?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY1OTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Jairph](https://unsplash.com/@jairph?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of American cultural elements contributing to global unity and scientific progress
 keyword: American culture transcending boundaries, scientific and artistic synergy in America

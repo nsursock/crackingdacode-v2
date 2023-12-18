@@ -23,13 +23,17 @@ descriptions:
 
 author: Nicolas Sursock
 date: 2020-03-06T22:38:00Z
-featured: https://images.unsplash.com/photo-1538333702852-c1b7a2a93001?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80
-alt: apple fruit with plastic syringes
-name: Sara Bakhshi
-handle: sarabakhshi
+featured: https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0Nzd8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80
+alt: doctor holding red stethoscope
+name: Online Marketing
+handle: impulsq
+
 keywords: effects of the unseen on our existence
 original: angry-terrific-demon.md
-tags: [Health & Wellness,Psychology,Lifestyle,Spirituality,Culture, processed]
+word: Transformation
+headline: Can Transformation Emerge from the Whispers of Demons?
+paragraph: Discover the subtle messages hidden within the cacophony of life, where the transformation may arise from the most unexpected of messengers. Dive into a journey of self-discovery and mind control, as we explore the profound effects of the unseen on our existence.
+tags: [Health,Psychology,Wellness,World,Culture, processed]
 layout: layouts/post.njk
 track: I'm The Slime
 versions:
@@ -98,8 +102,8 @@ In "I'm The Slime," Zappa solidifies his status as one of rock's most unconventi
 
 ## Could Birds Be Harbingers of Unheard Truths?
 
-![Do What You Love text](https://images.unsplash.com/photo-1554290712-e640351074bd?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Millo Lin](https://unsplash.com/@millolin?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![white and pink love me love me printed wall](https://images.unsplash.com/photo-1619504130510-6abbffa20fa2?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0NzZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of birds chirping at dawn with shadowy figures whispering in the background
 keyword: melodious chirping as unseen truth, Marshall McLuhan's medium message theory
@@ -113,8 +117,8 @@ In this context, it is crucial to consider Marshall McLuhan's adage, 'The medium
 
 ## Is Your Mind Your Own in the Face of Unseen Adversaries?
 
-![Pantheon, Greece](https://images.unsplash.com/photo-1500120393694-26bf69c14a46?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Joshua Rodriguez](https://unsplash.com/@jcrod?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![a large number of lanterns are lit up](https://images.unsplash.com/photo-1678038592667-eff9a4ca2c0b?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0NzZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Andreea Munteanu](https://unsplash.com/@andreeamun?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of a person surrounded by ethereal figures, a balance between serenity and chaos
 keyword: regaining composure after unsettling revelations, ancient Egyptian demonology
@@ -128,8 +132,8 @@ A transition from youthful naivety to a comprehension of the world's hidden forc
 
 ## Can Writing Illuminate the Path Through Rage and Control?
 
-![three people standing on roadside near building during nighttime](https://images.unsplash.com/photo-1465237392552-2f11d0f540d4?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Mac Glassford](https://unsplash.com/@macglassford?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![woman in white shirt using smartphone](https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0NzZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [bruce mars](https://unsplash.com/@brucemars?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of a person writing in a journal, surrounded by a halo of light amidst darkness
 keyword: creative outlet as a beacon of hope, transcending insignificance in a crowded world
@@ -143,8 +147,8 @@ As one prepares to metamorphose into a figure of commerce and commanding stage p
 
 ## How Does the Specter of Loss Shape Our Enduring Blues?
 
-![a group of pumpkins sitting on top of a wooden table](https://images.unsplash.com/photo-1635099064805-3187f6798a55?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Mathias Reding](https://unsplash.com/@matreding?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![high voltage signage](https://images.unsplash.com/photo-1511017499474-da8e1ab863e9?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0NzZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Sebastian Pociecha](https://unsplash.com/@sebastianpoc?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of a solitary figure under a somber sky, reflecting on a memory
 keyword: spectral warning and tragic demise, enduring legacy of a departed spirit
@@ -158,8 +162,8 @@ In the wake of a dear friend's departure, we are left to ponder the enduring leg
 
 ## Will the Sun of Hope Rise Amidst Societal Shadows?
 
-![blue and black video card](https://images.unsplash.com/photo-1562136935-2c010ce547b7?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Vitaly Sacred](https://unsplash.com/@vitalysacred?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![a blue notebook with a leaf on top of it](https://images.unsplash.com/photo-1685478237809-66cb9fc7aa47?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0NzZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [melanfolia](https://unsplash.com/@melanfolia?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of a sunrise over a cityscape, symbolizing hope amidst uncertainty
 keyword: uncertainties that permeate our lives, societal expectations and personal aspirations
@@ -173,8 +177,8 @@ The effects of the unseen on our existence are palpable as we navigate through t
 
 ## What Reflection Will You See in the Aftermath of Conflict?
 
-![woman praying in grayscale photo](https://images.unsplash.com/photo-1499101451337-2375b0b466fb?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4Mzk0NTV8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
-*Photo by [Guilherme Romano](https://unsplash.com/@guilhermeromano?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
+![island in the middle of body of water](https://images.unsplash.com/photo-1452092869062-a34f46079c92?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDI4NTY0NzZ8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80)
+*Photo by [Brian Fegter](https://unsplash.com/@retgef?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
 <!-- 
 prompt: photorealistic image of a person looking into a mirror with the cosmos reflected back
 keyword: reflection unmarred by turmoil, vastness of the universe and identity
