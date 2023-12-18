@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
   //   return items.slice(0, 9)
   // })
 
+  eleventyConfig.addFilter("getPostBySlug", function (collection, page) {
+    return collection.find((item) => item.fileSlug === page.fileSlug);
+  })
+
   eleventyConfig.addFilter('random', function (items) {
     return items[Math.floor(Math.random() * items.length)]
   })
