@@ -101,7 +101,7 @@ module.exports = {
      skeptics and effectively market the article.
   
   ## Comments
-  Generate ten, positive formally articulated comments tailored for the article, each spanning 50-60 words.
+  Generate ten, nuanced, formally articulated comments tailored for the article, each spanning 50-60 words.
   
   **Output:** The provided response is expected in JSON format (not markdown), following a structure akin to the example provided:
   
