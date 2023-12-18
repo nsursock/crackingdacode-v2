@@ -1,4 +1,4 @@
-<li x-data="{ isDalle: {{ post.data.tags | json }}.includes('dalle') }" 
+<li x-data="{ isDalle: {{ post.data.tags | json }}.includes('dalle') || '{{ post.data.featured }}'.includes('cloudinary') }" 
   class="flex-1 shadow-md ring-1 dark:ring-gray-100/5 ring-gray-900/5 dark:bg-gray-850 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden lg:max-w-2xl">
   <div class="flex flex-col justify-between h-full">
     <div class="">

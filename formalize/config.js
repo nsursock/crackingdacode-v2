@@ -18,7 +18,7 @@ module.exports = {
   2. Thoroughly scrutinize each section, inclusive of the introduction (initial section):
      - Formulate an appropriate title derived from the content of the section.
      - Discern and designate 1 long tail keyword (a minimum of 4 words) pertinent to the section.
-     - Present a detailed image prompt suitable for dall-e, illustrating the section with a photorealistic image.
+     - Present a detailed (2-3 sentences long) image prompt suitable for dall-e, illustrating the section with a photorealistic image.
      - Indicate word count.
   3. Endeavor to identify seamless transitions between sections, adhering to a maximum of 2 sentences 
     per transition and write it at the end of the section.
@@ -92,7 +92,7 @@ module.exports = {
   Generate four distinct variations for both the title and description.
   
   ## Prompt
-  Supply a detailed image prompt for dall-e, facilitating the illustration of the article with a photorealistic image.
+  Supply a detailed (2-3 sentences long) image prompt for dall-e, facilitating the illustration of the article with a photorealistic image.
   
   ## Lantern
   Compose four formal sentences, each spanning 15-20 words, designed to progressively persuade

@@ -60,6 +60,18 @@ export default () => ({
   
         // Replace the old image and its parent p with the reconstructed HTML
         imgElement.parentNode.outerHTML = reconstructedHTML;
+      } else {
+        // Replace the image and its parent p with the reconstructed HTML
+        const reconstructedHTML = `
+          <figure>
+            <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
+              alt="${imgAlt}" data-src="${imgSrc.replace('/upload/', '/upload/w_480/h_275/f_webp/')}">
+            <figcaption class="text-center">${imgAlt}</figcaption>
+          </figure>
+        `;
+  
+        // Replace the old image and its parent p with the reconstructed HTML
+        imgElement.parentNode.outerHTML = reconstructedHTML;
       }
     });
   },
