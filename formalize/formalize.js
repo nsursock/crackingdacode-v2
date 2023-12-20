@@ -17,7 +17,7 @@ cloudinary.config({
 
 const sourceDirectory = '../src/blog/';
 const numVariations = 1 // variations for images
-const isDebugMode = false // when json have been generated
+const isDebugMode = true // when json have been generated
 const isImagesAI = true // generate image from dall-e
 const maxRequests = 5; // Maximum number of requests before waiting
 const waitTime = 2 * 60 * 1000; // Time to wait in milliseconds

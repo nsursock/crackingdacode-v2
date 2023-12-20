@@ -51,7 +51,7 @@ export default () => ({
   
         // Replace the image and its parent p with the reconstructed HTML
         const reconstructedHTML = `
-          <figure>
+          <figure class="w-full">
             <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
               alt="${imgAlt}" data-src="${imgSrc}&w=480&h=320">
             <figcaption class="text-center">${caption}</figcaption>
@@ -63,9 +63,10 @@ export default () => ({
       } else {
         // Replace the image and its parent p with the reconstructed HTML
         const reconstructedHTML = `
-          <figure>
+          <figure class="w-full">
             <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
-              alt="${imgAlt}" data-src="${imgSrc.replace('/upload/', '/upload/w_480/h_275/f_webp/')}">
+              alt="${imgAlt}" data-src="${imgSrc.replace('w_480/h_275', 
+              `${Alpine.store('utils').isMobile() ? 'w_480/h_275' : 'w_700/h_400'}`)}">
             <figcaption class="text-center">${imgAlt}</figcaption>
           </figure>
         `;
