@@ -4,16 +4,18 @@ title2: Foster Lasting Healing?
 description: Explore the method of using music and free association to unearth and understand subconscious thoughts for enduring emotional healing.
 author: Nicolas Sursock
 date: 2023-12-06T05:07:00Z
-featured: https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-alt: silhouette of person standing on rock surrounded by body of water
-name: Mohamed Nohassi
-handle: coopery
+featured: /assets/images/hero-learnmore.webp
+alt: a vibrant abstract painting depicting a man and a woman in a colorful composition
+featured_unsplash: https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt_unsplash: silhouette of person standing on rock surrounded by body of water
+name_unsplash: Mohamed Nohassi
+handle_unsplash: coopery
 keywords: how to access and understand subconscious thoughts
 original: word-mission.md
 word: Thrilling
 headline: "Thrilling Beats Unleashed: Method Man's 'Cereal Killer' Revives Hardcore Hip-Hop!"
 paragraph: "Experience the exhilarating fusion of gritty lyricism and raw energy as Method Man's 'Cereal Killer' redefines the soundtrack of the streets."
-tags: [Psychology,Creativity,Science,Wellness,Philosophy,blog,formal,featured,processed]
+tags: [Psychology,Creativity,Science,Wellness,Philosophy, manual]
 layout: layouts/post.njk
 track: Cereal Killer
 versions:

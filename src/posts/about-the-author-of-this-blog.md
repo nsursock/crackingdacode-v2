@@ -5,17 +5,19 @@ title2: and the Purpose Behind All This
 description: In a world where the deceased reign over the living, an artist wages a musical war for freedom—where every note is a step towards liberation.
 date: 2022-06-07T04:40:32Z
 author: Nicolas Sursock
-featured: https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-alt: two person standing on gray tile paving
-name: Ian Schneider
-handle: goian
+featured: /assets/images/hero-aboutme.webp
+alt: a golden sunset with vibrant colors reflecting on calm waters against a silhouette of trees
+featured_unsplash: https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt_unsplash: two person standing on gray tile paving
+name_unsplash: Ian Schneider
+handle_unsplash: goian
 track: Little Wing
 versions:
     - artist: Jimi Hendrix
       link: https://apple.co/3azWESt
     - artist: Corinne Bailey Rae
       link: https://apple.co/3GX8qCz
-tags: [History,Creativity,Health,Wellness,Philosophy,processed]
+tags: [History,Creativity,Health,Wellness,Philosophy, manual]
 word: Enchanting
 headline: Jimi Hendrix’s ‘Little Wing’—A Mesmerizing Journey Through Sonic Beauty!
 paragraph: Surrender to the mesmerizing swirls of Jimi Hendrix's guitar in "Little Wing," an auditory voyage that resonates with the deepest chords of the human spirit.
