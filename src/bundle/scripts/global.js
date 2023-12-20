@@ -65,7 +65,9 @@ export default () => ({
         const reconstructedHTML = `
           <figure class="w-full">
             <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
-              alt="${imgAlt}" data-src="${imgSrc.replace('w_480/h_275', 
+              alt="${imgAlt}" :width="$store.utils.isMobile() ? 480 : 700" 
+              :height="$store.utils.isMobile() ? 275 : 400"
+              data-src="${imgSrc.replace('w_480/h_275', 
               `${Alpine.store('utils').isMobile() ? 'w_480/h_275' : 'w_700/h_400'}`)}">
             <figcaption class="text-center">${imgAlt}</figcaption>
           </figure>
