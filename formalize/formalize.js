@@ -17,7 +17,7 @@ cloudinary.config({
 
 const sourceDirectory = '../src/blog/';
 const numVariations = 1 // variations for images
-const isDebugMode = true // when json have been generated
+const isDebugMode = false // when json have been generated
 const isImagesAI = true // generate image from dall-e
 const maxRequests = 5; // Maximum number of requests before waiting
 const waitTime = 2 * 60 * 1000; // Time to wait in milliseconds
@@ -162,7 +162,7 @@ keyword: ${section.keywords.join(', ')}
         await delay(waitTime, 'index: ' + (index + 1))
 
       markdown += '\n' + title + '\n' + `
-![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url})
+![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url.replace('/upload/', '/upload/w_480/h_275/f_webp/')})
 <!-- 
 prompt: ${section.prompt}
 keyword: ${section.keywords.join(', ')}
