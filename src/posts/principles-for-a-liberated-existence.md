@@ -25,13 +25,15 @@ headline: Succumb to the Evocative Notes of 'Initials B.B.' by Serge Gainsbourg
 paragraph: Let the captivating serenade of "Initials B.B." transport you to an era of Parisian chic and lyrical seduction, only with Serge Gainsbourg.
 author: Nicolas Sursock
 date: 2023-11-13T17:02:00Z
-featured: https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTk5NDUyNTR8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80
-alt: assorted-color painted wall with painting materials
-name: Matthieu Comoy
-handle: alienwannabe
+featured: /assets/images/hero-getstarted.webp
+alt: a pair of keys illuminated in a dimly lit room
+featured_unsplash: https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?ixid=M3wzODQ3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTk5NDUyNTR8&ixlib=rb-4.0.3&auto=format&fit=crop&q=80
+alt_unsplash: assorted-color painted wall with painting materials
+name_unsplash: Matthieu Comoy
+handle_unsplash: alienwannabe
 keywords: unlocking the path to a liberated existence
 original: word-mission.md
-tags: [Creativity,Philosophy,Culture,Psychology,Education,blog,formal,featured,processed]
+tags: [Creativity,Philosophy,Culture,Psychology,Education, manual]
 layout: layouts/post.njk
 track: Initials B.B.
 versions:

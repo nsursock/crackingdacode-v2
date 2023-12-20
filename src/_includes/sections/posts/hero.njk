@@ -109,11 +109,13 @@
       <source height="320" width="480" media="(max-width: 799px)" 
             :srcset="'{{ featured }}'.includes('cloudinary') && tags.includes('processed') ? 
             '{{ featured }}'.replace('/upload/', '/upload/w_480/h_275/f_webp/') : 
+            tags.includes('manual') && '{{ featured }}'.includes('hero') ? '{{ featured }}' :
             `{{ featured }}&w=480&h=320`"/>
       {# <source media="(min-width: 800px)" srcset="{{ featured }}&q=80&w=1080&h=720"/> #}
       <img width="1080" height="720" class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" 
             :src="'{{ featured }}'.includes('cloudinary') && tags.includes('processed') ? 
             '{{ featured }}'.replace('/upload/', '/upload/w_1050/h_600/f_webp/') : 
+            tags.includes('manual') && '{{ featured }}'.includes('hero') ? '{{ featured }}'.split('.')[0] + '-desktop.' + '{{ featured }}'.split('.')[1] :
               `{{ featured }}&w=1080&h=720`" 
               alt="{{ alt }}"/>
     </picture>
