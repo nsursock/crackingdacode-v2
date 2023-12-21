@@ -52,9 +52,9 @@ eleventyComputed:
       function preloadImage(url) {
         var link = document.createElement('link');
         link.rel = 'preload';
+        link.fetchPriority = 'high'
         link.href = url;
         link.as = 'image';
-        link.fetchPriority = 'high'
         link.media = '(max-width: 799px)'
         document
           .head
