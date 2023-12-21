@@ -45,6 +45,45 @@ eleventyComputed:
   </symbol>
 </svg>
 
+{% block head %}
+  <div>
+    <!-- Your featured image variable (replace it with the actual value) -->
+    <script>
+      function preloadImage(url) {
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = url;
+        link.as = 'image';
+        link.fetchpriority = 'high'
+        link.media = '(max-width: 799px)'
+        document
+          .head
+          .appendChild(link);
+      }
+
+      function getImageUrl(featured, device) {
+        const dims = [];
+        if (device === 'mobile') {
+          dims.push('w_480/h_275', '&w=480&h=320');
+        } else if (device === 'desktop') {
+          dims.push('w_1050/h_600', '&w=1080&h=720');
+        }
+
+        if (featured.includes('cloudinary')) {
+          return featured.replace('/upload/', `/upload/${dims[0]}/f_webp/`);
+        } else if (featured.includes('hero')) {
+          return featured;
+        } else {
+          return featured + dims[1];
+        }
+      }
+      preloadImage(getImageUrl('{{ featured}}', 'mobile'));
+    </script>
+  </div>
+  {# <link rel="preload" fetchpriority="high" as="image" href="/assets/images/hero-index-desktop.webp" media="(min-width: 800px)"> #}
+  {# <link rel="preload" fetchpriority="high" as="image" href="/assets/images/placeholder2.webp"> #}
+{% endblock %}
+
 {% block body %}
 
   <div :class="isScrollingUp ? 'sticky top-0 z-40 animate-swing' : 'hidden'">
@@ -54,7 +93,7 @@ eleventyComputed:
   {% include 'sections/posts/banner.njk' %}
   {% include 'sections/posts/hero.njk' %}
 
-<!-- x-data="dataPosts" x-init="adapt($el)"  -->
+  <!-- x-data="dataPosts" x-init="adapt($el)"  -->
   <article x-effect="checkPermission('posts', 'principles-for-a-liberated-existence').then(cond => paymentMade = cond)"
     class=" dark:bg-gray-900 relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
     <div class="relative bg-white dark:bg-gray-900">
@@ -161,9 +200,13 @@ eleventyComputed:
           <p class="mt-2 text-lg leading-8 dark:text-gray-500 text-gray-600">I am pleased to present to you a comprehensive list of articles that have been curated with the intention of aligning with your potential areas of interest.</p>
         </div>
 
-        {% set slug = page.url.split('/')[1] %}
+        {% set slug = page
+          .url
+          .split('/')[1] %}
         {% if slug == 'critic' %}
-          {% set collectionName = page.url.split('/')[2] %}
+          {% set collectionName = page
+            .url
+            .split('/')[2] %}
           {% set modifiedSlug = collectionName.slice(0, -1) %}
         {% else %}
           {% set modifiedSlug = 'posts' %}

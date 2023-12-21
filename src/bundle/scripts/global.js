@@ -35,20 +35,37 @@ export default () => ({
   name: '',
   password: '',
 
+  getImageUrl(featured, device) {
+    const dims = []
+    if (device === 'mobile') {
+      dims.push('w_480/h_275', '&w=480&h=320')
+    } else if (device === 'desktop') {
+      dims.push('w_1050/h_600', '&w=1080&h=720')
+    }
+
+    if (featured.includes('cloudinary')) {
+      return featured.replace('/upload/', `/upload/${dims[0]}/f_webp/`);
+    } else if (featured.includes('hero')) {
+      return featured;
+    } else {
+      return featured + dims[1];
+    }
+  },
+
   replaceImages(el) {
     // Get all paragraphs containing images
     const imageParagraphs = Array.from(el.querySelectorAll('p > img'));
-  
+
     imageParagraphs.forEach((imgElement) => {
       const imgSrc = imgElement.getAttribute('src');
       const imgAlt = imgElement.getAttribute('alt');
-  
+
       // Get the sibling em element
       const emElement = imgElement.nextElementSibling;
-  
+
       if (emElement && emElement.tagName.toLowerCase() === 'em') {
         const caption = emElement.innerHTML.trim();
-  
+
         // Replace the image and its parent p with the reconstructed HTML
         const reconstructedHTML = `
           <figure class="w-full">
@@ -57,7 +74,7 @@ export default () => ({
             <figcaption class="text-center">${caption}</figcaption>
           </figure>
         `;
-  
+
         // Replace the old image and its parent p with the reconstructed HTML
         imgElement.parentNode.outerHTML = reconstructedHTML;
       } else {
@@ -67,12 +84,12 @@ export default () => ({
             <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
               alt="${imgAlt}" :width="$store.utils.isMobile() ? 480 : 700" 
               :height="$store.utils.isMobile() ? 275 : 400"
-              data-src="${imgSrc.replace('w_480/h_275', 
-              `${Alpine.store('utils').isMobile() ? 'w_480/h_275' : 'w_700/h_400'}`)}">
+              data-src="${imgSrc.replace('w_480/h_275',
+          `${Alpine.store('utils').isMobile() ? 'w_480/h_275' : 'w_700/h_400'}`)}">
             <figcaption class="text-center">${imgAlt}</figcaption>
           </figure>
         `;
-  
+
         // Replace the old image and its parent p with the reconstructed HTML
         imgElement.parentNode.outerHTML = reconstructedHTML;
       }
