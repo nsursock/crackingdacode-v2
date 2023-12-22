@@ -108,9 +108,9 @@
       </main>
     </div>
   </div>
-  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2" x-data="{ cloudName: 'doht6fqbq' }">
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
     <picture>
-      <source height="320" width="480" media="(max-width: 799px)" :srcset="getImageUrl('{{ featured }}', 'mobile')"/>
+      <source height="320" width="480" media="(max-width: 599px)" :srcset="getImageUrl('{{ featured }}', 'mobile')"/>
       {# <source media="(min-width: 800px)" srcset="{{ featured }}&q=80&w=1080&h=720"/> #}
       <img width="1080" height="720" class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" 
             :src="getImageUrl('{{ featured }}', 'desktop')" alt="{{ alt }}"/>

@@ -35,18 +35,20 @@ export default () => ({
   name: '',
   password: '',
 
-  getImageUrl(featured, device) {
-    const dims = []
+  getImageUrl(featured, device = '') {
+    const dims = [];
     if (device === 'mobile') {
-      dims.push('w_480/h_275', '&w=480&h=320')
+      dims.push('/w_480/h_275', '&w=480&h=320');
     } else if (device === 'desktop') {
-      dims.push('w_1050/h_600', '&w=1080&h=720')
-    }
+      dims.push('/w_1050/h_600', '&w=1080&h=720');
+    } else dims.push(['', ''])
+
+    // console.log(device, dims)
 
     if (featured.includes('cloudinary')) {
-      return featured.replace('/upload/', `/upload/${dims[0]}/f_webp/`);
+      return featured.replace('/upload/', `/upload${dims[0]}/f_webp/`);
     } else if (featured.includes('hero')) {
-      return featured;
+      return `${featured.split('.')[0]}${device === 'desktop' ? '-desktop' : ''}.${featured.split('.')[1]}`
     } else {
       return featured + dims[1];
     }
