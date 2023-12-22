@@ -162,7 +162,7 @@ keyword: ${section.keywords.join(', ')}
         await delay(waitTime, 'index: ' + (index + 1))
 
       markdown += '\n' + title + '\n' + `
-![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url.replace('/upload/', '/upload/w_480/h_275/f_webp/')})
+![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url.replace('/upload/', '/upload/c_fill,w_480,h_320/f_webp/')})
 <!-- 
 prompt: ${section.prompt}
 keyword: ${section.keywords.join(', ')}
