@@ -38,9 +38,9 @@ export default () => ({
   getImageUrl(featured, device = '') {
     const dims = [];
     if (device === 'mobile') {
-      dims.push('/w_480/h_275', '&w=480&h=320');
+      dims.push('/c_fill,w_480,h_320', '&w=480&h=320');
     } else if (device === 'desktop') {
-      dims.push('/w_1050/h_600', '&w=1080&h=720');
+      dims.push('/c_fill,w_1080,h_720', '&w=1080&h=720');
     } else dims.push(['', ''])
 
     // console.log(device, dims)
