@@ -19,6 +19,7 @@ const sourceDirectory = '../src/blog/';
 const numVariations = 1 // variations for images
 const isDebugMode = false // when json have been generated
 const isImagesAI = true // generate image from dall-e
+const isImageSection = true // generate image section
 const maxRequests = 5; // Maximum number of requests before waiting
 const waitTime = 2 * 60 * 1000; // Time to wait in milliseconds
 
@@ -76,6 +77,7 @@ async function processFile(jsonDocument, file) {
 }
 
 async function generateFrontMatter(file, article, rest, json) {
+  console.log(JSON.parse(rest.content));
   const splitTitle = splitHeadlineBalanced(JSON.parse(rest.content).metadata.title);
   // const photo = await extractUnplashMetadata(json.head.featured, true)
   let photo
@@ -135,7 +137,7 @@ async function generateFormalText(article, music) {
     const title = `## ${section.title}`
     let markdown = ''
 
-    let photo
+    let photo = undefined
     if (!isImagesAI) {
       photo = await getRandomUnsplashImage(section.keywords)
       markdown += '\n' + title + '\n' + `
@@ -148,6 +150,7 @@ keyword: ${section.keywords.join(', ')}
 `
     }
     else {
+      if (isImageSection) {
       photo = await getDallEImage(section.prompt)
       photo = await cloudinary.v2.uploader
         .upload(photo?.url, {
@@ -155,11 +158,12 @@ keyword: ${section.keywords.join(', ')}
           resource_type: 'image',
           detection: 'captioning'
         })
+      }
 
       // avoid too many requests 429
       await delay(2000, 'index: ' + (index + 1))
-      if ((index + 1) % maxRequests === 0)
-        await delay(waitTime, 'index: ' + (index + 1))
+      // if ((index + 1) % maxRequests === 0)
+      //   await delay(waitTime, 'index: ' + (index + 1))
 
       markdown += '\n' + title + '\n' + `
 ![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url.replace('/upload/', '/upload/c_fill,w_480,h_320/f_webp/')})

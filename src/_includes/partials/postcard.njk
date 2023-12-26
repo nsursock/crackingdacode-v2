@@ -10,7 +10,7 @@
             isDalleManual ? '{{ post.data.featured }}' :
             `{{ post.data.featured }}&w=480&h=320&fm=webp`" 
         :alt="`{{ post.data.alt }}`" 
-        x-intersect.once="$el.src = $el.dataset.src"
+        x-intersect.once.margin.150px="$el.src = $el.dataset.src"
         class="h-48 w-full object-cover ">
     </div>
     <div class="p-8">
