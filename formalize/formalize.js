@@ -198,7 +198,7 @@ async function generateMetadata(content, file) {
   let rest = null
   if (!isDebugMode) {
     conversation = [
-      { role: 'system', content: 'You are an experienced copy writer who knows how to grab attention.' },
+      { role: 'system', content: 'You are an experienced copy writer who uses 1st person and who knows how to grab attention.' },
       { role: 'user', content: config.promptRest },
       { role: 'assistant', content: content },
     ]
@@ -215,7 +215,7 @@ async function generateArticle(content, file) {
   let article = null
   if (!isDebugMode) {
     conversation = [
-      { role: 'system', content: 'You are an experienced editor who takes text input and rewrites for a more formal tone.' },
+      { role: 'system', content: 'You are an experienced editor who takes text input and rewrites for a more formal tone using 1st person.' },
       { role: 'user', content: config.promptArticle },
       { role: 'assistant', content: content },
     ]
