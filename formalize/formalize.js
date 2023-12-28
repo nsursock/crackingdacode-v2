@@ -477,6 +477,22 @@ function convertJson(filePath) {
 
 // ----------------------------------------------------------------
 
+async function processCritic(json) {
+      let music = null
+      if (!isDebugMode) {
+        conversation = [
+          { role: 'system', content: 'You are an experienced music lover who writes nuanced critics.' },
+          { role: 'user', content: config.promptMusicTrack + `${json.head.track} by ${json.head.versions[0].artist}` },
+          // { role: 'assistant', content:  },
+        ]
+        music = await sendToChatGPT(conversation, false)
+        writeJsonToFile(music, `./processed/${file}.music.track.json`)
+      } else {
+        music = readJsonFromFile(`./processed/${file}.music.track.json`)
+      }
+      // console.log(JSON.stringify(music.content))
+}
+
 (async () => {
   // Entry point
   const files = fs.readdirSync(sourceDirectory);
@@ -493,6 +509,7 @@ function convertJson(filePath) {
       // Create variations and process file
       console.log('Processing: ', file);
       await processFile(jsonDocument, file);
+      // await processCritic(jsonDocument)
     }
 
     const endTime = performance.now();
