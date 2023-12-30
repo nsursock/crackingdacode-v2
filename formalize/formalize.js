@@ -349,13 +349,13 @@ async function getDallEImage(prompt, hero = false) {
 
   const payload = {
     model: "dall-e-3",
-    prompt: prompt,
+    prompt: prompt + ' (photorealistic, landscape format)',
     size: "1792x1024",
-    // quality: "hd"
+    quality: "hd"
   };
 
   // Define the API endpoint
-  const apiUrl = 'https://api.openai.com/v1/images/generations ';
+  const apiUrl = 'https://api.openai.com/v1/images/generations';
 
   try {
     const response = await axios.post(apiUrl, payload, {
@@ -372,6 +372,7 @@ async function getDallEImage(prompt, hero = false) {
     return response.data.data[0];
   } catch (e) {
     console.error(e.message)
+    console.error(JSON.stringify(e.response.data.error, null, 2))
   }
   finally {
     console.log(prompt);
