@@ -14,12 +14,15 @@ module.exports = {
   promptArticle: `
   Your assignment is to meticulously refine the provided document in the following manner:
   
-  1. Systematically formalize each section by structuring paragraphs with precision
+  1. Systematically formalize each section by structuring paragraphs with precision and 
+    conclude the last section with 2 or 3 questions inviting readers to share their 
+    experience about the topic discussed in the article.
   2. Thoroughly scrutinize each section, inclusive of the introduction (initial section):
      - Formulate an appropriate title derived from the content of the section.
      - Discern and designate 1 long tail keyword (a minimum of 4 words) pertinent to the section.
      - Present a detailed, 45-50 words long, image prompt suitable for dall-e, 
         to illustrate the section
+     - Find one word and one word only to summarize the section.
      - Indicate word count.
   3. Endeavor to identify seamless transitions between sections, adhering to a maximum of 2 sentences 
     per transition and write it at the end of the section.
@@ -49,6 +52,7 @@ module.exports = {
           "content": [],
           "count": (word count),
           "keywords": [],
+          "word": "",
           "prompt": ""
         }
       ]

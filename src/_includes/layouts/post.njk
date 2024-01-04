@@ -85,11 +85,11 @@ eleventyComputed:
 //      console.log(device, dims)
 
       if (featured.includes('cloudinary')) {
-        return featured.replace('/upload/', `/upload${dims[0]}/f_webp/`);
+        return featured.replace('/upload/', `/upload${dims[0]}/q_80/f_jpg/`);
       } else if (featured.includes('hero')) {
         return `${featured.split('.')[0]}${device === 'desktop' ? '-desktop' : ''}.${featured.split('.')[1]}`
       } else {
-        return featured + dims[1];
+        return featured + dims[1] + '&q=80&auto=format';
       }
     }
     preloadImage(getImageUrl('{{ featured}}', 'mobile'));

@@ -82,7 +82,7 @@ async function generateFrontMatter(file, article, rest, json) {
   // const photo = await extractUnplashMetadata(json.head.featured, true)
   let photo
   if (!isImagesAI)
-    photo = await getRandomUnsplashImage(JSON.parse(rest.content).keywords)
+    photo = await getRandomUnsplashImage(JSON.parse(article.content).keyword)
   else {
     // delay(waitTime, 'getting hero image' + JSON.parse(rest.content).metadata.prompt)
     photo = await getDallEImage(JSON.parse(rest.content).metadata.prompt, true)
@@ -139,7 +139,7 @@ async function generateFormalText(article, music) {
 
     let photo = undefined
     if (!isImagesAI) {
-      photo = await getRandomUnsplashImage(section.keywords)
+      photo = await getRandomUnsplashImage(section.keywords.join(','))
       markdown += '\n' + title + '\n' + `
 ![${photo.alt_description}](${photo.urls.raw}&auto=format&fit=crop&q=80)
 *Photo by [${photo.user.name}](https://unsplash.com/@${photo.user.username}?utm_source=crackingdacode&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=crackingdacode&utm_medium=referral)*
@@ -166,7 +166,7 @@ keyword: ${section.keywords.join(', ')}
       //   await delay(waitTime, 'index: ' + (index + 1))
 
       markdown += '\n' + title + '\n' + `
-![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url.replace('/upload/', '/upload/c_fill,w_480,h_320/f_webp/')})
+![${photo?.info.detection.captioning.data.caption}](${photo?.secure_url.replace('/upload/', '/upload/c_fill,w_480,h_320/q_80/f_jpg/')})
 <!-- 
 prompt: ${section.prompt}
 keyword: ${section.keywords.join(', ')}

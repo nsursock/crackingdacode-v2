@@ -5,33 +5,23 @@ title2: and the Purpose Behind All This
 description: In a world where the deceased reign over the living, an artist wages a musical war for freedom—where every note is a step towards liberation.
 date: 2022-06-07T04:40:32Z
 author: Nicolas Sursock
-featured: /assets/images/hero-aboutme.webp
-alt: a golden sunset with vibrant colors reflecting on calm waters against a silhouette of trees
-featured_unsplash: https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-alt_unsplash: two person standing on gray tile paving
-name_unsplash: Ian Schneider
-handle_unsplash: goian
+featured_ai: /assets/images/hero-aboutme.webp
+alt_ai: a golden sunset with vibrant colors reflecting on calm waters against a silhouette of trees
+featured: https://images.unsplash.com/photo-1455849318743-b2233052fcff?fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+alt: two person standing on gray tile paving
+name: Ian Schneider
+handle: goian
 track: Little Wing
 versions:
     - artist: Jimi Hendrix
       link: https://apple.co/3azWESt
     - artist: Corinne Bailey Rae
       link: https://apple.co/3GX8qCz
-tags: [History,Creativity,Health,Wellness,Philosophy, manual]
+tags: [History,Creativity,Health,Wellness,Philosophy]
 word: Enchanting
 headline: Jimi Hendrix’s ‘Little Wing’—A Mesmerizing Journey Through Sonic Beauty!
 paragraph: Surrender to the mesmerizing swirls of Jimi Hendrix's guitar in "Little Wing," an auditory voyage that resonates with the deepest chords of the human spirit.
 ---
-
-"Little Wing" is a testament to the unparalleled artistry and emotive guitar prowess of Jimi Hendrix. This standout track from the 1967 album "Axis: Bold as Love" demonstrates Hendrix's ability to blend melody and rhythm into an aural tapestry that is as much a paean to the human spirit as it is a guitar solo. The song unfolds like a vibrant, chromatic dream, with Hendrix's tender vocals lacing through ethereal lyrics that evoke the guardian-like presence of an angelic figure.
-
-Hendrix's lyrics in "Little Wing" are both cryptic and captivating, shining with imagery that leaves the listener with a sense of wonder and introspection. The song’s innovative chord structure sets a canvas for Hendrix to paint his brief, yet profound instrumental story, making every note count in a masterpiece of economy. Hendrix’s guitar work on "Little Wing" is nothing short of spellbinding. His signature use of the instrument transcends mere performance, entering a realm where every bend, slide, and hammer-on tells its own tale. 
-
-The tone Jimi achieves is warm and round, yet capable of piercing through the mix. His use of dynamics, from soft whispers on the strings to soaring crescendos, creates a captivating conversation without the need for words. The song’s impact is eternal, inspiring countless guitarists across generations. From Stevie Ray Vaughan's heartfelt rendition to Derek and the Dominos' extended jam on "Layla," "Little Wing" speaks to the musician's journey, touching souls and encouraging exploration.
-
-"Little Wing" is not just a song; it's an experience. Jimi Hendrix left behind this track as a blueprint of his innermost expressions, creating an emotional resonance that fans and musicians alike will continue to discover and cherish for decades to come.
-
-## Born Under a Spellbinding Sign
 
 I came into the world in Beirut on the 5th of October, 1980, coincidentally sharing my birthday with both of my grandfathers. This momentous occasion, however, unfolded in the midst of a turbulent period for Lebanon, marked by a devastating Civil War that compelled many Lebanese families, including my own, to seek refuge abroad.
 

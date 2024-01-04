@@ -6,9 +6,9 @@
       isDalleManual || isDalleAuto ? 275 : 320 -->
       <img 
         width="480" height="320" :data-src="isDalleAuto ? 
-            `{{ post.data.featured }}`.replace('/upload/', '/upload/c_fill,w_480,h_320/f_webp/') : 
+            `{{ post.data.featured }}`.replace('/upload/', '/upload/c_fill,w_480,h_320/q_80/f_jpg/') : 
             isDalleManual ? '{{ post.data.featured }}' :
-            `{{ post.data.featured }}&w=480&h=320&fm=webp`" 
+            `{{ post.data.featured }}&w=480&h=320&q=80&auto=format`" 
         :alt="`{{ post.data.alt }}`" 
         x-intersect.once.margin.150px="$el.src = $el.dataset.src"
         class="h-48 w-full object-cover ">

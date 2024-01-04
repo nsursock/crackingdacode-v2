@@ -46,11 +46,11 @@ export default () => ({
     // console.log(device, dims)
 
     if (featured.includes('cloudinary')) {
-      return featured.replace('/upload/', `/upload${dims[0]}/f_webp/`);
+      return featured.replace('/upload/', `/upload${dims[0]}/q_80/f_jpg/`);
     } else if (featured.includes('hero')) {
       return `${featured.split('.')[0]}${device === 'desktop' ? '-desktop' : ''}.${featured.split('.')[1]}`
     } else {
-      return featured + dims[1];
+      return featured + dims[1] + '&q=80&auto=format';
     }
   },
 
@@ -72,7 +72,7 @@ export default () => ({
         const reconstructedHTML = `
           <figure class="w-full">
             <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
-              alt="${imgAlt}" data-src="${imgSrc}&w=480&h=320">
+              alt="${imgAlt}" data-src="${imgSrc}&w=600&h=400&q=80&auto=format">
             <figcaption class="text-center">${caption}</figcaption>
           </figure>
         `;
@@ -85,9 +85,9 @@ export default () => ({
           <figure class="w-full">
             <img x-intersect="$el.src = $el.dataset.src" class="rounded-lg" 
               alt="${imgAlt}" :width="$store.utils.isMobile() ? 480 : 700" 
-              :height="$store.utils.isMobile() ? 275 : 400"
-              data-src="${imgSrc.replace('w_480/h_275',
-          `${Alpine.store('utils').isMobile() ? 'w_480/h_275' : 'w_700/h_400'}`)}">
+              :height="$store.utils.isMobile() ? 320 : 400"
+              data-src="${imgSrc.replace('w_480,h_320',
+          `${Alpine.store('utils').isMobile() ? 'w_480,h_320' : 'w_700,h_400'}`)}">
             <figcaption class="text-center">${imgAlt}</figcaption>
           </figure>
         `;
